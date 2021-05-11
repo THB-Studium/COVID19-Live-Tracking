@@ -1,48 +1,35 @@
 p {
-  /*color: #f2d0a4;*/
   text-align: left;
   margin: 2px 0 0 24%;
-  /*font-size: 12px;*/
 }
 
-#impressum, #ueber-uns {
-  position: relative;
-  top: -45px;
-  margin: 0 10px 0 10px;
-  cursor: pointer;
-  /*text-decoration: initial;*/
-}
-
-#impressum {
-  float: left;
-}
-
-#ueber-uns {
-  float: right;
+h3 {
+  margin-top: 20px;
 }
 
 #input-search-term {
   margin: 10px 0 20px 0;
   margin-bottom: 200px;
 }
+
 #searchCountryForm {
   max-width: 70%;
   width: 50em;
-  /*background-color: white;*/
 }
 
 #suchTerm {
-  /*height: 10px;*/
   line-height: 28px
 }
 
 #map-result {
+  position: relative;
   max-width: 30%;
   margin: auto;
+  top: -2.5em;
 }
 
-img {
-  max-width: 100%;
+#map img {
+  max-width: 80%;
   flex: fit-content;
   border: 3px solid #6EB1D5;
   background: #C4C4C4;
@@ -50,5 +37,43 @@ img {
 }
 
 #map-legend {
-  text-align: left;
+  position: absolute;
+  left: -13%;
+  font-weight: 300;
+  font-size: 70%;
+}
+
+.top-werte, .top-links {
+  position: absolute;
+  width: 220px;
+  height: 554px;
+  bottom: 3.4em;
+  padding: 10px;
+
+  background: rgba(110, 177, 213, 0.2);
+}
+
+.top-werte {
+  left: 2.2em;
+}
+
+.top-links {
+  right: 2.2em;
+}
+
+.top-links ul {
+  margin-top: 40px;
+  color: #CCC5B9;
+}
+
+.top-links li {
+  margin-bottom: 10px;
+}
+
+#top-werte-buttons {
+  margin-top: 40px;
+}
+
+button {
+  margin-bottom: 20px;
 }

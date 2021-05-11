@@ -1,0 +1,5 @@
+<footer>
+  <a *ngIf="onImpressum" class="margin-left-15px" href="{{impressumPath}}">Impressum</a>
+  <span *ngIf="onAboutUs && onImpressum" class="margin-left-15px margin-right-15px"> | </span>
+  <a *ngIf="onAboutUs" routerLink="{{aboutUsPath}}">Über uns</a>
+</footer>
