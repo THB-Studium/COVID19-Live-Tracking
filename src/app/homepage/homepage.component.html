@@ -1,1 +1,39 @@
-<p>homepage works!</p>
+<header class="row" id="home_header">
+  <span id="impressum">
+      <a href="{{impressumPath}}">Impressum</a>
+  </span>
+
+  <span id="ueber-uns">
+      <a routerLink="{{aboutUsPath}}">Über uns</a>
+  </span>
+</header>
+
+<body class="body bodyHeight" id="home_body">
+  <h1>Wilkommen zu Covid-19 Live-Tracking</h1>
+
+  <!-- SEARCH TERM FIELD -->
+  <div id="input-search-term">
+    <mat-form-field  appearance="outline" id="searchCountryForm">
+      <input id="suchTerm" matInput name="suchTerm" (keyup)="applyFilter($event.target)"
+             [matAutocomplete]="stateAutoComplete"
+             placeholder="Suche nach Land" required type="text">
+      <mat-icon matSuffix>search</mat-icon>
+
+      <mat-autocomplete #stateAutoComplete="matAutocomplete">
+        <mat-option *ngFor="let state of filteredList" [value]="state"
+                    (onSelectionChange)="onSelectedState(state)">
+          <span>{{ state }}</span>
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </div>
+
+  <!-- MAP -->
+  <div id="map-result">
+    <div id="map">
+      <img src="assets/img/map.png">
+    </div>
+    <p id="map-legend">Covid-19 live Tracking: <b> Deutschland 7 Tage inzidenz</b></p>
+  </div>
+
+</body>
