@@ -1,0 +1,15 @@
+<div class="chart-body">
+  <p *ngIf="positionLabel === 'top'">{{chartLabelName}}</p>
+  <div class="chart-wrapper">
+    <canvas baseChart
+            [data]="pieChartData"
+            [labels]="pieChartLabels"
+            [chartType]="pieChartType"
+            [options]="pieChartOptions"
+            [plugins]="pieChartPlugins"
+            [legend]="pieChartLegend"
+            [width]="chartWidth">
+    </canvas>
+  </div>
+  <p *ngIf="positionLabel === 'bottom'">{{chartLabelName}}</p>
+</div>

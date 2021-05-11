@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core'
 import {rootingPath} from '../shared/rooting-path'
 import {Router} from '@angular/router'
 import {CovidService} from '../core/covid-19.service'
+import {constFederalState} from '../shared/constante'
 
 @Component({
   selector: 'app-homepage',
@@ -10,38 +11,18 @@ import {CovidService} from '../core/covid-19.service'
 })
 export class HomepageComponent implements OnInit {
   filteredList: Array<any> = []
-  statesOfGermany: Array<any> = []
-  // statesOfGermany: Array<any> = [
-  //   'Aach (bei Trier)',
-  //   'Aach (Hegau)',
-  //   'Aachen',
-  //   'Aalen',
-  //   'Acht',
-  //   'Achtelsbach',
-  //   'Achterwehr',
-  //   'Adenbüttel',
-  //   'Adendorf',
-  //   'Adlkofen',
-  //   'Admannshagen-Bargeshagen',
-  //   'Adorf/Vogtland',
-  //   'Ahrenviöl',
-  //   'Aichach',
-  //   'Aachen',
-  //   'Bergisch Gladbach',
-  //   'Berlin',
-  //   'Brandenburg',
-  //   'Göttingen',
-  //   'Gütersloh',
-  //   'Hannover',
-  //   'Hildesheim',
-  //   'Moers',
-  //   'Neuss',
-  //   'Paderborn',
-  //   'Recklinghausen',
-  //   'Reutlingen',
-  //   'Saarbrücken',
-  //   'Siegen',
+  federalStatesName: Array<any> = []
   // ]
+
+  covid19GermanyValues: any
+  totalPopulation = 0
+  totalCase = 0
+  neuInfiziert = 0
+  genesungsrate = 0
+  todesFaelle = 0
+  sterberate = 0
+  chartWidth = 250
+
 
   readonly topWertePath: string
   readonly topLinksPath: string
@@ -50,17 +31,19 @@ export class HomepageComponent implements OnInit {
     private router: Router,
     private covidService: CovidService
   ) {
+    this.federalStatesName = constFederalState.values.map(federalState => federalState.BundeslandName)
     this.topWertePath = '/' + rootingPath.top_werte
     this.topLinksPath = 'https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Risikogebiete_neu.html/'
   }
 
   ngOnInit(): void {
-    this.getValues()
+    this.getAllCountriesValues()
+    this.getDataByCountryId()
   }
 
   applyFilter(suchTerm: any): void {
     if (suchTerm?.value?.length >= 2) {
-      this.filteredList = this.statesOfGermany.filter((res: any) => res.country.toLowerCase().includes(suchTerm.value.toLowerCase()))
+      this.filteredList = this.federalStatesName.filter((name: any) => name.toLowerCase().includes(suchTerm.value.toLowerCase()))
     }
     if (suchTerm?.value?.length === 0) {
       this.filteredList = []
@@ -73,12 +56,31 @@ export class HomepageComponent implements OnInit {
       : this.router.navigate(['/' + rootingPath.search_results + '/' + pillId.toLowerCase()])
   }
 
-  private getValues(): void {
-    this.covidService.getAll().subscribe(
+  private getAllCountriesValues(): void {
+    this.covidService.getAllCountriesValues().subscribe(
       (results: any) => {
-        this.statesOfGermany = results.response
+        this.covid19GermanyValues = results.response.filter((resp: any) => resp.country === 'Germany')[0]
+
+        if (this.covid19GermanyValues) {
+          this.totalPopulation = this.covid19GermanyValues.population
+          this.totalCase = this.covid19GermanyValues.cases.total
+          this.neuInfiziert = +this.covid19GermanyValues.cases.new.replace('+', '')
+          this.genesungsrate = this.covid19GermanyValues.cases.recovered
+          this.todesFaelle = this.covid19GermanyValues.deaths.total
+          this.sterberate = (this.todesFaelle * 100) / this.totalCase
+        }
       },
-      (error: any) => console.log('error in HomepageComponent.getValues()')
+      (error: any) => console.log('error in HomepageComponent.getAllCountriesValues()')
+    )
+  }
+
+  private getDataByCountryId(): void {
+    this.covidService.getProBundesland(16).subscribe(
+      (results: any) => {
+        console.log(results.features[0].attributes)
+        // this.statesOfGermany = results.response
+      },
+      (error: any) => console.log('error in HomepageComponent.getDataByCountryId()')
     )
   }
 

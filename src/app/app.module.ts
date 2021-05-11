@@ -20,12 +20,15 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete'
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http'
 import {AuthInterceptor} from './core/auth.Interceptor'
 import {CovidService} from './core/covid-19.service'
-import {TopWerteComponent} from './top-werte/top-werte.component';
-import { FooterComponent } from './footer/footer.component'
+import {TopWerteComponent} from './top-werte/top-werte.component'
+import {FooterComponent} from './footer/footer.component'
+import {ChartComponent} from './chart/chart.component'
+import {MatGridListModule} from '@angular/material/grid-list'
+import {ChartsModule} from 'ng2-charts'
 
 
 const angularMaterialModules = [
-  MatFormFieldModule, MatIconModule, MatInputModule,
+  MatFormFieldModule, MatIconModule, MatInputModule, MatGridListModule,
   MatOptionModule, MatAutocompleteModule
 ]
 
@@ -40,15 +43,17 @@ const angularMaterialModules = [
     SearchResultsComponent,
     ImpressumComponent,
     TopWerteComponent,
-    FooterComponent
+    FooterComponent,
+    ChartComponent
   ],
-    imports: [
+  imports: [
     angularMaterialModules,
-        BrowserModule,
+    BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartsModule
   ],
   providers: [
     {
