@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
+import { rootingPath } from '../shared/rooting-path'
 
 @Component({
   selector: 'app-header',
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  readonly homePath: string
 
-  constructor() { }
+  constructor() {
+    this.homePath = '/' + rootingPath.home
+  }
 
   ngOnInit(): void {
   }

@@ -1,1 +1,123 @@
-/* You can add global styles to this file, and also import other style files */
+/** body of the index html ***/
+body {
+  margin: 0;
+  background-color: #242832;
+}
+
+h1 {
+  font-family: Bebas Neue;
+  font-size: 42px;
+  line-height: 50px;
+  letter-spacing: 0em;
+  font-style: normal;
+  color: #FFFCF2;
+}
+
+h2 {
+  font-family: Montserrat;
+  font-size: 28px;
+  font-weight: normal;
+  line-height: 34px;
+  letter-spacing: 0em;
+  font-style: normal;
+  color: #FFFCF2;
+}
+
+h3 {
+  font-family: Montserrat;
+  font-size: 23px;
+  font-weight: normal;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0em;
+}
+
+a, p {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #CCC5B9;
+}
+
+a {
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  -moz-transition: border-left-color 0.2s ease-in-out;
+  -ms-transition: border-left-color 0.2s ease-in-out;
+  -o-transition: border-left-color 0.2s ease-in-out;
+  -webkit-transition: border-left-color 0.2s ease-in-out;
+  transition: border-left-color 0.2s ease-in-out;
+}
+
+a:hover {
+  border-color: #6EB1D5;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.htmlBgrdColor {
+  background-color: #242832
+}
+
+.body {
+  background: #1C232B;
+  margin: 50px 30px 30px 30px;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.dodyBgrdColor {
+  background: #1C232B;
+}
+
+.bodyHeight {
+  height: calc(100vh - 10em);
+}
+
+.buttons {
+  width: 230px;
+  height: 67px;
+  background: #FFFCF2;
+  border: 2px solid #C4C4C4;
+  box-sizing: border-box;
+}
+
+.buttons-fonts {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #4D5964;
+}
+
+.footer {
+  position: absolute;
+  width: 555px;
+  height: 30px;
+  left: 50px;
+  top: 960px;
+  background: #6EB1D5;
+}
+
+.footer-fonts {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+
+  color: #4D5964;
+}
