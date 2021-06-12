@@ -1,7 +1,7 @@
 <body class="body bodyHeight" id="home_body">
 
 <div>
-  <p><a class="home" routerLink="{{homePath}}"  >Home</a></p>
+  <p><a class="home" routerLink="{{homePath}}">Home</a></p>
 </div>
 <div>
   <div class="about_us">
@@ -12,19 +12,27 @@
 
       Das Ziel dieser Webseite ist es, Metriken über live Covid-19 Daten so bereitzustellen, dass der “einfache” Bürger in der Lage sei, diese schneller zu erfassen und zu interpretieren. </p>
   </div>
-  <div class="team">
+
+
+  <div class="unser-team">
     <h2>Unser Team</h2>
     <div class="team_member">
-      <div class="member1">
-        <p><a class="role" routerLink>Mistra  Kuipou</a><span>(Konzeption)</span>  </p></div>
+      <div class="member1" (click)="navTo('mistra_kuipou')">
+        <a class="role">Mistra  Kuipou</a>
+        <p>(Konzeption)</p>
+      </div>
     </div>
     <div class="team_member">
-      <div class="member2">
-        <p><a class="role" routerLink >Bertin Jr Wagueu</a><span>(Design)</span>     </p></div>
+      <div class="member2" (click)="navTo('bertin_jr_wagueu')">
+        <a class="role">Bertin Jr Wagueu</a>
+        <p>(Design)</p>
+      </div>
     </div>
     <div class="team_member">
-      <div class="member3">
-        <p><a class="role" routerLink >Steve Ngalamo</a><span>(Frontend-Implementierung)</span>     </p></div>
+      <div class="member3" (click)="navTo('steve_ngalamo')">
+        <a class="role">Steve Ngalamo</a>
+        <p>(Implementierung)</p>
+      </div>
     </div>
   </div>
 </div>
