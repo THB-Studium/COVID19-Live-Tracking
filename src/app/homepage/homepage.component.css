@@ -3,8 +3,13 @@ p {
   margin: 2px 0 0 24%;
 }
 
-h3 {
-  margin-top: 20px;
+h1 {
+  font-size: 40px;
+  margin-top: 10px;
+}
+
+h2 {
+  margin-top: 30px;
 }
 
 #input-search-term {
@@ -21,15 +26,19 @@ h3 {
   line-height: 28px
 }
 
-#map-result {
+#map-group {
   position: relative;
   max-width: 30%;
   margin: auto;
+  left: 12%;
   top: -2.5em;
 }
 
-#map img {
-  max-width: 80%;
+#map-div, #map-div img {
+  width: 90%;
+}
+
+#map-div img {
   flex: fit-content;
   border: 3px solid #6EB1D5;
   background: #C4C4C4;
@@ -38,7 +47,7 @@ h3 {
 
 #map-legend {
   position: absolute;
-  left: -13%;
+  left: -18%;
   font-weight: 300;
   font-size: 70%;
 }
@@ -47,18 +56,18 @@ h3 {
   position: absolute;
   width: 220px;
   height: 554px;
-  bottom: 3.4em;
+  bottom: 3em;
   padding: 10px;
 
   background: rgba(110, 177, 213, 0.2);
 }
 
 .top-werte {
-  left: 2.2em;
+  left: 1.9em;
 }
 
 .top-links {
-  right: 2.2em;
+  right: 1.9em;
 }
 
 .top-links ul {
@@ -75,5 +84,46 @@ h3 {
 }
 
 button {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.chart-list {
+  margin-top: 5em;
+  margin-left: 20%;
+}
+
+
+/* Responsiv part*/
+@media screen and (max-width: 1059px) {
+  .top-werte, .top-links {
+    bottom: 2.1em;
+  }
+
+  .top-links {
+    right: 0.7em;
+  }
+
+  footer {
+    position: absolute;
+    bottom: 6em;
+  }
+}
+
+@media screen and (max-width: 1059px) {
+  .top-links {
+    left: 49.5em;
+  }
+
+  .chart-list {
+    margin-top: 4em;
+    margin-left: 9em;
+  }
+
+  #map-group {
+    left: 5.5em;
+  }
+
+  #map-legend {
+    font-size: 55%;
+  }
 }

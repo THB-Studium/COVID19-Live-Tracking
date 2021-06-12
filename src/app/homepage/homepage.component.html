@@ -10,9 +10,9 @@
     <mat-icon matSuffix>search</mat-icon>
 
     <mat-autocomplete #stateAutoComplete="matAutocomplete">
-      <mat-option (onSelectionChange)="navTo(state.country)" *ngFor="let state of filteredList"
-                  [value]="state.country">
-        <span>{{ state.country }}</span>
+      <mat-option (onSelectionChange)="navTo(state)" *ngFor="let state of filteredList"
+                  [value]="state">
+        <span>{{ state }}</span>
       </mat-option>
     </mat-autocomplete>
   </mat-form-field>
@@ -21,49 +21,69 @@
 
 <div class="row">
   <div class="col-md-2 top-werte">
-    <h3>Top Werte</h3>
+    <h2>Top Werte</h2>
 
     <div id="top-werte-buttons">
-      <button type="button" class="buttons buttons-fonts"
-              (click)="navTo('top_niedrigste_inzidenz', true)" title="Top 5 niedrigste Inzidenz"
-              data-toggle="tooltip"> Top 5 niedrigste Inzidenz
+      <button (click)="navTo('top_niedrigste_inzidenz', true)" class="buttons buttons-fonts"
+              data-toggle="tooltip" title="Top 5 niedrigste Inzidenz"
+              type="button"> Top 5 niedrigste Inzidenz
       </button>
-      <button type="button" class="buttons buttons-fonts"
-              (click)="navTo('top_urlaubsorte', true)" title="Top 5 Urlaubsorte"
-              data-toggle="tooltip"> Top 5 Urlaubsorte
+      <button (click)="navTo('top_urlaubsorte', true)" class="buttons buttons-fonts"
+              data-toggle="tooltip" title="Top 5 Urlaubsorte"
+              type="button"> Top 5 Urlaubsorte
       </button>
-      <button type="button" class="buttons buttons-fonts"
-              (click)="navTo('risikogebiete', true)" title="risikogebiete"
-              data-toggle="tooltip"> Risikogebiete
+      <button (click)="navTo('risikogebiete', true)" class="buttons buttons-fonts"
+              data-toggle="tooltip" title="risikogebiete"
+              type="button"> Risikogebiete
       </button>
     </div>
   </div>
   <div class="col-md-10">
     <!-- MAP -->
-    <div id="map-result">
-      <div id="map">
+    <div id="map-group">
+      <div id="map-div">
         <img src="assets/img/map.png">
       </div>
       <p id="map-legend">Covid-19 live Tracking: <b> Deutschland 7 Tage inzidenz</b></p>
     </div>
 
-<!--    <div class="row">-->
-<!--      <div class="col-md-3" style="position: relative">-->
-<!--        <img src="assets/img/1.png">-->
-<!--      </div>-->
-<!--      <div class="col-md-3" style="position: relative">-->
-<!--        <img src="assets/img/2.png">-->
-<!--      </div>-->
-<!--      <div class="col-md-3" style="position: relative">-->
-<!--        <img src="assets/img/3.png">-->
-<!--      </div>-->
-<!--      <div class="col-md-3" style="position: relative">-->
-<!--        <img src="assets/img/4.png">-->
-<!--      </div>-->
-<!--    </div>-->
+    <div class="chart-list">
+      <div class="chart-content">
+        <app-chart
+          [chartLabelName]="'Neu infiziert'"
+          [positionLabel]="'bottom'"
+          [caseValue]="neuInfiziert"
+          [totalValue]="totalCase"
+          [chartWidth]="chartWidth"></app-chart>
+      </div>
+      <div class="chart-content">
+        <app-chart
+          [chartLabelName]="'Genesungsrate'"
+          [positionLabel]="'bottom'"
+          [caseValue]="genesungsrate"
+          [totalValue]="totalCase"
+          [chartWidth]="chartWidth"></app-chart>
+      </div>
+      <div class="chart-content">
+        <app-chart
+          [chartLabelName]="'Todesfälle'"
+          [positionLabel]="'bottom'"
+          [caseValue]="todesFaelle"
+          [totalValue]="totalCase"
+          [chartWidth]="chartWidth"></app-chart>
+      </div>
+      <div class="chart-content">
+        <app-chart
+          [chartLabelName]="'Sterberate'"
+          [positionLabel]="'bottom'"
+          [caseValue]="sterberate"
+          [totalValue]="100"
+          [chartWidth]="chartWidth"></app-chart>
+      </div>
+    </div>
   </div>
   <div class="col-md-2 top-links">
-    <h3>Top Links</h3>
+    <h2>Top Links</h2>
 
     <ul>
       <li><a class="margin-left-15px" href="{{topLinksPath}}" target="”_blank”">Robert Koch-Institut</a></li>

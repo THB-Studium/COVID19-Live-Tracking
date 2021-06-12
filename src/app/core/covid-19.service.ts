@@ -1,24 +1,25 @@
 import {Injectable} from '@angular/core'
-import {HttpClient, HttpParams} from '@angular/common/http'
+import {HttpClient} from '@angular/common/http'
 import {map} from 'rxjs/operators'
-// @ts-ignore
-import {v4 as uuid} from 'uuid'
+import {environment} from '../../environments/environment'
 
 
 @Injectable({providedIn: 'root'})
 export class CovidService {
-  private readonly baseUrl: string
 
-  constructor(
-    private httpClient: HttpClient,
-  ) {
-    this.baseUrl = 'https://covid-193.p.rapidapi.com/statistics'
+  constructor(private httpClient: HttpClient) { }
+
+
+  /*** TO GET ALL COVID-19 VALUES BY COUNTRIES: ***/
+  getAllCountriesValues(): any {
+    return this.httpClient.get<Response>(environment.countryBaseUrl)
+      .pipe(map((res: Response) => res))
   }
 
-
-  /*** TO GET ALL COUNTRIES VALUES: ***/
-  getAll(queryParam?: HttpParams): any {
-    return this.httpClient.get<Response>(this.baseUrl, {params: queryParam})
+  /*** TO GET ALL COVID-19 VALUES BY FEDERAL STATES: ***/
+  getProBundesland(bundeslandId: number): any {
+    return this.httpClient.get<Response>(
+      environment.federalStatesBaseUrl + bundeslandId + environment.federalStatesQueriesUrl)
       .pipe(map((res: Response) => res))
   }
 
