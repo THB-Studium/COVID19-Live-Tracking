@@ -38,7 +38,6 @@ export class HomepageComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllCountriesValues()
-    this.getDataByCountryId()
   }
 
   applyFilter(suchTerm: any): void {
@@ -71,16 +70,6 @@ export class HomepageComponent implements OnInit {
         }
       },
       (error: any) => console.log('error in HomepageComponent.getAllCountriesValues()')
-    )
-  }
-
-  private getDataByCountryId(): void {
-    this.covidService.getProBundesland(16).subscribe(
-      (results: any) => {
-        console.log(results.features[0].attributes)
-        // this.statesOfGermany = results.response
-      },
-      (error: any) => console.log('error in HomepageComponent.getDataByCountryId()')
     )
   }
 

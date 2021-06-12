@@ -1,1 +1,68 @@
-<p>search-results works!</p>
+<div class="to-home">
+  <a href="{{homePath}}"> Home</a>
+</div>
+
+<body class="body bodyHeight">
+<div class="ergebnis-wrapper">
+  <div class="row">
+    <div class="col-sm">
+      <div class="bundesLandNameResult">
+        <h2>Suchergebnis für <b>{{ bundesLandName | titlecase }}</b></h2>
+      </div>
+      <div class="bundesLandImage" id="bundesLandMap">
+        <img (click)="changeImageSize()" [style.width.px]="mapWidth" src="assets/img/map.png">
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="border-wrapper">
+  <h3><b>Statistiken</b></h3>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <div>
+          <label class="iLabel " for="inzidentwert">Inzidentwert </label>
+        </div>
+
+        <img src="assets/img/MicrosoftTeams-image.png">
+      </div>
+      <div class="col-sm">
+        <div>
+          <label class="iLabel " for="inzidentwert">Todesfälle</label>
+        </div>
+        <img src="assets/img/MicrosoftTeams-image.png">
+      </div>
+      <div class="col-sm">
+        <div>
+          <label class="iLabel " for="inzidentwert">Genesungsrate </label>
+        </div>
+        <img src="assets/img/MicrosoftTeams-image.png">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm">
+        <div>
+          <label class="iLabel " for="inzidentwert">Neu infiziert </label>
+        </div>
+        <img src="assets/img/MicrosoftTeams-image.png">
+      </div>
+      <div class="col-sm">
+        <div>
+          <label class="iLabel " for="inzidentwert">Sterbrate </label>
+        </div>
+        <img src="assets/img/MicrosoftTeams-image.png">
+      </div>
+      <div class="col-sm">
+        <div>
+          <label class="iLabel " for="inzidentwert">Alle Fälle </label>
+        </div>
+        <img src="assets/img/MicrosoftTeams-image.png">
+      </div>
+    </div>
+  </div>
+</div>
+</body>
