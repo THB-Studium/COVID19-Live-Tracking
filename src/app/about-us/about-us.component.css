@@ -1,0 +1,76 @@
+a.home{
+  position: absolute;
+  width: 44px;
+  height: 17px;
+  left: 10px;
+  top: 55px;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+
+  color: #CCC5B9;
+}
+a.role{
+  text-align: center;
+  padding-top: 100%;
+}
+span{
+  text-align: center;
+  padding-top: 100%;
+  position: relative;
+}
+.team_member{
+  width: 175px;
+  min-width: 100px;
+  max-width: 260px;
+  height: 235px;
+  left: 418px;
+  top: 692px;
+  margin: 28px;
+  border: solid 1px black;
+  display: inline-block;
+}
+
+.member1{
+  background: url("../../assets/img/mistra-forest.png")  no-repeat center;
+  background-size: cover;
+  border-radius: 50%;
+  left: 15.14%;
+  right: 73.07%;
+  top: 70%;
+  bottom: 19.43%;
+  Width :173px;
+  Height:173px;
+  float: left;
+display: block;
+}
+
+.member2{
+  background: url("../../assets/img/bertin-junior.png") no-repeat center;
+  background-size: cover;
+  border-radius: 50%;
+  left: 15.14%;
+  right: 73.07%;
+  top: 67.58%;
+  bottom: 19.43%;
+  Width :173px;
+  Height:173px;
+  float: left;
+}
+
+.member3{
+  background: url("../../assets/img/steve-carmel.png") no-repeat center;
+  background-size: cover;
+  border-radius: 50%;
+  left: 15.14%;
+  right: 73.07%;
+  top: 67.58%;
+  bottom: 19.43%;
+  Width :173px;
+  Height:173px;
+  float: left;
+}
+

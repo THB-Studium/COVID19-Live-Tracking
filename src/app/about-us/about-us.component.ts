@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
+import {rootingPath} from '../shared/rooting-path'
+import {ActivatedRoute} from '@angular/router'
 
 @Component({
   selector: 'app-about-us',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutUsComponent implements OnInit {
 
-  constructor() { }
+  readonly homePath: string
+  memberName: string = ''
+
+  constructor(private  activeRoute: ActivatedRoute) {
+    this.homePath = '/' + rootingPath.home
+  }
 
   ngOnInit(): void {
+    this.activeRoute.params.subscribe(
+      (params: any ) => this.memberName = params['pillId']
+    )
   }
 
 }
