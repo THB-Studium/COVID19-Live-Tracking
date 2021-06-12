@@ -164,3 +164,44 @@ footer a:hover {
     bottom: 0.2%;
   }
 }
+
+/* These are what Bertin is Using */
+.border-wrapper {
+  width: auto;
+  height: auto;
+  margin: 182px 81px 41px 81px;
+  background: #242832;
+  border: 2px solid #6EB1D5;
+  box-sizing: border-box;
+}
+
+.iLabel {
+  left: calc(50% - 213px/2 - 420px);
+  top: calc(50% - 45.56px/2 - 213.72px);
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 42px;
+  text-align: center;
+
+  color: #CCC5B9;
+}
+
+.bundesLandImage {
+  text-align: right;
+}
+
+.homeclass {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  /* identical to box height */
+
+  /*text-decoration-line: underline;*/
+
+  color: #CCC5B9;
+}
