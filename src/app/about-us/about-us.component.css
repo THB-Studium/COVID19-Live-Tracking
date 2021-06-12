@@ -1,0 +1,95 @@
+body {
+  padding: 30px;
+}
+
+h2 {
+  margin-bottom: 30px;
+}
+
+a.home {
+  position: absolute;
+  width: 44px;
+  height: 17px;
+  left: 10px;
+  top: 55px;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+
+  color: #CCC5B9;
+}
+
+a.role {
+  text-align: center;
+  padding-top: 100%;
+}
+
+a, .member1, .member2, .member3 {
+  cursor: pointer;
+}
+
+.member1:hover, .member2:hover, .member3:hover {
+  Width: 180px;
+  Height: 180px;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 5);
+}
+
+.about_us p {
+  margin: auto;
+  width: 70%;
+  line-height: 1.8em;
+}
+
+.unser-team {
+  position: relative;
+  margin-top: 15em;
+  left: 6em;
+}
+
+.unser-team h2 {
+  position: relative;
+  left: -5em;
+}
+
+.team_member {
+  width: 175px;
+  min-width: 100px;
+  max-width: 260px;
+  text-align: center;
+  display: inline-block;
+  margin-right: 15em;
+}
+
+.member1 {
+  background: url("../../assets/img/mistra-forest.png") no-repeat center;
+}
+
+.member2 {
+  background: url("../../assets/img/bertin-junior.png") no-repeat center;
+}
+
+.member3 {
+  background: url("../../assets/img/steve-carmel.png") no-repeat center;
+}
+
+.member1, .member2, .member3 {
+  background-size: cover;
+  border-radius: 50%;
+  left: 15.14%;
+  right: 73.07%;
+  top: 70%;
+  bottom: 19.43%;
+  Width: 173px;
+  Height: 173px;
+  float: left;
+  display: block;
+}
+
+.role {
+  margin-top: 20px;
+  text-align: center;
+}
+
