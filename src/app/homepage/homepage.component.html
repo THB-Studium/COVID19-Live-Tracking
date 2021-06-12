@@ -1,39 +1,80 @@
-<header class="row" id="home_header">
-  <span id="impressum">
-      <a href="{{impressumPath}}">Impressum</a>
-  </span>
-
-  <span id="ueber-uns">
-      <a routerLink="{{aboutUsPath}}">Über uns</a>
-  </span>
-</header>
-
 <body class="body bodyHeight" id="home_body">
-  <h1>Wilkommen zu Covid-19 Live-Tracking</h1>
+<h1>Wilkommen zu Covid-19 Live-Tracking</h1>
 
-  <!-- SEARCH TERM FIELD -->
-  <div id="input-search-term">
-    <mat-form-field  appearance="outline" id="searchCountryForm">
-      <input id="suchTerm" matInput name="suchTerm" (keyup)="applyFilter($event.target)"
-             [matAutocomplete]="stateAutoComplete"
-             placeholder="Suche nach Land" required type="text">
-      <mat-icon matSuffix>search</mat-icon>
+<!-- SEARCH TERM FIELD -->
+<div id="input-search-term">
+  <mat-form-field appearance="outline" id="searchCountryForm">
+    <input (keyup)="applyFilter($event.target)" [matAutocomplete]="stateAutoComplete" id="suchTerm" matInput
+           name="suchTerm"
+           placeholder="Suche nach Land" required type="text">
+    <mat-icon matSuffix>search</mat-icon>
 
-      <mat-autocomplete #stateAutoComplete="matAutocomplete">
-        <mat-option *ngFor="let state of filteredList" [value]="state"
-                    (onSelectionChange)="onSelectedState(state)">
-          <span>{{ state }}</span>
-        </mat-option>
-      </mat-autocomplete>
-    </mat-form-field>
-  </div>
+    <mat-autocomplete #stateAutoComplete="matAutocomplete">
+      <mat-option (onSelectionChange)="navTo(state.country)" *ngFor="let state of filteredList"
+                  [value]="state.country">
+        <span>{{ state.country }}</span>
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</div>
 
-  <!-- MAP -->
-  <div id="map-result">
-    <div id="map">
-      <img src="assets/img/map.png">
+
+<div class="row">
+  <div class="col-md-2 top-werte">
+    <h3>Top Werte</h3>
+
+    <div id="top-werte-buttons">
+      <button type="button" class="buttons buttons-fonts"
+              (click)="navTo('top_niedrigste_inzidenz', true)" title="Top 5 niedrigste Inzidenz"
+              data-toggle="tooltip"> Top 5 niedrigste Inzidenz
+      </button>
+      <button type="button" class="buttons buttons-fonts"
+              (click)="navTo('top_urlaubsorte', true)" title="Top 5 Urlaubsorte"
+              data-toggle="tooltip"> Top 5 Urlaubsorte
+      </button>
+      <button type="button" class="buttons buttons-fonts"
+              (click)="navTo('risikogebiete', true)" title="risikogebiete"
+              data-toggle="tooltip"> Risikogebiete
+      </button>
     </div>
-    <p id="map-legend">Covid-19 live Tracking: <b> Deutschland 7 Tage inzidenz</b></p>
   </div>
+  <div class="col-md-10">
+    <!-- MAP -->
+    <div id="map-result">
+      <div id="map">
+        <img src="assets/img/map.png">
+      </div>
+      <p id="map-legend">Covid-19 live Tracking: <b> Deutschland 7 Tage inzidenz</b></p>
+    </div>
+
+<!--    <div class="row">-->
+<!--      <div class="col-md-3" style="position: relative">-->
+<!--        <img src="assets/img/1.png">-->
+<!--      </div>-->
+<!--      <div class="col-md-3" style="position: relative">-->
+<!--        <img src="assets/img/2.png">-->
+<!--      </div>-->
+<!--      <div class="col-md-3" style="position: relative">-->
+<!--        <img src="assets/img/3.png">-->
+<!--      </div>-->
+<!--      <div class="col-md-3" style="position: relative">-->
+<!--        <img src="assets/img/4.png">-->
+<!--      </div>-->
+<!--    </div>-->
+  </div>
+  <div class="col-md-2 top-links">
+    <h3>Top Links</h3>
+
+    <ul>
+      <li><a class="margin-left-15px" href="{{topLinksPath}}" target="”_blank”">Robert Koch-Institut</a></li>
+      <li><a class="margin-left-15px" href="{{topLinksPath}}" target="”_blank”">Top Links 2</a></li>
+      <li><a class="margin-left-15px" href="{{topLinksPath}}" target="”_blank”">Top Links 3</a></li>
+      <li><a class="margin-left-15px" href="{{topLinksPath}}" target="”_blank”">Top Links 4</a></li>
+      <li><a class="margin-left-15px" href="{{topLinksPath}}" target="”_blank”">Top Links 5</a></li>
+      <li><a class="margin-left-15px" href="{{topLinksPath}}" target="”_blank”">Top Links 6</a></li>
+      <li><a class="margin-left-15px" href="{{topLinksPath}}" target="”_blank”">Top Links 7</a></li>
+    </ul>
+  </div>
+</div>
 
 </body>

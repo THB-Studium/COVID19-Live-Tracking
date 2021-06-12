@@ -6,11 +6,13 @@ import { SearchResultsComponent } from './search-results/search-results.componen
 import { AboutUsComponent } from './about-us/about-us.component'
 import { ImpressumComponent } from './impressum/impressum.component'
 import { PortofolioComponent } from './portofolio/portofolio.component'
+import {TopWerteComponent} from './top-werte/top-werte.component'
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: '/' + rootingPath.home},
   {path: rootingPath.home, component: HomepageComponent},
   {path: rootingPath.search_results + '/:pillId', component: SearchResultsComponent},
+  {path: rootingPath.top_werte + '/:pillId', component: TopWerteComponent},
   {path: rootingPath.about, component: AboutUsComponent},
   {path: rootingPath.about + '/:pillId', component: PortofolioComponent},
   {path: rootingPath.impressum, component: ImpressumComponent},
