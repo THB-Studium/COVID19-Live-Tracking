@@ -93,3 +93,7 @@ a, .member1, .member2, .member3 {
   text-align: center;
 }
 
+.bodyHeight {
+  height: calc(100vh - 10em);
+}
+
