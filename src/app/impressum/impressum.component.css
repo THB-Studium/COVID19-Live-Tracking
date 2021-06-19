@@ -1,0 +1,42 @@
+a.home {
+  position: absolute;
+  width: 44px;
+  height: 17px;
+  left: 10px;
+  top: 55px;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+
+  color: #CCC5B9;
+}
+div.contact{
+  margin: auto;
+  background: white;
+  width: 1132px;
+  height: 457px;
+  left: 151px;
+  top: 328px;
+}
+
+p.contact{
+  text-align: center;
+  margin-top: 2em;
+  /* background: white;#1C232B;*/
+}
+
+div.logo_impressum{
+  margin: auto;
+  width: 125px;
+  height: 270px;
+  background: url("../../assets/logo/afri-care-logo-ohne.png") no-repeat center;
+  background-size: contain;
+}
+
+.logo_impressum{
+  margin-bottom: 25em;
+}
+
