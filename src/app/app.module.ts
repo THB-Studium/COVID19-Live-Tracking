@@ -26,6 +26,7 @@ import {ChartComponent} from './chart/chart.component'
 import {MatGridListModule} from '@angular/material/grid-list'
 import {ChartsModule} from 'ng2-charts'
 import {MatTabsModule} from '@angular/material/tabs'
+import {SortService} from './core/sort.service'
 
 
 const angularMaterialModules = [
@@ -63,7 +64,8 @@ const angularMaterialModules = [
       multi: true
     },
     angularMaterialModules,
-    CovidService
+    CovidService,
+    SortService
   ],
   bootstrap: [AppComponent]
 })
