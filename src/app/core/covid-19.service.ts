@@ -25,4 +25,11 @@ export class CovidService {
       .pipe(map((res: Response) => res))
   }
 
+  /*** TO GET ALL COVID-19 VALUES OF ALL FEDERAL STATES:
+   * The data come from the arcgis free API (https://services7.arcgis.com/mOBPykOjAyBO2ZKk/ArcGIS/rest/services/) ***/
+  getforAllBundesland(): any {
+  return this.httpClient.get<Response>(environment.fetchAllFederalStatesBaseUrl)
+    .pipe(map((res: Response) => res))
+  }
+
 }

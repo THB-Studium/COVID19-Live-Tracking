@@ -25,11 +25,12 @@ import {FooterComponent} from './footer/footer.component'
 import {ChartComponent} from './chart/chart.component'
 import {MatGridListModule} from '@angular/material/grid-list'
 import {ChartsModule} from 'ng2-charts'
+import {MatTabsModule} from '@angular/material/tabs'
 
 
 const angularMaterialModules = [
   MatFormFieldModule, MatIconModule, MatInputModule, MatGridListModule,
-  MatOptionModule, MatAutocompleteModule
+  MatOptionModule, MatAutocompleteModule, MatTabsModule
 ]
 
 @NgModule({
