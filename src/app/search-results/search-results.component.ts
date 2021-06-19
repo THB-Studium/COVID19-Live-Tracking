@@ -10,11 +10,25 @@ import {constFederalState} from '../shared/constante'
   styleUrls: ['./search-results.component.css']
 })
 export class SearchResultsComponent implements OnInit {
-  mapWidth = 300
-  onMapClick = false
+  mapWidth = 100
+  isVisible = true
   readonly homePath: string
+  imagePath: any = 'assets/img/mapSmall.png'
   bundesLandName = ''
   bundeslandWerte: any
+
+  filteredList: Array<any> = []
+  federalStatesName: Array<any> = []
+  // ]
+
+  covid19GermanyValues: any
+  totalPopulation = 1000
+  totalCase = 299
+  neuInfiziert = 134
+  genesungsrate = 23
+  todesFaelle = 35
+  sterberate = 46
+  chartWidth = 250
 
   constructor(
     private activeRoute: ActivatedRoute,
@@ -36,10 +50,8 @@ export class SearchResultsComponent implements OnInit {
     )
   }
 
-
   changeImageSize(): void {
-    this.onMapClick ? this.mapWidth = 100 : this.mapWidth = 400
-    this.onMapClick = !this.onMapClick
+    this.isVisible = !this.isVisible
   }
 
   private getDataByCountryId(bundesLandId: number): void {

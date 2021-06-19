@@ -9,9 +9,6 @@
       <div class="bundesLandNameResult">
         <h2>Suchergebnis für <b>{{ bundesLandName | titlecase }}</b></h2>
       </div>
-      <div class="bundesLandImage" id="bundesLandMap">
-        <img (click)="changeImageSize()" [style.width.px]="mapWidth" src="assets/img/map.png">
-      </div>
     </div>
 
   </div>
@@ -19,50 +16,75 @@
 </div>
 
 <div class="border-wrapper">
-  <h3><b>Statistiken</b></h3>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-sm">
-        <div>
-          <label class="iLabel " for="inzidentwert">Inzidentwert </label>
-        </div>
-
-        <img src="assets/img/MicrosoftTeams-image.png">
-      </div>
-      <div class="col-sm">
-        <div>
-          <label class="iLabel " for="inzidentwert">Todesfälle</label>
-        </div>
-        <img src="assets/img/MicrosoftTeams-image.png">
-      </div>
-      <div class="col-sm">
-        <div>
-          <label class="iLabel " for="inzidentwert">Genesungsrate </label>
-        </div>
-        <img src="assets/img/MicrosoftTeams-image.png">
-      </div>
+  <div class="row">
+    <div class="bundesLandNameResult col-10">
+      <h2 id="statistic-title-center"><b>Statistiken</b></h2>
     </div>
-    <div class="row">
-      <div class="col-sm">
-        <div>
-          <label class="iLabel " for="inzidentwert">Neu infiziert </label>
-        </div>
-        <img src="assets/img/MicrosoftTeams-image.png">
-      </div>
-      <div class="col-sm">
-        <div>
-          <label class="iLabel " for="inzidentwert">Sterbrate </label>
-        </div>
-        <img src="assets/img/MicrosoftTeams-image.png">
-      </div>
-      <div class="col-sm">
-        <div>
-          <label class="iLabel " for="inzidentwert">Alle Fälle </label>
-        </div>
-        <img src="assets/img/MicrosoftTeams-image.png">
-      </div>
+    <!-- The smallest map-->
+    <div class="bundesLandImage col-4" id="bundesLandMapSmall" *ngIf="isVisible">
+      <img class="pointer" (click)="changeImageSize()" src="assets/img/mapSmall.png">
+      <p id="map-legend-smallest">Covid-19 live tracking: &nbsp; <b>{{ bundesLandName | titlecase }}</b></p>
     </div>
   </div>
+  <!-- The biggest map-->
+  <div class="bundesLandImage" id="bundesLandMapBig" *ngIf="!isVisible">
+    <img class="pointer center" (click)="changeImageSize()" src="assets/img/mapBig.png">
+    <p id="map-legend-biggest">Covid-19 live tracking: &nbsp; <b>{{ bundesLandName | titlecase }}</b></p>
+  </div>
+
+  <div class="shift-right">
+    <div class="chart-content">
+      <app-chart
+        [chartLabelName]="'Inzidenzwert'"
+        [positionLabel]="'top'"
+        [caseValue]="genesungsrate"
+        [totalValue]="totalCase"
+        [chartWidth]="chartWidth"></app-chart>
+    </div>
+    <div class="chart-content">
+      <app-chart
+        [chartLabelName]="'Todesfälle'"
+        [positionLabel]="'top'"
+        [caseValue]="todesFaelle"
+        [totalValue]="totalCase"
+        [chartWidth]="chartWidth"></app-chart>
+    </div>
+    <div class="chart-content">
+      <app-chart
+        [chartLabelName]="'Genesungsrate'"
+        [positionLabel]="'top'"
+        [caseValue]="sterberate"
+        [totalValue]="100"
+        [chartWidth]="chartWidth"></app-chart>
+    </div>
+  </div>
+
+  <div class="shift-right">
+    <div class="chart-content">
+      <app-chart
+        [chartLabelName]="'Neu infiziert'"
+        [positionLabel]="'top'"
+        [caseValue]="genesungsrate"
+        [totalValue]="totalCase"
+        [chartWidth]="chartWidth"></app-chart>
+    </div>
+    <div class="chart-content">
+      <app-chart
+        [chartLabelName]="'Sterbrate'"
+        [positionLabel]="'top'"
+        [caseValue]="todesFaelle"
+        [totalValue]="totalCase"
+        [chartWidth]="chartWidth"></app-chart>
+    </div>
+    <div class="chart-content">
+      <app-chart
+        [chartLabelName]="'Alle Fälle'"
+        [positionLabel]="'top'"
+        [caseValue]="sterberate"
+        [totalValue]="100"
+        [chartWidth]="chartWidth"></app-chart>
+    </div>
+  </div>
+
 </div>
 </body>

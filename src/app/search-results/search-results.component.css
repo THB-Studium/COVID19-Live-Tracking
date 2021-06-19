@@ -6,14 +6,13 @@ h3 {
 .border-wrapper {
   width: auto;
   height: auto;
-  margin: 182px 81px 41px 81px;
-  padding: 10px;
+  /*margin: 182px 81px 41px 81px;*/
   background: #242832;
   border: 2px solid #6EB1D5;
   box-sizing: border-box;
 }
 
-#bundesLandMap img {
+img {
   border: 1px solid #6EB1D5;
 }
 
@@ -32,7 +31,6 @@ h3 {
 }
 
 .bundesLandImage {
-  text-align: right;
   margin-right: 20px;
 }
 
@@ -45,4 +43,58 @@ h3 {
   left: 1.5em;
   top: 0.8em;
   width: 44px;
+}
+
+
+
+#map-legend {
+  font-size: 55%;
+}
+
+#bundesLandMapSmall {
+  margin-top: 10px;
+  right: -7.5em;
+  position: relative;
+  width: 10em;
+  float: right;
+}
+#statistic-title-center {
+  margin-top: 10px;
+  margin-right: -10em;
+}
+
+#bundesLandMapSmall p {
+  font-size: 5px;
+  margin-left: 20px;
+}
+
+#bundesLandMapBig .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    width: 75%;
+}
+
+#bundesLandMapBig p {
+  font-size: 12px;
+  margin-left: 16.5em;
+}
+
+/* Statistic charts*/
+.statistic{
+  padding: 11.5em;
+}
+.statistic-item{
+  height: 25em;
+  margin-bottom: -10em;
+}
+.chart-content{
+  width: 20em;
+  padding: 1em;
+  text-align: center;
+}
+
+.shift-right {
+  margin-right: 0em;
 }
