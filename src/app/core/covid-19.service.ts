@@ -10,13 +10,15 @@ export class CovidService {
   constructor(private httpClient: HttpClient) { }
 
 
-  /*** TO GET ALL COVID-19 VALUES BY COUNTRIES: ***/
+  /*** TO GET ALL COVID-19 VALUES BY COUNTRIES:
+   * The data come from the "rapidapi" free API (https://covid-193.p.rapidapi.com/statistics) ***/
   getAllCountriesValues(): any {
     return this.httpClient.get<Response>(environment.countryBaseUrl)
       .pipe(map((res: Response) => res))
   }
 
-  /*** TO GET ALL COVID-19 VALUES BY FEDERAL STATES: ***/
+  /*** TO GET ALL COVID-19 VALUES BY FEDERAL STATES:
+   * The data come from the arcgis free API (https://services7.arcgis.com/mOBPykOjAyBO2ZKk/ArcGIS/rest/services/) ***/
   getProBundesland(bundeslandId: number): any {
     return this.httpClient.get<Response>(
       environment.federalStatesBaseUrl + bundeslandId + environment.federalStatesQueriesUrl)

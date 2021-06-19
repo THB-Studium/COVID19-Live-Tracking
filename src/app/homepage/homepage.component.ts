@@ -41,12 +41,9 @@ export class HomepageComponent implements OnInit {
   }
 
   applyFilter(suchTerm: any): void {
-    if (suchTerm?.value?.length >= 2) {
-      this.filteredList = this.federalStatesName.filter((name: any) => name.toLowerCase().includes(suchTerm.value.toLowerCase()))
-    }
-    if (suchTerm?.value?.length === 0) {
-      this.filteredList = []
-    }
+    suchTerm?.value?.length === 0
+      ? this.filteredList = []
+      : this.filteredList = this.federalStatesName.filter((name: any) => name.toLowerCase().startsWith(suchTerm.value.toLowerCase()))
   }
 
   navTo(pillId: string, topWerte?: boolean): void {

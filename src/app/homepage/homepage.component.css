@@ -23,7 +23,8 @@ h2 {
 }
 
 #suchTerm {
-  line-height: 28px
+  line-height: 28px;
+  color: #C4C4C4;
 }
 
 #map-group {
