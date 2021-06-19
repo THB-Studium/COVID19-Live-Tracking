@@ -52,7 +52,7 @@ export class TopWerteComponent implements OnInit {
           results.features.forEach((item: any) => {
             const counstryData: IFederalCountry = {} as IFederalCountry
 
-            counstryData.incident = parseFloat(item.attributes.cases7_bl_per_100k_txt)
+            counstryData.incident = parseFloat(item.attributes.cases7_bl_per_100k_txt.replace(",", '.'))
             counstryData.aktualisierung = item.attributes.Aktualisierung
             counstryData.death = item.attributes.Death
             counstryData.fallzahl = item.attributes.Fallzahl
