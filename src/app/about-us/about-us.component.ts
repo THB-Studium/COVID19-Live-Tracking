@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core'
 import {rootingPath} from '../shared/rooting-path'
-import {ActivatedRoute, Router} from '@angular/router'
+import {Router} from '@angular/router'
+import {constTeamMember} from '../shared/constante'
 
 @Component({
   selector: 'app-about-us',
@@ -8,25 +9,21 @@ import {ActivatedRoute, Router} from '@angular/router'
   styleUrls: ['./about-us.component.css']
 })
 export class AboutUsComponent implements OnInit {
-
   readonly homePath: string
-  memberName = ''
+  private teamMembers: Array<any>
 
   constructor(
-    private activeRoute: ActivatedRoute,
     private router: Router,
   ) {
+    this.teamMembers = constTeamMember.values
     this.homePath = '/' + rootingPath.home
   }
 
   ngOnInit(): void {
-    this.activeRoute.params.subscribe(
-      (params: any) => this.memberName = params.pillId
-    )
   }
 
   navTo(personName: string): void {
-    this.router.navigate(['/' + rootingPath.about + '/' + personName.toLowerCase()])
+    this.router.navigate(['/' + rootingPath.about + '/' + personName.toLowerCase().replace(' ', '_')])
   }
 
 }

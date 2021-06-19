@@ -6,38 +6,25 @@
 <div>
   <div class="about_us">
     <h2>Über uns</h2>
-    <p>Wir sind Studierende im dritten Semester Master Informatik mit dem Schwerpunkt Mobile and Network Computing. Im Rahmen eines Semesterprojekts im Fach Interface Design wurde diese Webseite entwickelt.
-
-      Im Zeiten von Covid-19 in denen Unsicherheit in allen sozialen Schichten herrscht, ist es schwierig Überblick über die sich ändernden Maßnahmen zu verschaffen. Trotz des ununterbrochen Infomationsfluss in den Nachrichten und Informationsseite wie RKI oder Johns hopkins university sind sich viele Menschen nicht sicher, welche Regeln, wo und ab wann gelten.
-
-      Das Ziel dieser Webseite ist es, Metriken über live Covid-19 Daten so bereitzustellen, dass der “einfache” Bürger in der Lage sei, diese schneller zu erfassen und zu interpretieren. </p>
+    <p>Wir sind Studierende im dritten Semester Master Informatik mit dem Schwerpunkt Mobile and Network Computing. Im
+      Rahmen eines Semesterprojekts im Fach Interface Design wurde diese Webseite entwickelt.
+      Im Zeiten von Covid-19 in denen Unsicherheit in allen sozialen Schichten herrscht, ist es schwierig Überblick über
+      die sich ändernden Maßnahmen zu verschaffen. Trotz des ununterbrochen Infomationsfluss
+      in den Nachrichten und Informationsseite wie RKI oder Johns hopkins university sind sich viele Menschen nicht
+      sicher, welche Regeln, wo und ab wann gelten.
+      Das Ziel dieser Webseite ist es, Metriken über live Covid-19 Daten so bereitzustellen, dass der “einfache” Bürger
+      in der Lage sei, diese schneller zu erfassen und zu interpretieren. </p>
   </div>
-
 
   <div class="unser-team">
     <h2>Unser Team</h2>
-    <div class="team_member">
-      <div class="member1" (click)="navTo('mistra_kuipou')">
-        <a class="role">Mistra  Kuipou</a>
-        <p>(Konzeption)</p>
-      </div>
-    </div>
-    <div class="team_member">
-      <div class="member2" (click)="navTo('bertin_jr_wagueu')">
-        <a class="role">Bertin Jr Wagueu</a>
-        <p>(Design)</p>
-      </div>
-    </div>
-    <div class="team_member">
-      <div class="member3" (click)="navTo('steve_ngalamo')">
-        <a class="role">Steve Ngalamo</a>
-        <p>(Implementierung)</p>
+    <div *ngFor="let member of teamMembers; let i = index" class="team_member">
+      <div (click)="navTo(member.name)" [class]="'member' + (i+1)">
+        <a class="role">{{member.name}}</a>
+        <p>({{member.role}})</p>
       </div>
     </div>
   </div>
 </div>
-
-
-
 
 </body>
