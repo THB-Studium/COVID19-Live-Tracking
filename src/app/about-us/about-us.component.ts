@@ -10,7 +10,7 @@ import {constTeamMember} from '../shared/constante'
 })
 export class AboutUsComponent implements OnInit {
   readonly homePath: string
-  private teamMembers: Array<any>
+  readonly teamMembers: Array<any>
 
   constructor(
     private router: Router,
