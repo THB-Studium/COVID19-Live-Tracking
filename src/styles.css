@@ -7,14 +7,14 @@ body {
   background-color: #1C232B;
 }
 
-index-bgd-color {
+.index-bgd-color {
   background-color: #1C232B;
 }
 
 
 /* more style */
 h1 {
-  font-family: "Bebas Neue";
+  font-family: "Bebas Neue", sans-serif;
   font-size: 42px;
   line-height: 50px;
   letter-spacing: 0em;
@@ -24,7 +24,7 @@ h1 {
 }
 
 h2 {
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-size: 28px;
   font-weight: bold;
   line-height: 34px;
@@ -34,7 +34,7 @@ h2 {
 }
 
 h3 {
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 28px;
@@ -44,7 +44,7 @@ h3 {
 }
 
 a, p {
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 300;
   font-size: 14px;
@@ -79,7 +79,7 @@ footer {
   bottom: 1.6%;
   background: #6EB1D5;
 
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 300;
   font-size: 14px;
@@ -131,7 +131,7 @@ footer a:hover {
 }
 
 .buttons-fonts {
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 300;
   font-size: 13px;
