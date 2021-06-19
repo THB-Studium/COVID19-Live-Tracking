@@ -1,12 +1,18 @@
-/** body of the index html ***/
+/** style of body of the index html ***/
 html, body {
   min-width: 1018px;
 }
 body {
   margin: 0;
-  background-color: #242832;
+  background-color: #1C232B;
 }
 
+index-bgd-color {
+  background-color: #1C232B;
+}
+
+
+/* more style */
 h1 {
   font-family: "Bebas Neue";
   font-size: 42px;
@@ -97,18 +103,18 @@ footer a:hover {
 }
 
 .htmlBgrdColor {
-  background-color: #242832
+  background-color: #1C232B
 }
 
 .body {
-  background: #1C232B;
+  background: #242832;
   margin: 50px 30px 30px 30px;
   padding-top: 10px;
   text-align: center;
 }
 
 .dodyBgrdColor {
-  background: #1C232B;
+  background: #242832;
 }
 
 .bodyHeight {
