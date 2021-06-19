@@ -14,9 +14,6 @@ export class PortofolioComponent implements OnInit {
 
   constructor(private activeRoute: ActivatedRoute) {
     this.homePath = '/' + rootingPath.home
-
-  constructor(private activeRoute: ActivatedRoute) {
-    this.homePath = '/' + rootingPath.home
   }
 
   ngOnInit(): void {
