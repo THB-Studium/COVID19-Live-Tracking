@@ -13,23 +13,23 @@
           <div class="chart-list index-bgd-color statistic-item">
             <div class="chart-content">
               <app-chart
-                [chartLabelName]="'Neu infiziert'"
+                [chartLabelName]="'7 Tage Inzidenz/ 7 Tage Fallzahl'"
                 [positionLabel]="'bottom'"
-                [caseValue]= "neuInfiziert"
-                [totalValue]="totalCase"
+                [caseValue]= "incident"
+                [totalValue]="fallzahl7Tage"
                 [chartWidth]="chartWidth"></app-chart>
             </div>
             <div class="chart-content">
               <app-chart
-                [chartLabelName]="'Genesungsrate'"
+                [chartLabelName]="'Fallzahl Gesamt/ gesamt Todesfälle'"
                 [positionLabel]="'bottom'"
-                [caseValue]="genesungsrate"
-                [totalValue]="totalCase"
+                [caseValue]="totalCase"
+                [totalValue]="todesFaelle"
                 [chartWidth]="chartWidth"></app-chart>
             </div>
             <div class="chart-content">
               <app-chart
-                [chartLabelName]="'Todesfälle'"
+                [chartLabelName]="'Todesfälle Gesamt/ Gesamtfälle'"
                 [positionLabel]="'bottom'"
                 [caseValue]="todesFaelle"
                 [totalValue]="totalCase"
@@ -37,28 +37,28 @@
             </div>
             <div class="chart-content">
               <app-chart
-                [chartLabelName]="'Sterberate'"
+                [chartLabelName]="'7 Tage Sterbezahl/ 7 Tage Fallzahl'"
                 [positionLabel]="'bottom'"
-                [caseValue]="sterberate"
-                [totalValue]="100"
+                [caseValue]="sterben7"
+                [totalValue]="fallzahl7Tage"
                 [chartWidth]="chartWidth"></app-chart>
             </div>
             <div class="chart-content">
+              <app-chart
+                [chartLabelName]="' 7 Tage Fallzahl/ gesamt Fallzall'"
+                [positionLabel]="'bottom'"
+                [caseValue]="fallzahl7Tage"
+                [totalValue]="totalCase"
+                [chartWidth]="chartWidth"></app-chart>
+            </div>
+<!--            <div class="chart-content">
               <app-chart
                 [chartLabelName]="'Sterberate'"
                 [positionLabel]="'bottom'"
                 [caseValue]="sterberate"
                 [totalValue]="totalCase"
                 [chartWidth]="chartWidth"></app-chart>
-            </div>
-            <div class="chart-content">
-              <app-chart
-                [chartLabelName]="'Sterberate'"
-                [positionLabel]="'bottom'"
-                [caseValue]="sterberate"
-                [totalValue]="totalCase"
-                [chartWidth]="chartWidth"></app-chart>
-            </div>
+            </div>-->
           </div>
           <div>
             <p><a class="laender-verordnung margin-left-15px" href="{{lvoPath}}" target="”_blank”">Link zur Länderverodnung</a></p>

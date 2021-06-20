@@ -16,17 +16,17 @@ export class TopWerteComponent implements OnInit {
   readonly homePath: string
   readonly lvoPath: string
 
-  federalContriesDatas: IFederalCountry[] = []
+  federalContriesData: IFederalCountry[] = []
   topValues: IFederalCountry[] = []
   currentPillId = ''
 
 
   totalPopulation = 0
   totalCase = 780
-  neuInfiziert = 950
-  genesungsrate = 150
+  incident = 950
+  fallzahl7Tage = 150
   todesFaelle = 230
-  sterberate = 560
+  sterben7 = 560
   chartWidth = 500
   asyncTabs: Observable<any[]> | undefined
 
@@ -50,18 +50,18 @@ export class TopWerteComponent implements OnInit {
       (results: any) => {
         if (results) {
           results.features.forEach((item: any) => {
-            const counstryData: IFederalCountry = {} as IFederalCountry
+            const countryData: IFederalCountry = {} as IFederalCountry
 
-            counstryData.incident = parseFloat(item.attributes.cases7_bl_per_100k_txt.replace(",", '.'))
-            counstryData.aktualisierung = item.attributes.Aktualisierung
-            counstryData.death = item.attributes.Death
-            counstryData.fallzahl = item.attributes.Fallzahl
-            counstryData.lAN_ew_GEN = item.attributes.LAN_ew_GEN
-            counstryData.cases7_bl = item.attributes.cases7_bl
-            counstryData.death7_bl = item.attributes.death7_bl
-            counstryData.faelle = item.attributes.faelle_100000_EW
+            countryData.incident = parseFloat(item.attributes.cases7_bl_per_100k_txt.replace(',', '.'))
+            countryData.aktualisierung = item.attributes.Aktualisierung
+            countryData.death = item.attributes.Death
+            countryData.fallzahl = item.attributes.Fallzahl
+            countryData.lAN_ew_GEN = item.attributes.LAN_ew_GEN
+            countryData.cases7_bl = item.attributes.cases7_bl
+            countryData.death7_bl = item.attributes.death7_bl
+            countryData.faelle = item.attributes.faelle_100000_EW
 
-            this.federalContriesDatas.push(counstryData)
+            this.federalContriesData.push(countryData)
           })
 
           if (this.currentPillId === 'top_niedrigste_inzidenz' || this.currentPillId === 'top_urlaubsorte') {
@@ -77,23 +77,41 @@ export class TopWerteComponent implements OnInit {
   }
 
   private getTopLowIncidentCountries(): void {
-    this.federalContriesDatas = this.sortService.sortObjects(this.federalContriesDatas, true, 'incident')
-    for (let i = 0; i < 10; i++) {
-      this.topValues.push(this.federalContriesDatas[i])
+    this.fetchTopIncidence(true)
+    const labelNames = this.topValues.map((value: IFederalCountry) => value.lAN_ew_GEN)
+    this.setNavBarTabs(labelNames)
+   /* labelNames.forEach(() => {
+      this.getIncidenz()
+    })*/
+    if (labelNames?.length > 0) {
+      this.getIncidenz()
     }
+  }
+
+  private fetchTopIncidence(sortASC: boolean): void {
+    this.federalContriesData = this.sortService.sortObjects(this.federalContriesData, sortASC, 'incident')
+    for (let i = 0; i < 10; i++) {
+      this.topValues.push(this.federalContriesData[i])
+    }
+  }
+
+  private getTopRisikogebiete(): void {
+    this.fetchTopIncidence(false)
     const labelNames = this.topValues.map((value: IFederalCountry) => value.lAN_ew_GEN)
     this.setNavBarTabs(labelNames)
     console.log(this.topValues)
   }
 
-  private getTopRisikogebiete(): void {
-    this.federalContriesDatas = this.sortService.sortObjects(this.federalContriesDatas, false, 'incident')
-    for (let i = 0; i < 10; i++) {
-      this.topValues.push(this.federalContriesDatas[i])
-    }
-    const labelNames = this.topValues.map((value: IFederalCountry) => value.lAN_ew_GEN)
-    this.setNavBarTabs(labelNames)
-    console.log(this.topValues)
+  private getIncidenz(): void {
+    this.fetchTopIncidence(true)
+    this.topValues.map((value: IFederalCountry) => {
+      this.incident = value.incident
+      this.todesFaelle = value.death
+      this.totalCase = value.fallzahl
+      this.sterben7 = value.death7_bl
+      this.fallzahl7Tage = value.cases7_bl
+    })
+
   }
 
   private setNavBarTabs(names: string[]): void {
