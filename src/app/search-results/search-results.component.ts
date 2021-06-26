@@ -40,11 +40,13 @@ export class SearchResultsComponent implements OnInit {
   ngOnInit(): void {
     this.activeRoute.params.subscribe(
       (params: any) => {
-        this.bundesLandName = params.pillId
-        const bundesLandId = constFederalState.values.filter(
-          fedSt => fedSt.BundeslandName.toLowerCase() === this.bundesLandName.toLowerCase())[0].BundeslandId
-        if (bundesLandId) {
-          this.getDataByCountryId(bundesLandId)
+        if (params.pillId) {
+          this.bundesLandName = params.pillId
+          const bundesLandId = constFederalState.values.filter(
+            fedSt => fedSt.BundeslandName.toLowerCase() === this.bundesLandName.toLowerCase())[0].BundeslandId
+          if (bundesLandId) {
+            this.getDataByCountryId(bundesLandId)
+          }
         }
       }
     )

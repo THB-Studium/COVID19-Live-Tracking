@@ -8,7 +8,9 @@ describe('LiveMapComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [LiveMapComponent]
+      declarations: [
+        LiveMapComponent
+      ]
     })
       .compileComponents()
   })

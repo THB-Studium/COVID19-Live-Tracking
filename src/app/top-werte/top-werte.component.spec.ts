@@ -1,6 +1,9 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing'
 
 import {TopWerteComponent} from './top-werte.component'
+import {HttpClientTestingModule} from '@angular/common/http/testing'
+import {SortService} from '../core/sort.service'
+import {RouterTestingModule} from '@angular/router/testing'
 
 describe('TopWerteComponent', () => {
   let component: TopWerteComponent
@@ -8,7 +11,13 @@ describe('TopWerteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [TopWerteComponent]
+      imports: [
+        HttpClientTestingModule, RouterTestingModule,
+      ],
+      declarations: [TopWerteComponent],
+      providers: [
+        SortService
+      ]
     })
       .compileComponents()
   })

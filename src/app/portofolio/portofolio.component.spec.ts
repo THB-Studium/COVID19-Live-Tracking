@@ -1,6 +1,8 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing'
 
 import {PortofolioComponent} from './portofolio.component'
+import {HttpClientTestingModule} from '@angular/common/http/testing'
+import {RouterTestingModule} from '@angular/router/testing'
 
 describe('PortofolioComponent', () => {
   let component: PortofolioComponent
@@ -8,7 +10,10 @@ describe('PortofolioComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [PortofolioComponent]
+      declarations: [PortofolioComponent],
+      imports: [
+        HttpClientTestingModule, RouterTestingModule
+      ],
     })
       .compileComponents()
   })

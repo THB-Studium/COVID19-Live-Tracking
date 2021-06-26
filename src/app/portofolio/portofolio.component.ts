@@ -19,9 +19,11 @@ export class PortofolioComponent implements OnInit {
   ngOnInit(): void {
     this.activeRoute.params.subscribe(
       (params: any) => {
-        this.currentTeamMember = constTeamMember.values
-          .filter((member: any) => member.name.toLowerCase() === params.pillId.replace('_', ' '))[0]
-        console.log(this.currentTeamMember)
+        if (params?.pillId) {
+          this.currentTeamMember = constTeamMember.values
+            .filter((member: any) => member.name.toLowerCase() === params.pillId.replace('_', ' '))[0]
+          console.log(this.currentTeamMember)
+        }
       }
     )
   }
