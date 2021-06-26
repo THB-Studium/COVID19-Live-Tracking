@@ -1,0 +1,33 @@
+a.home{
+  position: absolute;
+  width: 44px;
+  height: 17px;
+  left: 10px;
+  top: 55px;
+}
+
+.statistic{
+  padding: 5em;
+}
+.statistic-item{
+  height: calc(100vh - 25em);
+  margin-bottom: -10em;
+}
+.chart-content{
+  width: 30em;
+  padding: 3em;
+}
+.laender-verordnung{
+  margin-left: -0.0em;
+  margin-top: 11.5em;
+  padding: 0.2em;
+  color: #CCC5B9;
+  background: #6EB1D5;
+  width: 50%;
+  font-family: "Montserrat Light", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+}
+
