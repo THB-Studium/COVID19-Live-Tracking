@@ -27,6 +27,7 @@ export const constTeamMember = {
       description: 'Seit Sommer 2020 studiere ich Informatik im Master an der TH-Brandenburg mit Schwerpunkt "Mobile Network and Computing". ' +
         'Mein Bachelor-Studium habe ich auch an der THB absolviert. Meine Abschlussarbeit ging um das Thema Software testing und ' +
         'qualitätssicherung. Ich wohne in Teltow und komme ursprünglich aus Kamerun.',
+      imagePath: 'assets/img/mistra-forest.png',
       skills: [
         'Web Development (Frontend & Backend)',
         'Qualitätsicherung',
@@ -38,7 +39,8 @@ export const constTeamMember = {
         'Java',
         'Medizin-Informatik',
         'Machine Lerning & AI'
-      ]
+      ],
+      contact: 'https://moodle.th-brandenburg.de/user/profile.php?id=4568'
     },
     {
       name: 'Bertin Jr Wagueu',
@@ -47,6 +49,7 @@ export const constTeamMember = {
         'Ich habe meinen Bachelor im Winter 2019/2020 abgeschlossen und mache jetzt weiter mit dem Master in Netwok ' +
         'and Mobile Computing (NMC) mit Schwerpunkt Systemintegration, Mobile User Experience und Modellgetriebene Software-Entwicklung.' +
         'Muttersprachen: Französisch, EnglischGelernte Sprache: Deutsch',
+      imagePath: 'assets/img/bertin-junior.png',
       skills: [
         'Amazon Web Sevices (AWS)',
         'Salesforce',
@@ -58,7 +61,8 @@ export const constTeamMember = {
         'Spring Boot',
         'Data mining',
         'Prolog'
-      ]
+      ],
+      contact: 'https://moodle.th-brandenburg.de/user/profile.php?id=12821'
     },
     {
       name: 'Steve Ngalamo',
@@ -71,12 +75,13 @@ export const constTeamMember = {
         'Nachdem ich meinen deutschen Sprachkurs und mein Studium des Bachelors in Medizininformatik abgeschlossen hatte, ' +
         'begann ich seit dem Jahr 2020 bist heute einen Master Informatik mit Schwerpunkt "Network and Mobile Computing" an der THB. ' +
         'Ich lebe mit meiner lieben Frau und meiner Tochter in Brandenburg, wo ich seit 2 Jahren als Webentwickler-Werkstudent tätig bin.',
+      imagePath: 'assets/img/steve-carmel.png',
       skills: [
         'Web Development (Frontend & Backend)',
-        'Qualitätsicherung' ,
-        'Protractor test' ,
-        'Junit test' ,
-        'Angular' ,
+        'Qualitätsicherung',
+        'Protractor test',
+        'Junit test',
+        'Angular',
         'Node Js',
         'Java Spring Boot',
         'Maven',
@@ -84,7 +89,8 @@ export const constTeamMember = {
         'Robotic (Python & C)',
         'Data mining',
         'Prolog'
-      ]
+      ],
+      contact: 'https://moodle.th-brandenburg.de/user/profile.php?id=11608'
     }
   ]
 }

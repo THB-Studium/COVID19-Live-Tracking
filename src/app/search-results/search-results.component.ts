@@ -3,6 +3,7 @@ import {ActivatedRoute} from '@angular/router'
 import {rootingPath} from '../shared/rooting-path'
 import {CovidService} from '../core/covid-19.service'
 import {constFederalState} from '../shared/constante'
+import {CommunicationService} from '../core/communication.service'
 
 @Component({
   selector: 'app-search-results',
@@ -32,12 +33,14 @@ export class SearchResultsComponent implements OnInit {
 
   constructor(
     private activeRoute: ActivatedRoute,
-    private covidService: CovidService
+    private covidService: CovidService,
+    private comService: CommunicationService
   ) {
     this.homePath = '/' + rootingPath.home
   }
 
   ngOnInit(): void {
+    this.footerItemsInit()
     this.activeRoute.params.subscribe(
       (params: any) => {
         if (params.pillId) {
@@ -64,6 +67,14 @@ export class SearchResultsComponent implements OnInit {
       },
       (error: any) => console.log('error in SearchResultsComponent.getDataByCountryId()')
     )
+  }
+
+  private footerItemsInit(): void {
+    this.comService.resetAll()
+    this.comService.setImpressum(true)
+    this.comService.setAboutUs(true)
+    this.comService.setCountryOrdinance(true)
+    this.comService.setOtherMeasure(true)
   }
 
 }

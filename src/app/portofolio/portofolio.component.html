@@ -1,14 +1,86 @@
 <body class="body bodyHeight">
-<div>
-  <p><a class="home" routerLink="{{homePath}}">Home</a></p>
 
-  <p>{{this.currentTeamMember?.name}}</p>
-</div>
-<div>
-  <p>
+<div class="body-contents">
+  <!-- Carousel from Boostrap:  https://ng-bootstrap.github.io/#/components/carousel/examples-->
 
-  </p>
+
+<!--  <div>-->
+<!--    <div class="slideshow-container" *ngFor="let member of teamMembers">-->
+
+<!--      <div class="mySlides fade">-->
+<!--        <img [src]="member.imagePath">-->
+<!--        <div class="text">{{member.name}}</div>-->
+<!--      </div>-->
+
+<!--      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>-->
+<!--      <a class="next" onclick="plusSlides(1)">&#10095;</a>-->
+
+<!--    </div>-->
+<!--    <br>-->
+
+<!--    <div style="text-align:center">-->
+<!--      <span class="dot" onclick="currentSlide(1)"></span>-->
+<!--      <span class="dot" onclick="currentSlide(2)"></span>-->
+<!--      <span class="dot" onclick="currentSlide(3)"></span>-->
+<!--    </div>-->
+<!--  </div>-->
+
+
+
+
+
+
+<!--  <ngb-carousel-->
+<!--    #carousel (slide)="onSlide($event)"-->
+<!--    class="my-carousel">-->
+<!--    <ng-template *ngFor="let member of teamMembers" ngbSlide>-->
+<!--      <div class="picsum-img-wrapper">-->
+<!--        <img [alt]="member.name" [src]="member.imagePath">-->
+<!--      </div>-->
+<!--      <div class="carousel-caption">-->
+<!--        <h3>{{member.name}}</h3>-->
+<!--        <p>({{member.role}})</p>-->
+<!--      </div>-->
+<!--    </ng-template>-->
+<!--  </ngb-carousel>-->
+
+
+  <ngb-carousel #carousel class="my-carousel" [showNavigationArrows]="true" [showNavigationIndicators]="true">
+    <ng-template ngbSlide *ngFor="let member of teamMembers">
+      <div class="picsum-img-wrapper">
+        <img [src]="member.imagePath" alt="Random slide">
+      </div>
+      <div class="carousel-caption">
+        <h3>{{member.name}}</h3>
+        <p>({{member.role}})</p>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+
+
+
+  <!-- More Infos -->
+  <div class="mbr-description">
+    <p>{{currentTeamMember?.description}}</p>
+  </div>
+  <div class="mbr-skills clearfix">
+    <h2>Fachliche Skills</h2>
+    <ul *ngFor="let skill of currentTeamMember.skills">
+      <li><p>{{skill}}</p></li>
+    </ul>
+  </div>
+  <div class="mbr-infos-footer">
+    <img
+      (click)="navToTHBWebsite()"
+      alt="thb logo"
+      class="pointer"
+      id="thbLogo"
+      src="assets/logo/thb-logo.png"
+      title="to the thb home page">
+    <p>
+      Technische Hochschule Brandenburg {{currentTeamMember?.name}}
+      <a class="margin-left-15px" href="{{currentTeamMember?.contact}}" target="”_blank”">E-Mail senden</a>
+    </p>
+  </div>
 </div>
-<div></div>
-<div></div>
 </body>

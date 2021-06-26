@@ -1,5 +1,9 @@
 <footer>
-  <a *ngIf="onImpressum" class="margin-left-15px" href="{{impressumPath}}">Impressum</a>
-  <span *ngIf="onAboutUs && onImpressum" class="margin-left-15px margin-right-15px"> | </span>
+  <a *ngIf="onImpressum" href="{{impressumPath}}">Impressum</a>
+  <span *ngIf="onImpressum && onAboutUs"> | </span>
   <a *ngIf="onAboutUs" routerLink="{{aboutUsPath}}">Über uns</a>
+  <span *ngIf="onAboutUs && onCountryOrdinance"> | </span>
+  <a *ngIf="onCountryOrdinance" href="{{impressumPath}}">Link zur Landerverodnung</a>
+  <span *ngIf="onCountryOrdinance && onOtherMeasure"> | </span>
+  <a *ngIf="onOtherMeasure" routerLink="{{aboutUsPath}}">Weitere Maßnahme</a>
 </footer>

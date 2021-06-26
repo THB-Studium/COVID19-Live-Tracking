@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core'
 import {rootingPath} from '../shared/rooting-path'
+import {CommunicationService} from '../core/communication.service'
 
 @Component({
   selector: 'app-impressum',
@@ -10,11 +11,17 @@ export class ImpressumComponent implements OnInit {
 
   readonly homePath: string
 
-  constructor() {
+  constructor(private comService: CommunicationService) {
     this.homePath = '/' + rootingPath.home
   }
 
   ngOnInit(): void {
+    this.footerItemsInit()
+  }
+
+  private footerItemsInit(): void {
+    this.comService.resetAll()
+    this.comService.setAboutUs(true)
   }
 
 }
