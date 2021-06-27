@@ -40,7 +40,7 @@ a, .member1, .member2, .member3 {
 .about_us p {
   margin: auto;
   width: 70%;
-  line-height: 1.8em;
+  line-height: 2.4em;
 }
 
 .unser-team {
@@ -51,6 +51,7 @@ a, .member1, .member2, .member3 {
 
 .unser-team h2 {
   position: relative;
+  text-align: center;
   left: -5em;
 }
 
@@ -90,10 +91,9 @@ a, .member1, .member2, .member3 {
 
 .role {
   margin-top: 20px;
-  text-align: center;
 }
 
 .bodyHeight {
-  height: calc(100vh - 10em);
+  min-height: calc(100vh - 10em);
 }
 

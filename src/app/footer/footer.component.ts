@@ -1,6 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core'
+import {Component, OnInit} from '@angular/core'
 import {rootingPath} from '../shared/rooting-path'
-import {ActivatedRoute, Router} from '@angular/router'
+import {CommunicationService} from '../core/communication.service'
 
 @Component({
   selector: 'app-footer',
@@ -8,27 +8,28 @@ import {ActivatedRoute, Router} from '@angular/router'
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
-  onAboutUs = true
-  onImpressum = true
+  onImpressum: boolean | undefined
+  onAboutUs: boolean | undefined
+  onCountryOrdinance: boolean | undefined
+  onOtherMeasure: boolean | undefined
 
-  readonly aboutUsPath: string
   readonly impressumPath: string
+  readonly aboutUsPath: string
+  readonly countryOrdinancePath: string
+  readonly otherMeasurePath: string
 
-  constructor(
-    private router: Router,
-    private activeRoute: ActivatedRoute,
-  ) {
-    this.aboutUsPath = '/' + rootingPath.about,
-      this.impressumPath = '/' + rootingPath.impressum
+  constructor(private comService: CommunicationService) {
+    this.impressumPath = '/' + rootingPath.impressum,
+      this.aboutUsPath = '/' + rootingPath.about,
+      this.countryOrdinancePath = '',
+      this.otherMeasurePath = ''
   }
 
   ngOnInit(): void {
-    // console.log(this.activeRoute)
-    // console.log(this.activeRoute['_routerState'].url)
-    // this.activeRoute.params.subscribe(params => {
-    //   console.log(params)
-    //   // if (params['pillId'] = )
-    // })
+    this.comService.getImpressum().subscribe((value: boolean) => this.onImpressum = value)
+    this.comService.getAboutUs().subscribe((value: boolean) => this.onAboutUs = value)
+    this.comService.getCountryOrdinance().subscribe((value: boolean) => this.onCountryOrdinance = value)
+    this.comService.getOtherMeasure().subscribe((value: boolean) => this.onOtherMeasure = value)
   }
 
 }

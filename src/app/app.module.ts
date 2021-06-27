@@ -25,13 +25,14 @@ import {FooterComponent} from './footer/footer.component'
 import {ChartComponent} from './chart/chart.component'
 import {MatGridListModule} from '@angular/material/grid-list'
 import {ChartsModule} from 'ng2-charts'
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap'
 import {MatTabsModule} from '@angular/material/tabs'
 import {SortService} from './core/sort.service'
 
 
 const angularMaterialModules = [
   MatFormFieldModule, MatIconModule, MatInputModule, MatGridListModule,
-  MatOptionModule, MatAutocompleteModule, MatTabsModule
+  MatOptionModule, MatAutocompleteModule, MatTabsModule, NgbModule
 ]
 
 @NgModule({

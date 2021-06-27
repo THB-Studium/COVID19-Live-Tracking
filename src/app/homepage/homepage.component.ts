@@ -3,6 +3,8 @@ import {rootingPath} from '../shared/rooting-path'
 import {Router} from '@angular/router'
 import {CovidService} from '../core/covid-19.service'
 import {constFederalState} from '../shared/constante'
+import {IFooterItem} from '../model/footer-item.interface'
+import {CommunicationService} from '../core/communication.service'
 
 @Component({
   selector: 'app-homepage',
@@ -12,7 +14,6 @@ import {constFederalState} from '../shared/constante'
 export class HomepageComponent implements OnInit {
   filteredList: Array<any> = []
   federalStatesName: Array<any> = []
-  // ]
 
   covid19GermanyValues: any
   totalPopulation = 0
@@ -29,7 +30,8 @@ export class HomepageComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private covidService: CovidService
+    private covidService: CovidService,
+    private comService: CommunicationService
   ) {
     this.federalStatesName = constFederalState.values.map(federalState => federalState.BundeslandName)
     this.topWertePath = '/' + rootingPath.top_werte
@@ -37,6 +39,7 @@ export class HomepageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.footerItemsInit()
     this.getAllCountriesValues()
   }
 
@@ -52,6 +55,12 @@ export class HomepageComponent implements OnInit {
       : this.router.navigate(['/' + rootingPath.search_results + '/' + pillId.toLowerCase()])
   }
 
+  private footerItemsInit(): void {
+    this.comService.resetAll()
+    this.comService.setImpressum(true)
+    this.comService.setAboutUs(true)
+  }
+
   private getAllCountriesValues(): void {
     this.covidService.getAllCountriesValues().subscribe(
       (results: any) => {
@@ -60,7 +69,9 @@ export class HomepageComponent implements OnInit {
         if (this.covid19GermanyValues) {
           this.totalPopulation = this.covid19GermanyValues.population
           this.totalCase = this.covid19GermanyValues.cases.total
-          this.neuInfiziert = +this.covid19GermanyValues.cases.new.replace('+', '')
+          if (this.covid19GermanyValues.cases?.new) {
+            this.neuInfiziert = +this.covid19GermanyValues.cases.new.replace('+', '')
+          }
           this.genesungsrate = this.covid19GermanyValues.cases.recovered
           this.todesFaelle = this.covid19GermanyValues.deaths.total
           this.sterberate = (this.todesFaelle * 100) / this.totalCase

@@ -5,6 +5,7 @@ import {CovidService} from '../core/covid-19.service'
 import {SortService} from '../core/sort.service'
 import {IFederalCountry} from '../model/federal-country.interface'
 import {ActivatedRoute} from '@angular/router'
+import {CommunicationService} from '../core/communication.service'
 
 
 @Component({
@@ -33,7 +34,8 @@ export class TopWerteComponent implements OnInit {
   constructor(
     private covidService: CovidService,
     private sortService: SortService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private comService: CommunicationService
   ) {
     this.homePath = '/' + rootingPath.home
     this.lvoPath = 'https://www.schleswig-holstein.de/DE/Schwerpunkte/Coronavirus/_documents/teaser_erlasse.html#doc6e00366d-8e07-4704-bced-88e5c28e9363bodyText1'
@@ -42,6 +44,7 @@ export class TopWerteComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.footerItemsInit()
     this.getDataByCountry()
   }
 
@@ -122,6 +125,13 @@ export class TopWerteComponent implements OnInit {
         observer.next(labelNames)
       }, 1000)
     })
+  }
+
+  private footerItemsInit(): void {
+    this.comService.resetAll()
+    this.comService.setImpressum(true)
+    this.comService.setAboutUs(true)
+    this.comService.setCountryOrdinance(true)
   }
 
 }

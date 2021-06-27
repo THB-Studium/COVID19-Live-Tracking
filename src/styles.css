@@ -3,6 +3,7 @@ html, body {
   min-width: 1018px;
 }
 body {
+  display: block;
   margin: 0;
   background-color: #1C232B;
 }
@@ -73,7 +74,7 @@ a:hover {
 footer {
   clear: both;
   position: absolute;
-  width: 555px;
+  min-width: 555px;
   height: 30px;
   left: 2.2em;
   bottom: 1.6%;
@@ -86,11 +87,9 @@ footer {
   line-height: 17px;
   display: flex;
   align-items: center;
-
-  color: #4D5964;
 }
 
-footer span, footer a {
+footer, footer span, footer a {
   color: #4D5964;
 }
 footer a:hover {
@@ -118,7 +117,7 @@ footer a:hover {
 }
 
 .bodyHeight {
-  height: calc(100vh - 9.1em);
+  min-height: calc(100vh - 9.1em);
 }
 
 .buttons {
@@ -163,6 +162,9 @@ footer a:hover {
   display: inline-block;
 }
 
+.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  background-color: #6EB1D5;
+}
 
 /* Responsiv part*/
 @media screen and (max-width: 1059px) {
