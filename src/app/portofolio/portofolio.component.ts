@@ -40,7 +40,6 @@ export class PortofolioComponent implements OnInit {
             .filter((member: any) => member.name.toLowerCase() === params.pillId.split('_').join(' '))[0]
           console.log(this.currentTeamMember)
         }
-        }
       }
     )
   }

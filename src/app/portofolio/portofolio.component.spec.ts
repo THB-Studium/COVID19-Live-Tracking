@@ -3,6 +3,7 @@ import {ComponentFixture, TestBed} from '@angular/core/testing'
 import {PortofolioComponent} from './portofolio.component'
 import {HttpClientTestingModule} from '@angular/common/http/testing'
 import {RouterTestingModule} from '@angular/router/testing'
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap'
 
 describe('PortofolioComponent', () => {
   let component: PortofolioComponent
@@ -12,7 +13,7 @@ describe('PortofolioComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [PortofolioComponent],
       imports: [
-        HttpClientTestingModule, RouterTestingModule
+        HttpClientTestingModule, RouterTestingModule, NgbModule
       ],
     })
       .compileComponents()
