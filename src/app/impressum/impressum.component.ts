@@ -8,7 +8,6 @@ import {CommunicationService} from '../core/communication.service'
   styleUrls: ['./impressum.component.css']
 })
 export class ImpressumComponent implements OnInit {
-
   readonly homePath: string
 
   constructor(private comService: CommunicationService) {
@@ -16,10 +15,7 @@ export class ImpressumComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.footerItemsInit()
-  }
-
-  private footerItemsInit(): void {
+    // to set the footer hyperlinks paths
     this.comService.resetAll()
     this.comService.setAboutUs(true)
   }

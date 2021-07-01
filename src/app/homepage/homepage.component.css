@@ -22,6 +22,10 @@ h2 {
   width: 50em;
 }
 
+#searchCountryForm mat-icon {
+  color: #C4C4C4;
+}
+
 #suchTerm {
   line-height: 28px;
   color: #C4C4C4;
@@ -29,10 +33,10 @@ h2 {
 
 #map-group {
   position: relative;
-  max-width: 30%;
+  max-width: 50%;
   margin: auto;
-  left: 12%;
-  top: -2.5em;
+  left: 14%;
+  top: -9em;
 }
 
 #map-div, #map-div img {
@@ -89,7 +93,7 @@ button {
 }
 
 .chart-list {
-  margin-top: 5em;
+  margin-top: -5em;
   margin-left: 20%;
 }
 

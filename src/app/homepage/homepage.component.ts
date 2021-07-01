@@ -3,7 +3,6 @@ import {rootingPath} from '../shared/rooting-path'
 import {Router} from '@angular/router'
 import {CovidService} from '../core/covid-19.service'
 import {constFederalState} from '../shared/constante'
-import {IFooterItem} from '../model/footer-item.interface'
 import {CommunicationService} from '../core/communication.service'
 
 @Component({
@@ -22,7 +21,7 @@ export class HomepageComponent implements OnInit {
   genesungsrate = 0
   todesFaelle = 0
   sterberate = 0
-  chartWidth = 250
+  chartWidth = 230
 
 
   readonly topWertePath: string

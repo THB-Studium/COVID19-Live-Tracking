@@ -1,8 +1,4 @@
 <body class="body bodyHeight">
-
-  <div>
-    <p><a class="home" routerLink="{{homePath}}">Home</a></p>
-  </div>
   <div>
     <mat-tab-group>
       <mat-tab *ngFor="let tab of asyncTabs | async">
@@ -13,7 +9,7 @@
           <div class="chart-list index-bgd-color statistic-item">
             <div class="chart-content">
               <app-chart
-                [chartLabelName]="'7 Tage Inzidenz/ 7 Tage Fallzahl'"
+                [chartLabelName]="'7 Tage Inzidenz'"
                 [positionLabel]="'bottom'"
                 [caseValue]= "incident"
                 [totalValue]="fallzahl7Tage"
@@ -21,7 +17,7 @@
             </div>
             <div class="chart-content">
               <app-chart
-                [chartLabelName]="'Fallzahl Gesamt/ gesamt Todesfälle'"
+                [chartLabelName]="'Fallzahl Gesamt'"
                 [positionLabel]="'bottom'"
                 [caseValue]="totalCase"
                 [totalValue]="todesFaelle"
@@ -29,7 +25,7 @@
             </div>
             <div class="chart-content">
               <app-chart
-                [chartLabelName]="'Todesfälle Gesamt/ Gesamtfälle'"
+                [chartLabelName]="'Todesfälle Gesamt'"
                 [positionLabel]="'bottom'"
                 [caseValue]="todesFaelle"
                 [totalValue]="totalCase"
@@ -37,7 +33,7 @@
             </div>
             <div class="chart-content">
               <app-chart
-                [chartLabelName]="'7 Tage Sterbezahl/ 7 Tage Fallzahl'"
+                [chartLabelName]="'7 Tage Sterbezahl'"
                 [positionLabel]="'bottom'"
                 [caseValue]="sterben7"
                 [totalValue]="fallzahl7Tage"
@@ -45,20 +41,20 @@
             </div>
             <div class="chart-content">
               <app-chart
-                [chartLabelName]="' 7 Tage Fallzahl/ gesamt Fallzall'"
+                [chartLabelName]="' 7 Tage Fallzahl'"
                 [positionLabel]="'bottom'"
                 [caseValue]="fallzahl7Tage"
                 [totalValue]="totalCase"
                 [chartWidth]="chartWidth"></app-chart>
             </div>
-<!--            <div class="chart-content">
+           <div class="chart-content">
               <app-chart
                 [chartLabelName]="'Sterberate'"
                 [positionLabel]="'bottom'"
-                [caseValue]="sterberate"
+                [caseValue]="100"
                 [totalValue]="totalCase"
                 [chartWidth]="chartWidth"></app-chart>
-            </div>-->
+            </div>
           </div>
         </div>
       </mat-tab>

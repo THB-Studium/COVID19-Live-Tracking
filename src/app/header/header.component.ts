@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core'
-import { rootingPath } from '../shared/rooting-path'
+import {Component, OnInit} from '@angular/core'
+import {rootingPath} from '../shared/rooting-path'
+import {ChildActivationEnd, Router} from '@angular/router'
+import {filter, take} from 'rxjs/operators'
 
 @Component({
   selector: 'app-header',
@@ -8,12 +10,22 @@ import { rootingPath } from '../shared/rooting-path'
 })
 export class HeaderComponent implements OnInit {
   readonly homePath: string
+  currentPath: string | undefined
 
-  constructor() {
-    this.homePath = '/' + rootingPath.home
+  constructor(
+    private router: Router
+  ) {
+    this.homePath = './' + rootingPath.home
   }
 
   ngOnInit(): void {
+    this.router.events.pipe(
+      filter(event => event instanceof ChildActivationEnd),
+      take(1),
+    ).subscribe(event => {
+      // @ts-ignore
+      this.currentPath = event.snapshot._routerState.url.replace('/', '')
+    })
   }
 
 }
