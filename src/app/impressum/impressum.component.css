@@ -1,66 +1,41 @@
-a.home {
-  position: absolute;
-  width: 44px;
-  height: 17px;
-  left: 10px;
-  top: 55px;
-}
-div.contact{
+.contact {
   margin: auto;
   width: 1132px;
   height: 457px;
   left: 151px;
   top: 328px;
-  text-align: center;
+  text-align: center !important;
+  align-items: center;
+  padding: 50px;
 }
 
-div.logo_impressum{
+.logo-impressum {
   margin: auto;
   width: 125px;
   height: 270px;
   background: url("../../assets/logo/afri-care-logo-ohne.png") no-repeat center;
   background-size: contain;
+  cursor: pointer;
 }
 
-.logo_impressum{
-  margin-bottom: 25em;
-}
-
-p.contact_name,p.contact_address,p.contact_email{
-  margin-left: 35em;
-  display: flex;
-  font-family: "Montserrat Light", sans-serif;
-  font-style: normal;
-  font-size: 14px;
-  line-height: 1.5em;
-  align-items: center;
-  text-align: center;
-}
-br{
-  margin-left: 12em;
-}
-
-p.africare{
-  margin-top: 1em;
-  font-family: Montserrat, sans-serif;
+h1 {
   font-style: normal;
   font-weight: bold;
   line-height: 51px;
-  margin-left: 10em;
-  font-size: 42px;
-  padding-top: 0.7em;
+  letter-spacing: 5px;
+  font-size: 45px;
 }
-p.contact_title{
-  margin-top: 2em;
-  margin-bottom: 1.2em;
-  margin-left: 18.5em;
+
+h2 {
+  margin-top: 50px;
   font-family: "Montserrat Light", sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 28px;
 }
 
-p.contact_address{
-  margin-bottom: 3em;
-  margin-top: 3em;
+p {
+  display: block;
+  line-height: 20px;
+  margin: 3em;
 }

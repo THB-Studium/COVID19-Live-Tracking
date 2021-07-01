@@ -50,7 +50,7 @@ export class CommunicationService {
     return this.otherMeasure.asObservable()
   }
 
-  /*** to reset all ***/
+  /*** to reset all observables ***/
   resetAll(): void {
     this.setImpressum(false)
     this.setAboutUs(false)

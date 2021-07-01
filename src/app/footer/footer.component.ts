@@ -20,9 +20,9 @@ export class FooterComponent implements OnInit {
 
   constructor(private comService: CommunicationService) {
     this.impressumPath = '/' + rootingPath.impressum,
-      this.aboutUsPath = '/' + rootingPath.about,
-      this.countryOrdinancePath = '',
-      this.otherMeasurePath = ''
+    this.aboutUsPath = '/' + rootingPath.about,
+    this.countryOrdinancePath = '',
+    this.otherMeasurePath = ''
   }
 
   ngOnInit(): void {

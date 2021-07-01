@@ -40,7 +40,7 @@ a, .member1, .member2, .member3 {
 .about_us p {
   margin: auto;
   width: 70%;
-  line-height: 2.4em;
+  line-height: 2em;
 }
 
 .unser-team {
