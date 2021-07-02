@@ -1,10 +1,11 @@
 body {
   padding: 30px;
-  min-height: calc(100vh - 7em);
+  /*min-height: calc(100vh - 7em);*/
 }
 
 #afri-care-logo {
-  max-width: 4%;
+  top: 4em;
+  min-width: 2.5em;
 }
 
 h2 {
@@ -27,50 +28,21 @@ h2 {
   line-height: 1.5em;
 }
 
-a.role {
-  text-align: center;
-  padding-top: 100%;
-}
-
 .unser-team {
-  position: relative;
   margin-top: 9em;
-  left: 9em;
+  text-align: center;
 }
 
-.unser-team h2 {
-  position: relative;
-  left: -4.2em;
-}
-
-.team_member {
+.team-member {
   width: 175px;
   min-width: 100px;
   max-width: 260px;
   text-align: center;
   display: inline-block;
-  margin-right: 18em;
+  margin: 20px 9em 0 9em;
 }
 
-.member1:hover, .member2:hover, .member3:hover {
-  Width: 180px;
-  Height: 180px;
-  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 5);
-}
-
-.member1 {
-  background: url("../../assets/img/mistra-forest.png") no-repeat center;
-}
-
-.member2 {
-  background: url("../../assets/img/bertin-junior.png") no-repeat center;
-}
-
-.member3 {
-  background: url("../../assets/img/steve-carmel.png") no-repeat center;
-}
-
-.member1, .member2, .member3 {
+.member-picture {
   background-size: cover;
   border-radius: 50%;
   left: 15.14%;
@@ -81,13 +53,30 @@ a.role {
   Height: 173px;
   float: left;
   display: block;
+  margin-bottom: 10px;
 }
 
-a, .member1, .member2, .member3 {
-  cursor: pointer;
+#member1 img:hover, #member2 img:hover, #member3 img:hover {
+  Width: 180px;
+  Height: 180px;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 5);
 }
 
-.role {
-  margin-top: 20px;
+.member-name, .member-role {
+  display: unset;
+}
+
+.member-name {
+  font-weight: bold;
+}
+
+.member-role {
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 1060px) {
+  .team-member {
+    margin-top: 4em;
+  }
 }
 
