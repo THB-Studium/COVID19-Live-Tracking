@@ -1,3 +1,20 @@
+export const constTopLinks = {
+  values: [
+    {name: 'Mosel', url: 'https://www.visitmosel.de/'},
+    {name: 'Lüneburger Heide', url: 'https://www.lueneburger-heide.de/'},
+    {name: 'Eifel', url: 'https://www.eifel.info/'},
+    {name: 'Bodensee', url: 'https://www.bodensee.eu/de'},
+    {name: 'Phantasialand', url: 'https://www.phantasialand.de/de/'},
+    {name: 'Legoland Günzburg', url: 'https://www.legoland.de/'},
+    {name: 'Ostfriesland', url: 'https://www.ostfriesland.de/start.html'},
+    {name: 'Mecklenburgische Seenplatte', url: 'https://www.mecklenburgische-seenplatte.de/'},
+    {name: 'Sächsische Schweiz', url: 'https://www.saechsische-schweiz.de/'},
+    {name: 'Sankt Peter-Ording', url: 'https://www.st-peter-ording.de/'},
+    {name: 'Lister Ellenbogen, Sylt', url: 'https://www.insel-sylt.de/address/lister-ellenbogen/'},
+    // {name: 'Bensersiel', url: 'https://www.bensersiel.de/'},
+  ]
+}
+
 export const constFederalState = {
   values: [
     {BundeslandId: 1, BundeslandName: 'Schleswig-Holstein'},
@@ -67,14 +84,11 @@ export const constTeamMember = {
     {
       name: 'Steve Ngalamo',
       role: 'Implementierung',
-      description: 'Ich komme ursprünglich aus Kamerun und bin seit 2014 in Deutschland. ' +
-        'Ich kam nach Deutschland, um Medizin zu studieren und Thoraxchirurg zu werden. ' +
-        'Aber sobald ich in Deutschland angekommen bin, hörte ich von dem Bachelor of Science ' +
-        'in Medizininformatik, der von der Technischen Hochschule Brandenburg (THB) angeboten wird. ' +
-        'Dieser Studiengang hat mich interessiert, weil er meine beiden Hobbys (Medizin und Informatik) vereint. ' +
-        'Nachdem ich meinen deutschen Sprachkurs und mein Studium des Bachelors in Medizininformatik abgeschlossen hatte, ' +
-        'begann ich seit dem Jahr 2020 bist heute einen Master Informatik mit Schwerpunkt "Network and Mobile Computing" an der THB. ' +
-        'Ich lebe mit meiner lieben Frau und meiner Tochter in Brandenburg, wo ich seit 2 Jahren als Webentwickler-Werkstudent tätig bin.',
+      description: 'Ich komme ursprünglich aus Kamerun und bin seit 2014 in Deutschland  ' +
+        'und bin seit September 2015 Student an der THB. ' +
+        'Meinen Bachelor in Medizininformatik habe ich im Winter 2019/2020 abgeschlossen und mache jetzt weiter mit dem Master Informatik' +
+        ' in Netwok and Mobile Computing (NMC) mit Schwerpunkt Systemintegration, Mobile User Experience und Modellgetriebene Software-Entwicklung.' +
+        'Muttersprachen: Französisch, EnglischGelernte Sprache: Deutsch',
       imagePath: 'assets/img/steve-carmel.png',
       skills: [
         'Web Development (Frontend & Backend)',
@@ -85,10 +99,7 @@ export const constTeamMember = {
         'Node Js',
         'Java Spring Boot',
         'Maven',
-        'C, C++',
-        'Robotic (Python & C)',
-        'Data mining',
-        'Prolog'
+        'Data mining'
       ],
       contact: 'https://moodle.th-brandenburg.de/user/profile.php?id=11608'
     }

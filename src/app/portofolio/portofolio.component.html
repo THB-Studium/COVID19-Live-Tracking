@@ -1,46 +1,13 @@
 <body class="body bodyHeight">
 
+<!-- Afri-care-germany logo -->
+<img id="afri-care-logo"
+     routerLink="{{homePath}}"
+     class="pointer"
+     src="assets/logo/afri-care-germany-logo-2.png">
+
 <div class="body-contents">
-  <!-- Carousel from Boostrap:  https://ng-bootstrap.github.io/#/components/carousel/examples-->
-
-
-  <!--  <div>-->
-  <!--    <div class="slideshow-container" *ngFor="let member of teamMembers">-->
-
-  <!--      <div class="mySlides fade">-->
-  <!--        <img [src]="member.imagePath">-->
-  <!--        <div class="text">{{member.name}}</div>-->
-  <!--      </div>-->
-
-  <!--      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>-->
-  <!--      <a class="next" onclick="plusSlides(1)">&#10095;</a>-->
-
-  <!--    </div>-->
-  <!--    <br>-->
-
-  <!--    <div style="text-align:center">-->
-  <!--      <span class="dot" onclick="currentSlide(1)"></span>-->
-  <!--      <span class="dot" onclick="currentSlide(2)"></span>-->
-  <!--      <span class="dot" onclick="currentSlide(3)"></span>-->
-  <!--    </div>-->
-  <!--  </div>-->
-
-
-  <!--  <ngb-carousel-->
-  <!--    #carousel (slide)="onSlide($event)"-->
-  <!--    class="my-carousel">-->
-  <!--    <ng-template *ngFor="let member of teamMembers" ngbSlide>-->
-  <!--      <div class="picsum-img-wrapper">-->
-  <!--        <img [alt]="member.name" [src]="member.imagePath">-->
-  <!--      </div>-->
-  <!--      <div class="carousel-caption">-->
-  <!--        <h3>{{member.name}}</h3>-->
-  <!--        <p>({{member.role}})</p>-->
-  <!--      </div>-->
-  <!--    </ng-template>-->
-  <!--  </ngb-carousel>-->
-
-
+  <!-- Ngb Carousel from Boostrap:  https://ng-bootstrap.github.io/#/components/carousel/examples -->
   <ngb-carousel #carousel [showNavigationArrows]="true" [showNavigationIndicators]="true" class="my-carousel">
     <ng-template *ngFor="let member of teamMembers" ngbSlide>
       <div class="picsum-img-wrapper">
@@ -52,12 +19,12 @@
     </ng-template>
   </ngb-carousel>
 
-
   <!-- More Infos -->
   <div class="mbr-description">
     <p>{{currentTeamMember?.description}}</p>
   </div>
 
+  <!-- Skills -->
   <div class="mbr-skills clearfix">
     <h2>Fachliche Skills</h2>
     <ul *ngFor="let skill of currentTeamMember.skills">

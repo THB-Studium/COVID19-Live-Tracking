@@ -1,20 +1,29 @@
-p {
-  text-align: left;
-  margin: 2px 0 0 24%;
-}
-
 h1 {
   font-size: 40px;
-  margin-top: 10px;
+  margin-top: 3%;
+  margin-bottom: 40px;
 }
 
 h2 {
   margin-top: 30px;
+  margin-bottom: 30px;
 }
 
+p {
+  font-weight: 1000;
+  text-align: left;
+  margin: 2px 0 0 24%;
+}
+
+/*** about the search field ***/
 #input-search-term {
-  margin: 10px 0 20px 0;
-  margin-bottom: 200px;
+  margin: 10px 0 200px 0;
+  color: #1C232B;
+}
+
+mat-option {
+  background-color: #f2f2f2;
+  color: #1C232B;
 }
 
 #searchCountryForm {
@@ -22,13 +31,8 @@ h2 {
   width: 50em;
 }
 
-#searchCountryForm mat-icon {
-  color: #C4C4C4;
-}
-
 #suchTerm {
-  line-height: 28px;
-  color: #C4C4C4;
+  color: #1C232B;
 }
 
 #map-group {
@@ -53,7 +57,7 @@ h2 {
 #map-legend {
   position: absolute;
   left: -18%;
-  font-weight: 300;
+  font-weight: 1000;
   font-size: 70%;
 }
 
@@ -76,12 +80,11 @@ h2 {
 }
 
 .top-links ul {
-  margin-top: 40px;
   color: #CCC5B9;
 }
 
-.top-links li {
-  margin-bottom: 10px;
+.top-links li a {
+  text-align: start;
 }
 
 #top-werte-buttons {
@@ -93,7 +96,7 @@ button {
 }
 
 .chart-list {
-  margin-top: -5em;
+  margin-top: -4em;
   margin-left: 20%;
 }
 

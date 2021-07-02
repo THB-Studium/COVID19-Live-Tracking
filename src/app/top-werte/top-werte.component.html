@@ -1,8 +1,15 @@
 <body class="body bodyHeight">
   <div>
+    <!--  MatTabsModule from Angular materials: https://material.angular.io/components/tabs/overview  -->
     <mat-tab-group>
       <mat-tab *ngFor="let tab of asyncTabs | async">
         <ng-template mat-tab-label>{{tab.label}}</ng-template>
+
+        <!-- Afri-care-germany logo -->
+        <img id="afri-care-logo"
+             routerLink="{{homePath}}"
+             class="pointer"
+             src="assets/logo/afri-care-germany-logo.png">
 
         <div class="statistic">
           <!-- CHARTS -->

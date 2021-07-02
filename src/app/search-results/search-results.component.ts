@@ -14,7 +14,6 @@ export class SearchResultsComponent implements OnInit {
   mapWidth = 100
   isVisible = true
   readonly homePath: string
-  imagePath: any = 'assets/img/mapSmall.png'
   bundesLandName = ''
   bundeslandWerte: any
 

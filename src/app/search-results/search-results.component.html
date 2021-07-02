@@ -1,84 +1,89 @@
 <body class="body bodyHeight">
-<div class="ergebnis-wrapper">
-  <div class="row">
-    <div class="col-sm">
-      <div class="bundesLandNameResult">
-        <h2>Suchergebnis für <b>{{ bundesLandName | titlecase }}</b></h2>
-      </div>
-    </div>
 
-  </div>
+<!-- Afri-care-germany logo -->
+<img id="afri-care-logo"
+     routerLink="{{homePath}}"
+     class="pointer"
+     src="assets/logo/afri-care-germany-logo-2.png">
 
+<h2 id="title-header">Suchergebnis für <b>{{ bundesLandName | titlecase }}</b></h2>
+
+
+<!-- The biggest map-->
+<div *ngIf="!isVisible" class="bundesLandImage" id="bundesLandMapBig">
+  <img (click)="changeImageSize()"
+       class="pointer center"
+       title="zum Verkleinern anklicken"
+       src="assets/img/dld-map-results.jpeg">
+  <p>Covid-19 live tracking: &nbsp; <b>{{ bundesLandName | titlecase }}</b></p>
 </div>
 
 <div class="border-wrapper">
   <div class="row">
-    <div class="bundesLandNameResult col-10">
+    <div class="col-10">
       <h2 id="statistic-title-center"><b>Statistiken</b></h2>
     </div>
     <!-- The smallest map-->
-    <div class="bundesLandImage col-4" id="bundesLandMapSmall" *ngIf="isVisible">
-      <img class="pointer" (click)="changeImageSize()" src="assets/img/mapSmall.png">
+    <div *ngIf="isVisible" class="bundesLandImage col-4" id="bundesLandMapSmall">
+      <img (click)="changeImageSize()"
+           class="pointer"
+           title="zum Vergrößern anklicken"
+           src="assets/img/dld-map-results.jpeg">
       <p id="map-legend-smallest">Covid-19 live tracking: &nbsp; <b>{{ bundesLandName | titlecase }}</b></p>
     </div>
   </div>
-  <!-- The biggest map-->
-  <div class="bundesLandImage" id="bundesLandMapBig" *ngIf="!isVisible">
-    <img class="pointer center" (click)="changeImageSize()" src="assets/img/mapBig.png">
-    <p id="map-legend-biggest">Covid-19 live tracking: &nbsp; <b>{{ bundesLandName | titlecase }}</b></p>
-  </div>
 
   <div class="shift-right">
     <div class="chart-content">
       <app-chart
+        [caseValue]="genesungsrate"
         [chartLabelName]="'Inzidenzwert'"
+        [chartWidth]="chartWidth"
         [positionLabel]="'top'"
-        [caseValue]="genesungsrate"
-        [totalValue]="totalCase"
-        [chartWidth]="chartWidth"></app-chart>
+        [totalValue]="totalCase"></app-chart>
     </div>
     <div class="chart-content">
       <app-chart
-        [chartLabelName]="'Todesfälle'"
-        [positionLabel]="'top'"
         [caseValue]="todesFaelle"
-        [totalValue]="totalCase"
-        [chartWidth]="chartWidth"></app-chart>
+        [chartLabelName]="'Todesfälle'"
+        [chartWidth]="chartWidth"
+        [positionLabel]="'top'"
+        [totalValue]="totalCase"></app-chart>
     </div>
     <div class="chart-content">
       <app-chart
-        [chartLabelName]="'Genesungsrate'"
-        [positionLabel]="'top'"
         [caseValue]="sterberate"
-        [totalValue]="100"
-        [chartWidth]="chartWidth"></app-chart>
+        [chartLabelName]="'Genesungsrate'"
+        [chartWidth]="chartWidth"
+        [positionLabel]="'top'"
+        [totalValue]="100"></app-chart>
     </div>
   </div>
 
   <div class="shift-right">
     <div class="chart-content">
       <app-chart
-        [chartLabelName]="'Neu infiziert'"
-        [positionLabel]="'top'"
         [caseValue]="genesungsrate"
-        [totalValue]="totalCase"
-        [chartWidth]="chartWidth"></app-chart>
+        [chartLabelName]="'Neu infiziert'"
+        [chartWidth]="chartWidth"
+        [positionLabel]="'top'"
+        [totalValue]="totalCase"></app-chart>
     </div>
     <div class="chart-content">
       <app-chart
-        [chartLabelName]="'Sterbrate'"
-        [positionLabel]="'top'"
         [caseValue]="todesFaelle"
-        [totalValue]="totalCase"
-        [chartWidth]="chartWidth"></app-chart>
+        [chartLabelName]="'Sterbrate'"
+        [chartWidth]="chartWidth"
+        [positionLabel]="'top'"
+        [totalValue]="totalCase"></app-chart>
     </div>
     <div class="chart-content">
       <app-chart
-        [chartLabelName]="'Alle Fälle'"
-        [positionLabel]="'top'"
         [caseValue]="sterberate"
-        [totalValue]="100"
-        [chartWidth]="chartWidth"></app-chart>
+        [chartLabelName]="'Alle Fälle'"
+        [chartWidth]="chartWidth"
+        [positionLabel]="'top'"
+        [totalValue]="100"></app-chart>
     </div>
   </div>
 

@@ -2,8 +2,9 @@ import {Component, OnInit} from '@angular/core'
 import {rootingPath} from '../shared/rooting-path'
 import {Router} from '@angular/router'
 import {CovidService} from '../core/covid-19.service'
-import {constFederalState} from '../shared/constante'
+import {constFederalState, constTopLinks} from '../shared/constante'
 import {CommunicationService} from '../core/communication.service'
+import {ITopLink} from '../model/top-link.interface'
 
 @Component({
   selector: 'app-homepage',
@@ -22,10 +23,12 @@ export class HomepageComponent implements OnInit {
   todesFaelle = 0
   sterberate = 0
   chartWidth = 230
+  positionLabel = 'bottom'
 
 
+  readonly homePath: string
   readonly topWertePath: string
-  readonly topLinksPath: string
+  readonly topLinks: Array<ITopLink> = []
 
   constructor(
     private router: Router,
@@ -34,7 +37,8 @@ export class HomepageComponent implements OnInit {
   ) {
     this.federalStatesName = constFederalState.values.map(federalState => federalState.BundeslandName)
     this.topWertePath = '/' + rootingPath.top_werte
-    this.topLinksPath = 'https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Risikogebiete_neu.html/'
+    this.topLinks = constTopLinks.values
+    this.homePath = '/' + rootingPath.home
   }
 
   ngOnInit(): void {
