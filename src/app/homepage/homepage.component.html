@@ -1,12 +1,20 @@
 <body class="body bodyHeight" id="home_body">
+
+<!-- Afri-care-germany logo -->
+<img id="afri-care-logo"
+     routerLink="{{homePath}}"
+     class="pointer"
+     src="assets/logo/afri-care-germany-logo-2.png">
+
 <h1>Wilkommen zu Covid-19 Live-Tracking</h1>
 
 <!-- SEARCH TERM FIELD -->
 <div id="input-search-term">
   <mat-form-field appearance="outline" id="searchCountryForm">
     <input (keyup)="applyFilter($event.target)" [matAutocomplete]="stateAutoComplete" id="suchTerm" matInput
-           name="suchTerm"
-           placeholder="Nach Bundesland suchen" required type="text">
+           name="suchTerm" type="text"
+           placeholder="Nach Bundesland suchen"
+           title="Nach Bundesland suchen">
     <mat-icon matSuffix>search</mat-icon>
 
     <mat-autocomplete #stateAutoComplete="matAutocomplete">
@@ -45,44 +53,44 @@
     <!-- MAP -->
     <div id="map-group">
       <div id="map-div">
-        <img src="assets/img/map.png">
+        <img src="assets/img/dld-map.jpeg">
       </div>
-      <p id="map-legend">Covid-19 live Tracking: <b>Deutschland 7 Tage inzidenz</b></p>
+      <p id="map-legend">Covid-19 live Tracking: &nbsp; <b>Deutschland 7 Tage inzidenz</b></p>
     </div>
 
     <!-- CHARTS -->
     <div class="chart-list">
       <div class="chart-content">
         <app-chart
-          [chartLabelName]="'Neu infiziert'"
-          [positionLabel]="'bottom'"
           [caseValue]="neuInfiziert"
-          [totalValue]="totalCase"
-          [chartWidth]="chartWidth"></app-chart>
+          [chartLabelName]="'Neu infiziert'"
+          [chartWidth]="chartWidth"
+          [positionLabel]="positionLabel"
+          [totalValue]="totalCase"></app-chart>
       </div>
       <div class="chart-content">
         <app-chart
-          [chartLabelName]="'Genesungsrate'"
-          [positionLabel]="'bottom'"
           [caseValue]="genesungsrate"
-          [totalValue]="totalCase"
-          [chartWidth]="chartWidth"></app-chart>
+          [chartLabelName]="'Genesungsrate'"
+          [chartWidth]="chartWidth"
+          [positionLabel]="positionLabel"
+          [totalValue]="totalCase"></app-chart>
       </div>
       <div class="chart-content">
         <app-chart
-          [chartLabelName]="'Todesfälle'"
-          [positionLabel]="'bottom'"
           [caseValue]="todesFaelle"
-          [totalValue]="totalCase"
-          [chartWidth]="chartWidth"></app-chart>
+          [chartLabelName]="'Todesfälle'"
+          [chartWidth]="chartWidth"
+          [positionLabel]="positionLabel"
+          [totalValue]="totalCase"></app-chart>
       </div>
       <div class="chart-content">
         <app-chart
-          [chartLabelName]="'Sterberate'"
-          [positionLabel]="'bottom'"
           [caseValue]="sterberate"
-          [totalValue]="100"
-          [chartWidth]="chartWidth"></app-chart>
+          [chartLabelName]="'Sterberate'"
+          [chartWidth]="chartWidth"
+          [positionLabel]="positionLabel"
+          [totalValue]="100"></app-chart>
       </div>
     </div>
   </div>
@@ -91,14 +99,8 @@
   <div class="col-md-2 top-links">
     <h2>Top Links</h2>
 
-    <ul>
-      <li><a class="margin-left-15px" href="{{topLinksPath}}" target="'_blank'">Robert Koch-Institut</a></li>
-      <li><a class="margin-left-15px" href="" target="”_blank”"> </a></li>
-      <li><a class="margin-left-15px" href="" target="”_blank”"> </a></li>
-      <li><a class="margin-left-15px" href="" target="”_blank”"> </a></li>
-      <li><a class="margin-left-15px" href="" target="”_blank”"> </a></li>
-      <li><a class="margin-left-15px" href="" target="”_blank”"> </a></li>
-      <li><a class="margin-left-15px" href="" target="”_blank”"> </a></li>
+    <ul *ngFor="let topLink of topLinks">
+      <li><a class="margin-left-15px" href="{{topLink.url}}" target="'_blank'">{{topLink.name}}</a></li>
     </ul>
   </div>
 </div>

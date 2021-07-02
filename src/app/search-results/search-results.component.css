@@ -1,24 +1,82 @@
-h3 {
-  margin: 20px;
-  margin-bottom: 5em;
+body {
+  flex: auto;
+}
+
+#afri-care-logo {
+  top: 5.8%;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: 100;
+  letter-spacing: 4px;
+  margin-top: 1.8em;
+  margin-bottom: 3em;
+}
+
+#bundesLandMapBig {
+  margin: auto;
+  max-width: 60%;
+}
+
+#bundesLandMapBig .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  width: 75%;
+}
+
+#bundesLandMapBig p {
+  position: absolute;
+  margin-top: 7px;
+  left: 18%;
+  font-weight: 1000;
+  font-size: 12px;
+  margin-left: 16.5em;
 }
 
 .border-wrapper {
   width: auto;
   height: auto;
-  /*margin: 182px 81px 41px 81px;*/
   background: #242832;
   border: 2px solid #6EB1D5;
   box-sizing: border-box;
+  margin: 6em;
+  text-align: center;
 }
 
-img {
+#statistic-title-center {
+  margin-right: -10em;
+  margin-bottom: 20px;
+}
+
+.bundesLandImage img {
   border: 1px solid #6EB1D5;
 }
 
+#bundesLandMapSmall {
+  position: relative;
+  margin-top: 10px;
+  right: -4.3em;
+  max-width: 12%;
+  float: right;
+}
+
+#bundesLandMapSmall img {
+  max-width: 100%;
+}
+
+#bundesLandMapSmall p {
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+
+
 .iLabel {
-  left: calc(50% - 213px/2 - 420px);
-  top: calc(50% - 45.56px/2 - 213.72px);
+  left: calc(50% - 213px / 2 - 420px);
+  top: calc(50% - 45.56px / 2 - 213.72px);
 
   font-family: Roboto;
   font-style: normal;
@@ -45,56 +103,23 @@ img {
   width: 44px;
 }
 
-
-
-#map-legend {
-  font-size: 55%;
-}
-
-#bundesLandMapSmall {
-  margin-top: 10px;
-  right: -7.5em;
-  position: relative;
-  width: 10em;
-  float: right;
-}
-#statistic-title-center {
-  margin-top: 10px;
-  margin-right: -10em;
-}
-
-#bundesLandMapSmall p {
-  font-size: 5px;
-  margin-left: 20px;
-}
-
-#bundesLandMapBig .center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 100px;
-    width: 75%;
-}
-
-#bundesLandMapBig p {
-  font-size: 12px;
-  margin-left: 16.5em;
-}
-
 /* Statistic charts*/
-.statistic{
+.statistic {
   padding: 11.5em;
 }
-.statistic-item{
+
+.statistic-item {
   height: 25em;
   margin-bottom: -10em;
 }
-.chart-content{
+
+.chart-content {
   width: 20em;
   padding: 1em;
+  margin-right: 5%;
   text-align: center;
 }
 
 .shift-right {
-  margin-right: 0em;
+  /*margin-right: 0em;*/
 }

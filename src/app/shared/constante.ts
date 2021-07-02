@@ -1,3 +1,20 @@
+export const constTopLinks = {
+  values: [
+    {name: 'Mosel', url: 'https://www.visitmosel.de/'},
+    {name: 'Lüneburger Heide', url: 'https://www.lueneburger-heide.de/'},
+    {name: 'Eifel', url: 'https://www.eifel.info/'},
+    {name: 'Bodensee', url: 'https://www.bodensee.eu/de'},
+    {name: 'Phantasialand', url: 'https://www.phantasialand.de/de/'},
+    {name: 'Legoland Günzburg', url: 'https://www.legoland.de/'},
+    {name: 'Ostfriesland', url: 'https://www.ostfriesland.de/start.html'},
+    {name: 'Mecklenburgische Seenplatte', url: 'https://www.mecklenburgische-seenplatte.de/'},
+    {name: 'Sächsische Schweiz', url: 'https://www.saechsische-schweiz.de/'},
+    {name: 'Sankt Peter-Ording', url: 'https://www.st-peter-ording.de/'},
+    {name: 'Lister Ellenbogen, Sylt', url: 'https://www.insel-sylt.de/address/lister-ellenbogen/'},
+    // {name: 'Bensersiel', url: 'https://www.bensersiel.de/'},
+  ]
+}
+
 export const constFederalState = {
   values: [
     {BundeslandId: 1, BundeslandName: 'Schleswig-Holstein'},
