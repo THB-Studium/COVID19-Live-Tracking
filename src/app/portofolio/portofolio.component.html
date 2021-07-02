@@ -8,19 +8,19 @@
 
 <div class="body-contents">
   <!-- Ngb Carousel from Boostrap:  https://ng-bootstrap.github.io/#/components/carousel/examples -->
-  <ngb-carousel #carousel [showNavigationArrows]="true" [showNavigationIndicators]="true" class="my-carousel">
-    <ng-template *ngFor="let member of teamMembers" ngbSlide>
+  <ngb-carousel #carousel="ngbCarousel" [showNavigationArrows]="true"
+                [showNavigationIndicators]="true" (slide)="onSlide($event)"
+                activeId="1" class="my-carousel">
+    <ng-template *ngFor="let member of teamMembers; let i = index" id="{{i}}" ngbSlide>
       <div class="picsum-img-wrapper">
         <img [src]="member.imagePath" alt="Random slide">
-      </div>
-      <div class="carousel-caption">
-        <h3>{{member.name}}</h3>
       </div>
     </ng-template>
   </ngb-carousel>
 
   <!-- More Infos -->
   <div class="mbr-description">
+    <h2>{{currentTeamMember.name}} ({{currentTeamMember.role}})</h2>
     <p>{{currentTeamMember?.description}}</p>
   </div>
 

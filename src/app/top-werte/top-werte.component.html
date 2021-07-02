@@ -18,50 +18,50 @@
               <app-chart
                 [chartLabelName]="'7 Tage Inzidenz'"
                 [positionLabel]="'bottom'"
-                [caseValue]= "incident"
-                [totalValue]="fallzahl7Tage"
+                [caseValue]= "selectedFederalStateDatas?.incident"
+                [totalValue]="0"
                 [chartWidth]="chartWidth"></app-chart>
             </div>
             <div class="chart-content">
               <app-chart
                 [chartLabelName]="'Fallzahl Gesamt'"
                 [positionLabel]="'bottom'"
-                [caseValue]="totalCase"
-                [totalValue]="todesFaelle"
+                [caseValue]="selectedFederalStateDatas?.fallzahl"
+                [totalValue]="selectedFederalStateDatas?.faelle"
                 [chartWidth]="chartWidth"></app-chart>
             </div>
             <div class="chart-content">
               <app-chart
                 [chartLabelName]="'Todesfälle Gesamt'"
                 [positionLabel]="'bottom'"
-                [caseValue]="todesFaelle"
-                [totalValue]="totalCase"
+                [caseValue]="selectedFederalStateDatas?.death"
+                [totalValue]="selectedFederalStateDatas?.faelle"
                 [chartWidth]="chartWidth"></app-chart>
             </div>
             <div class="chart-content">
               <app-chart
                 [chartLabelName]="'7 Tage Sterbezahl'"
                 [positionLabel]="'bottom'"
-                [caseValue]="sterben7"
-                [totalValue]="fallzahl7Tage"
+                [caseValue]="selectedFederalStateDatas?.death7_bl"
+                [totalValue]="selectedFederalStateDatas?.faelle"
                 [chartWidth]="chartWidth"></app-chart>
             </div>
             <div class="chart-content">
               <app-chart
                 [chartLabelName]="' 7 Tage Fallzahl'"
                 [positionLabel]="'bottom'"
-                [caseValue]="fallzahl7Tage"
-                [totalValue]="totalCase"
+                [caseValue]="selectedFederalStateDatas?.cases7_bl"
+                [totalValue]="selectedFederalStateDatas?.faelle"
                 [chartWidth]="chartWidth"></app-chart>
             </div>
-           <div class="chart-content">
-              <app-chart
-                [chartLabelName]="'Sterberate'"
-                [positionLabel]="'bottom'"
-                [caseValue]="100"
-                [totalValue]="totalCase"
-                [chartWidth]="chartWidth"></app-chart>
-            </div>
+<!--           <div class="chart-content">-->
+<!--              <app-chart-->
+<!--                [chartLabelName]="'Sterberate'"-->
+<!--                [positionLabel]="'bottom'"-->
+<!--                [caseValue]="100"-->
+<!--                [totalValue]="totalCase"-->
+<!--                [chartWidth]="chartWidth"></app-chart>-->
+<!--            </div>-->
           </div>
         </div>
       </mat-tab>

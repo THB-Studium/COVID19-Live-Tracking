@@ -1,5 +1,7 @@
-body {
-
+#afri-care-logo {
+  top: 4em;
+  max-width: 4%;
+  min-width: 2.5em;
 }
 
 .picsum-img-wrapper img {
@@ -7,7 +9,7 @@ body {
 }
 
 .my-carousel {
-  width: 28em;
+  width: 40em;
   margin: -10px auto;
 }
 
@@ -17,14 +19,13 @@ body {
   background: #C4C4C4;
 }
 
-.carousel-caption {
+div.carousel-caption {
   text-align: center;
 }
 
 .carousel-caption h3 {
-  position: absolute;
-  margin-top: 5%;
-  margin-left: 34%;
+  /*position: absolute;*/
+  margin: auto;
   font-family: "Montserrat Light", sans-serif;
   font-style: normal;
   font-weight: bold;
@@ -61,7 +62,7 @@ body {
   display: table;
 }
 
-.mbr-skills h2 {
+h2 {
   margin-bottom: 50px;
 
   font-family: 'Bebas Neue', cursive;

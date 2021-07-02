@@ -12,12 +12,10 @@ import {CommunicationService} from '../core/communication.service'
   styleUrls: ['./portofolio.component.css']
 })
 export class PortofolioComponent implements OnInit {
-  @ViewChild('carousel', {static: true}) carousel: NgbCarousel | undefined
+  @ViewChild('carousel', {static: true}) myCarousel: NgbCarousel | undefined
   teamMembers: IMember[] = []
   currentTeamMember: IMember = {} as IMember
   readonly homePath: string
-
-  slideIndex = 1
 
   constructor(
     private router: Router,
@@ -30,60 +28,41 @@ export class PortofolioComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.showSlides(this.slideIndex)
     this.footerItemsInit()
-    this.carousel?.pause()
+    this.myCarousel?.pause()
     this.activeRoute.params.subscribe(
       (params: any) => {
         if (params?.pillId) {
           this.currentTeamMember = constTeamMember.values
             .filter((member: any) => member.name.toLowerCase() === params.pillId.split('_').join(' '))[0]
-          console.log(this.currentTeamMember)
+
+          if (this.currentTeamMember?.name !== '') {
+            switch (this.currentTeamMember.name) {
+              case 'Mistra Forest':
+                this.myCarousel?.select('0')
+                break
+              case 'Bertin Jr Wagueu':
+                this.myCarousel?.select('1')
+                break
+              case 'Steve Ngalamo':
+                this.myCarousel?.select('2')
+                break
+            }
+          }
         }
       }
     )
   }
 
   onSlide(slideEvent: NgbSlideEvent): void {
-    console.log(slideEvent)
     this.currentTeamMember = this.teamMembers[+slideEvent.current.replace('ngb-slide-', '')]
+    const rootingUrl = '/' + rootingPath.about + '/' + this.currentTeamMember.name.toLowerCase().split(' ').join('_')
+    this.router.navigate([rootingUrl])
   }
 
   navToTHBWebsite(): void {
     window.open('https://www.th-brandenburg.de', '_blank')
   }
-
-  // plusSlides(n: any): void {
-  //   this.showSlides(this.slideIndex += n)
-  // }
-  //
-  // currentSlide(n: any): void {
-  //   this.showSlides(this.slideIndex = n)
-  // }
-
-  // showSlides(n: any): void {
-  //   let i
-  //   const slides: HTMLCollectionOf<any> = document.getElementsByClassName('mySlides')
-  //   const dots: HTMLCollectionOf<any> = document.getElementsByClassName('dot')
-  //   if (n > slides.length) {
-  //     this.slideIndex = 1
-  //   }
-  //   if (n < 1) {
-  //     this.slideIndex = slides.length
-  //   }
-  //   for (i = 0; i < slides.length; i++) {
-  //     slides[i].style.display = 'none'
-  //   }
-  //   for (i = 0; i < dots.length; i++) {
-  //     dots[i].className = dots[i].className.replace(' active', '')
-  //   }
-  //   if (slides[this.slideIndex - 1]) {
-  //     slides[this.slideIndex - 1].style.display = 'block'
-  //   }
-  //   if (dots[this.slideIndex - 1]) {
-  //     dots[this.slideIndex - 1].className += ' active'
-  //   }
-  // }
 
   private footerItemsInit(): void {
     this.comService.resetAll()
