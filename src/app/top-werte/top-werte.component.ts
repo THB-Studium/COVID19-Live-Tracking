@@ -8,8 +8,8 @@ import {CommunicationService} from '../core/communication.service'
 import {MatTabChangeEvent} from '@angular/material/tabs'
 import {filter, take} from 'rxjs/operators'
 import {constFederalState} from '../shared/constante'
-import {IFederalCountryData} from '../model/federal-country.interface'
-import {IFederalCountry} from '../model/federal-country-data.interface'
+import {IFederalState} from '../model/federal-states-data.interface'
+import {IFederalStatesData} from '../model/federal-state.interface'
 
 
 @Component({
@@ -21,9 +21,9 @@ export class TopWerteComponent implements OnInit {
   readonly homePath: string
   readonly lvoPath: string
 
-  federalContriesData: IFederalCountryData[] = []
-  selectedFederalContry: IFederalCountry = {} as IFederalCountry
-  topValues: IFederalCountryData[] = []
+  federalStatesData: IFederalStatesData[] = []
+  selectedFederalState: IFederalState = {} as IFederalState
+  topValues: IFederalStatesData[] = []
   currentPillId = ''
   currentPath: string | undefined
 
@@ -69,9 +69,9 @@ export class TopWerteComponent implements OnInit {
   onTabClicked(event: MatTabChangeEvent): void {
     this.asyncTabs?.subscribe(values => {
       console.log(values[event.index])
-      this.selectedFederalContry = constFederalState.values.filter(fedSt => fedSt.bundeslandName === values[event.index].label)[0]
-      this.comService.setCountryOrdinanceUrl(this.selectedFederalContry.landerverodnung)
-      console.log(this.selectedFederalContry)
+      this.selectedFederalState = constFederalState.values.filter(fedSt => fedSt.federalStateName === values[event.index].label)[0]
+      this.comService.setFederalStateOrdinanceUrl(this.selectedFederalState.federalStateOrdinance)
+      console.log(this.selectedFederalState)
     })
   }
 
@@ -80,7 +80,7 @@ export class TopWerteComponent implements OnInit {
       (results: any) => {
         if (results) {
           results.features.forEach((item: any) => {
-            const countryData: IFederalCountryData = {} as IFederalCountryData
+            const countryData: IFederalStatesData = {} as IFederalStatesData
 
             countryData.incident = parseFloat(item.attributes.cases7_bl_per_100k_txt.replace(',', '.'))
             countryData.aktualisierung = item.attributes.Aktualisierung
@@ -91,8 +91,8 @@ export class TopWerteComponent implements OnInit {
             countryData.death7_bl = item.attributes.death7_bl
             countryData.faelle = item.attributes.faelle_100000_EW
 
-            this.federalContriesData.push(countryData)
-            console.log(this.federalContriesData)
+            this.federalStatesData.push(countryData)
+            console.log(this.federalStatesData)
           })
 
           if (this.currentPillId === 'top_niedrigste_inzidenz' || this.currentPillId === 'top_urlaubsorte') {
@@ -109,7 +109,7 @@ export class TopWerteComponent implements OnInit {
 
   private getTopLowIncidentCountries(): void {
     this.fetchTopIncidence(true)
-    const labelNames = this.topValues.map((value: IFederalCountryData) => value.lAN_ew_GEN)
+    const labelNames = this.topValues.map((value: IFederalStatesData) => value.lAN_ew_GEN)
     this.setNavBarTabs(labelNames)
     if (labelNames?.length > 0) {
       this.getIncidenz()
@@ -117,21 +117,21 @@ export class TopWerteComponent implements OnInit {
   }
 
   private fetchTopIncidence(sortASC: boolean): void {
-    this.federalContriesData = this.sortService.sortObjects(this.federalContriesData, sortASC, 'incident')
+    this.federalStatesData = this.sortService.sortObjects(this.federalStatesData, sortASC, 'incident')
     for (let i = 0; i < 10; i++) {
-      this.topValues.push(this.federalContriesData[i])
+      this.topValues.push(this.federalStatesData[i])
     }
   }
 
   private getTopRisikogebiete(): void {
     this.fetchTopIncidence(false)
-    const labelNames = this.topValues.map((value: IFederalCountryData) => value.lAN_ew_GEN)
+    const labelNames = this.topValues.map((value: IFederalStatesData) => value.lAN_ew_GEN)
     this.setNavBarTabs(labelNames)
   }
 
   private getIncidenz(): void {
     this.fetchTopIncidence(true)
-    this.topValues.map((value: IFederalCountryData) => {
+    this.topValues.map((value: IFederalStatesData) => {
       this.incident = value.incident
       this.todesFaelle = value.death
       this.totalCase = value.fallzahl
@@ -155,7 +155,7 @@ export class TopWerteComponent implements OnInit {
     this.comService.resetAll()
     this.comService.setImpressum(true)
     this.comService.setAboutUs(true)
-    this.comService.setCountryOrdinance(true)
+    this.comService.setFederalStateOrdinance(true)
   }
 
 }

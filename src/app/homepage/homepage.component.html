@@ -1,9 +1,9 @@
 <body class="body bodyHeight" id="home_body">
 
 <!-- Afri-care-germany logo -->
-<img id="afri-care-logo"
+<img class="pointer"
+     id="afri-care-logo"
      routerLink="{{homePath}}"
-     class="pointer"
      src="assets/logo/afri-care-germany-logo.png">
 
 <h1>Wilkommen zu Covid-19 Live-Tracking</h1>
@@ -13,9 +13,9 @@
   <!-- MatInputModule from Angular materials: https://material.angular.io/components/input/overview -->
   <mat-form-field appearance="outline" id="searchCountryForm">
     <input (keyup)="applyFilter($event.target)" [matAutocomplete]="stateAutoComplete" id="suchTerm" matInput
-           name="suchTerm" type="text"
-           placeholder="Nach Bundesland suchen"
-           title="Nach Bundesland suchen">
+           name="suchTerm" placeholder="Nach Bundesland suchen"
+           title="Nach Bundesland suchen"
+           type="text">
 
     <!-- MatIconModule from Angular materials: https://material.angular.io/components/icon/overview -->
     <mat-icon matSuffix>search</mat-icon>

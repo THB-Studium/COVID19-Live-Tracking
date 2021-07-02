@@ -1,4 +1,4 @@
-export interface IFederalCountryData {
+export interface IFederalStatesData {
   incident: number // cases7 bl per 100k txt
   aktualisierung: number
   death: number

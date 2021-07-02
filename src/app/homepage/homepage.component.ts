@@ -5,6 +5,7 @@ import {CovidService} from '../core/covid-19.service'
 import {constFederalState, constTopLinks} from '../shared/constante'
 import {CommunicationService} from '../core/communication.service'
 import {ITopLink} from '../model/top-link.interface'
+import {IFederalState} from '../model/federal-states-data.interface'
 
 @Component({
   selector: 'app-homepage',
@@ -35,7 +36,7 @@ export class HomepageComponent implements OnInit {
     private covidService: CovidService,
     private comService: CommunicationService
   ) {
-    this.federalStatesName = constFederalState.values.map(federalState => federalState.bundeslandName)
+    this.federalStatesName = constFederalState.values.map(federalState => federalState.federalStateName)
     this.topWertePath = '/' + rootingPath.top_werte
     this.topLinks = constTopLinks.values
     this.homePath = '/' + rootingPath.home
@@ -52,10 +53,12 @@ export class HomepageComponent implements OnInit {
       : this.filteredList = this.federalStatesName.filter((name: any) => name.toLowerCase().startsWith(suchTerm.value.toLowerCase()))
   }
 
-  navTo(pillId: string, topWerte?: boolean): void {
-    topWerte
+  navTo(pillId: string, topValues?: boolean): void {
+    const selectedFederalState: IFederalState = constFederalState.values.filter(fedStat => fedStat.federalStateName === pillId)[0]
+    topValues
       ? this.router.navigate(['/' + rootingPath.top_werte + '/' + pillId.toLowerCase()])
-      : this.router.navigate(['/' + rootingPath.search_results + '/' + pillId.toLowerCase()])
+      : ( this.router.navigate(['/' + rootingPath.search_results + '/' + pillId.toLowerCase()]),
+          this.comService.setFederalStateOrdinanceUrl(selectedFederalState.federalStateOrdinance))
   }
 
   private footerItemsInit(): void {
