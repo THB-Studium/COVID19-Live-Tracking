@@ -169,11 +169,12 @@ footer a:hover {
 }
 
 
-/*** about the home search field ***/
+/*** about the mat tab in top values components ***/
 .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
   background-color: #6EB1D5;
 }
 
+/*** about the home search field ***/
 .mat-form-field-appearance-outline .mat-form-field-infix {
   bottom: 0.2em !important;
   padding: unset;
