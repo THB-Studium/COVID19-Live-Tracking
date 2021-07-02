@@ -11,17 +11,16 @@ export class FooterComponent implements OnInit {
   onImpressum: boolean | undefined
   onAboutUs: boolean | undefined
   onCountryOrdinance: boolean | undefined
+  countryOrdinanceUrl: string | undefined
   onOtherMeasure: boolean | undefined
 
   readonly impressumPath: string
   readonly aboutUsPath: string
-  readonly countryOrdinancePath: string
   readonly otherMeasurePath: string
 
   constructor(private comService: CommunicationService) {
     this.impressumPath = '/' + rootingPath.impressum,
     this.aboutUsPath = '/' + rootingPath.about,
-    this.countryOrdinancePath = '',
     this.otherMeasurePath = ''
   }
 
@@ -29,6 +28,7 @@ export class FooterComponent implements OnInit {
     this.comService.getImpressum().subscribe((value: boolean) => this.onImpressum = value)
     this.comService.getAboutUs().subscribe((value: boolean) => this.onAboutUs = value)
     this.comService.getCountryOrdinance().subscribe((value: boolean) => this.onCountryOrdinance = value)
+    this.comService.getCountryOrdinanceUrl().subscribe((value: string) => this.countryOrdinanceUrl = value)
     this.comService.getOtherMeasure().subscribe((value: boolean) => this.onOtherMeasure = value)
   }
 
