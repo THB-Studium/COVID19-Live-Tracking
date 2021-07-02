@@ -10,29 +10,29 @@ export const constTopLinks = {
     {name: 'Mecklenburgische Seenplatte', url: 'https://www.mecklenburgische-seenplatte.de/'},
     {name: 'Sächsische Schweiz', url: 'https://www.saechsische-schweiz.de/'},
     {name: 'Sankt Peter-Ording', url: 'https://www.st-peter-ording.de/'},
-    {name: 'Lister Ellenbogen, Sylt', url: 'https://www.insel-sylt.de/address/lister-ellenbogen/'},
+    // {name: 'Lister Ellenbogen, Sylt', url: 'https://www.insel-sylt.de/address/lister-ellenbogen/'},
     // {name: 'Bensersiel', url: 'https://www.bensersiel.de/'},
   ]
 }
 
 export const constFederalState = {
   values: [
-    {BundeslandId: 1, BundeslandName: 'Schleswig-Holstein'},
-    {BundeslandId: 2, BundeslandName: 'Hamburg'},
-    {BundeslandId: 3, BundeslandName: 'Niedersachsen'},
-    {BundeslandId: 4, BundeslandName: 'Bremen'},
-    {BundeslandId: 5, BundeslandName: 'Nordrhein-Westfalen'},
-    {BundeslandId: 6, BundeslandName: 'Hessen'},
-    {BundeslandId: 7, BundeslandName: 'Rheinland-Pfalz'},
-    {BundeslandId: 8, BundeslandName: 'Baden-Württemberg'},
-    {BundeslandId: 9, BundeslandName: 'Bayern'},
-    {BundeslandId: 10, BundeslandName: 'Saarland'},
-    {BundeslandId: 11, BundeslandName: 'Berlin'},
-    {BundeslandId: 12, BundeslandName: 'Brandenburg'},
-    {BundeslandId: 13, BundeslandName: 'Mecklenburg-Vorpommern'},
-    {BundeslandId: 14, BundeslandName: 'Sachsen'},
-    {BundeslandId: 15, BundeslandName: 'Sachsen-Anhalt'},
-    {BundeslandId: 16, BundeslandName: 'Thüringen'}
+    {bundeslandId: 1, bundeslandName: 'Schleswig-Holstein', landerverodnung: 'https://www.schleswig-holstein.de/DE/Schwerpunkte/Coronavirus/coronavirus_node.html;jsessionid=8651006488D177B24833E4A56502FC06.delivery1-master'},
+    {bundeslandId: 2, bundeslandName: 'Hamburg', landerverodnung: 'https://www.hamburg.de/coronavirus/'},
+    {bundeslandId: 3, bundeslandName: 'Niedersachsen', landerverodnung: 'https://www.niedersachsen.de/Coronavirus'},
+    {bundeslandId: 4, bundeslandName: 'Bremen', landerverodnung: 'https://www.bremen.de/corona'},
+    {bundeslandId: 5, bundeslandName: 'Nordrhein-Westfalen', landerverodnung: 'https://www.land.nrw/corona'},
+    {bundeslandId: 6, bundeslandName: 'Hessen', landerverodnung: 'https://www.hessen.de/fuer-buerger/aktuelle-informationen-zu-corona-hessen'},
+    {bundeslandId: 7, bundeslandName: 'Rheinland-Pfalz', landerverodnung: 'https://corona.rlp.de/de/startseite/'},
+    {bundeslandId: 8, bundeslandName: 'Baden-Württemberg', landerverodnung: 'https://www.baden-wuerttemberg.de/de/service/aktuelle-infos-zu-corona/'},
+    {bundeslandId: 9, bundeslandName: 'Bayern', landerverodnung: 'https://www.bayern.de/coronavirus-in-bayern-informationen-auf-einen-blick/'},
+    {bundeslandId: 10, bundeslandName: 'Saarland', landerverodnung: 'https://corona.saarland.de/DE/home/home_node.html'},
+    {bundeslandId: 11, bundeslandName: 'Berlin', landerverodnung: 'https://www.berlin.de/corona/'},
+    {bundeslandId: 12, bundeslandName: 'Brandenburg', landerverodnung: 'https://kkm.brandenburg.de/kkm/de/'},
+    {bundeslandId: 13, bundeslandName: 'Mecklenburg-Vorpommern', landerverodnung: 'https://www.regierung-mv.de/corona/'},
+    {bundeslandId: 14, bundeslandName: 'Sachsen', landerverodnung: 'https://www.coronavirus.sachsen.de/index.html'},
+    {bundeslandId: 15, bundeslandName: 'Sachsen-Anhalt', landerverodnung: 'https://coronavirus.sachsen-anhalt.de/'},
+    {bundeslandId: 16, bundeslandName: 'Thüringen', landerverodnung: 'https://corona.thueringen.de/'}
   ]
 }
 

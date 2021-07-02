@@ -3,9 +3,13 @@ import {Observable, Observer} from 'rxjs'
 import {rootingPath} from '../shared/rooting-path'
 import {CovidService} from '../core/covid-19.service'
 import {SortService} from '../core/sort.service'
-import {IFederalCountry} from '../model/federal-country.interface'
-import {ActivatedRoute} from '@angular/router'
+import {ActivatedRoute, ChildActivationEnd, Router} from '@angular/router'
 import {CommunicationService} from '../core/communication.service'
+import {MatTabChangeEvent} from '@angular/material/tabs'
+import {filter, take} from 'rxjs/operators'
+import {constFederalState} from '../shared/constante'
+import {IFederalCountryData} from '../model/federal-country.interface'
+import {IFederalCountry} from '../model/federal-country-data.interface'
 
 
 @Component({
@@ -17,9 +21,11 @@ export class TopWerteComponent implements OnInit {
   readonly homePath: string
   readonly lvoPath: string
 
-  federalContriesData: IFederalCountry[] = []
-  topValues: IFederalCountry[] = []
+  federalContriesData: IFederalCountryData[] = []
+  selectedFederalContry: IFederalCountry = {} as IFederalCountry
+  topValues: IFederalCountryData[] = []
   currentPillId = ''
+  currentPath: string | undefined
 
 
   totalPopulation = 0
@@ -35,12 +41,24 @@ export class TopWerteComponent implements OnInit {
     private covidService: CovidService,
     private sortService: SortService,
     private activatedRoute: ActivatedRoute,
-    private comService: CommunicationService
+    private comService: CommunicationService,
+    private router: Router
   ) {
     this.homePath = '/' + rootingPath.home
     this.lvoPath = 'https://www.schleswig-holstein.de/DE/Schwerpunkte/Coronavirus/_documents/teaser_erlasse.html#doc6e00366d-8e07-4704-bced-88e5c28e9363bodyText1'
 
-    this.activatedRoute.params.subscribe((params: any) =>  this.currentPillId = params.pillId)
+
+    // to get the current url
+    this.router.events.pipe(
+      filter(event => event instanceof ChildActivationEnd),
+      take(1),
+    ).subscribe(event => {
+      // @ts-ignore
+      this.currentPath = event.snapshot._routerState.url.replace('/', '')
+      console.log(this.currentPath)
+    })
+
+    this.activatedRoute.params.subscribe((params: any) => this.currentPillId = params.pillId)
   }
 
   ngOnInit(): void {
@@ -48,12 +66,21 @@ export class TopWerteComponent implements OnInit {
     this.getDataByCountry()
   }
 
+  onTabClicked(event: MatTabChangeEvent): void {
+    this.asyncTabs?.subscribe(values => {
+      console.log(values[event.index])
+      this.selectedFederalContry = constFederalState.values.filter(fedSt => fedSt.bundeslandName === values[event.index].label)[0]
+      this.comService.setCountryOrdinanceUrl(this.selectedFederalContry.landerverodnung)
+      console.log(this.selectedFederalContry)
+    })
+  }
+
   private getDataByCountry(): void {
     this.covidService.getforAllBundesland().subscribe(
       (results: any) => {
         if (results) {
           results.features.forEach((item: any) => {
-            const countryData: IFederalCountry = {} as IFederalCountry
+            const countryData: IFederalCountryData = {} as IFederalCountryData
 
             countryData.incident = parseFloat(item.attributes.cases7_bl_per_100k_txt.replace(',', '.'))
             countryData.aktualisierung = item.attributes.Aktualisierung
@@ -65,13 +92,14 @@ export class TopWerteComponent implements OnInit {
             countryData.faelle = item.attributes.faelle_100000_EW
 
             this.federalContriesData.push(countryData)
+            console.log(this.federalContriesData)
           })
 
           if (this.currentPillId === 'top_niedrigste_inzidenz' || this.currentPillId === 'top_urlaubsorte') {
             this.getTopLowIncidentCountries()
           }
           if (this.currentPillId === 'risikogebiete') {
-              this.getTopRisikogebiete()
+            this.getTopRisikogebiete()
           }
         }
       },
@@ -81,11 +109,8 @@ export class TopWerteComponent implements OnInit {
 
   private getTopLowIncidentCountries(): void {
     this.fetchTopIncidence(true)
-    const labelNames = this.topValues.map((value: IFederalCountry) => value.lAN_ew_GEN)
+    const labelNames = this.topValues.map((value: IFederalCountryData) => value.lAN_ew_GEN)
     this.setNavBarTabs(labelNames)
-   /* labelNames.forEach(() => {
-      this.getIncidenz()
-    })*/
     if (labelNames?.length > 0) {
       this.getIncidenz()
     }
@@ -100,14 +125,13 @@ export class TopWerteComponent implements OnInit {
 
   private getTopRisikogebiete(): void {
     this.fetchTopIncidence(false)
-    const labelNames = this.topValues.map((value: IFederalCountry) => value.lAN_ew_GEN)
+    const labelNames = this.topValues.map((value: IFederalCountryData) => value.lAN_ew_GEN)
     this.setNavBarTabs(labelNames)
-    console.log(this.topValues)
   }
 
   private getIncidenz(): void {
     this.fetchTopIncidence(true)
-    this.topValues.map((value: IFederalCountry) => {
+    this.topValues.map((value: IFederalCountryData) => {
       this.incident = value.incident
       this.todesFaelle = value.death
       this.totalCase = value.fallzahl

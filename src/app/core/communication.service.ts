@@ -8,6 +8,7 @@ export class CommunicationService {
   private impressum: Subject<boolean> = new Subject<boolean>()
   private aboutUs: Subject<boolean> = new Subject<boolean>()
   private countryOrdinance: Subject<boolean> = new Subject<boolean>()
+  private countryOrdinanceUrl: Subject<string> = new Subject<string>()
   private otherMeasure: Subject<boolean> = new Subject<boolean>()
 
 
@@ -39,6 +40,15 @@ export class CommunicationService {
 
   getCountryOrdinance(): Observable<boolean> {
     return this.countryOrdinance.asObservable()
+  }
+
+  /*** Country ordinance url ***/
+  setCountryOrdinanceUrl(value: string): void {
+    this.countryOrdinanceUrl.next(value)
+  }
+
+  getCountryOrdinanceUrl(): Observable<string> {
+    return this.countryOrdinanceUrl.asObservable()
   }
 
   /*** Other measure ***/

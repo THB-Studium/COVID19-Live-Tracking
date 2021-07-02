@@ -4,19 +4,23 @@
 <img id="afri-care-logo"
      routerLink="{{homePath}}"
      class="pointer"
-     src="assets/logo/afri-care-germany-logo-2.png">
+     src="assets/logo/afri-care-germany-logo.png">
 
 <h1>Wilkommen zu Covid-19 Live-Tracking</h1>
 
 <!-- SEARCH TERM FIELD -->
 <div id="input-search-term">
+  <!-- MatInputModule from Angular materials: https://material.angular.io/components/input/overview -->
   <mat-form-field appearance="outline" id="searchCountryForm">
     <input (keyup)="applyFilter($event.target)" [matAutocomplete]="stateAutoComplete" id="suchTerm" matInput
            name="suchTerm" type="text"
            placeholder="Nach Bundesland suchen"
            title="Nach Bundesland suchen">
+
+    <!-- MatIconModule from Angular materials: https://material.angular.io/components/icon/overview -->
     <mat-icon matSuffix>search</mat-icon>
 
+    <!-- MatAutocompleteModule from Angular materials: https://material.angular.io/components/autocomplete/overview -->
     <mat-autocomplete #stateAutoComplete="matAutocomplete">
       <mat-option (onSelectionChange)="navTo(state)" *ngFor="let state of filteredList"
                   [value]="state">
@@ -97,7 +101,7 @@
 
   <!-- TOP LINKS -->
   <div class="col-md-2 top-links">
-    <h2>Top Links</h2>
+    <h2>Beste Urlaubsorten Deutschlands</h2>
 
     <ul *ngFor="let topLink of topLinks">
       <li><a class="margin-left-15px" href="{{topLink.url}}" target="'_blank'">{{topLink.name}}</a></li>

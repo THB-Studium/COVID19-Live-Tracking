@@ -3,7 +3,7 @@
   <span *ngIf="onImpressum && onAboutUs"> | </span>
   <a *ngIf="onAboutUs" routerLink="{{aboutUsPath}}">Über uns</a>
   <span *ngIf="onAboutUs && onCountryOrdinance"> | </span>
-  <a *ngIf="onCountryOrdinance" href="" target="'_blank'">Link zur Landerverodnung</a>
+  <a *ngIf="onCountryOrdinance" href="{{countryOrdinanceUrl}}" target="'_blank'">Link zur Landerverodnung</a>
   <span *ngIf="onCountryOrdinance && onOtherMeasure"> | </span>
   <a *ngIf="onOtherMeasure" routerLink="" target="'_blank'">Weitere Maßnahme</a>
 </footer>

@@ -1,7 +1,7 @@
 <body class="body bodyHeight">
   <div>
     <!--  MatTabsModule from Angular materials: https://material.angular.io/components/tabs/overview  -->
-    <mat-tab-group>
+    <mat-tab-group (selectedTabChange)="onTabClicked($event)">
       <mat-tab *ngFor="let tab of asyncTabs | async">
         <ng-template mat-tab-label>{{tab.label}}</ng-template>
 

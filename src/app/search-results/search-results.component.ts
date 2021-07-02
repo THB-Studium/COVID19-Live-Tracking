@@ -45,7 +45,7 @@ export class SearchResultsComponent implements OnInit {
         if (params.pillId) {
           this.bundesLandName = params.pillId
           const bundesLandId = constFederalState.values.filter(
-            fedSt => fedSt.BundeslandName.toLowerCase() === this.bundesLandName.toLowerCase())[0].BundeslandId
+            fedSt => fedSt.bundeslandName.toLowerCase() === this.bundesLandName.toLowerCase())[0].bundeslandId
           if (bundesLandId) {
             this.getDataByCountryId(bundesLandId)
           }

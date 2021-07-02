@@ -84,6 +84,8 @@ mat-option {
 }
 
 .top-links li a {
+  font-size: 14px;
+  line-height: 18px;
   text-align: start;
 }
 

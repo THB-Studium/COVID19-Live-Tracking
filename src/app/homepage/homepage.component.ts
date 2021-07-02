@@ -35,7 +35,7 @@ export class HomepageComponent implements OnInit {
     private covidService: CovidService,
     private comService: CommunicationService
   ) {
-    this.federalStatesName = constFederalState.values.map(federalState => federalState.BundeslandName)
+    this.federalStatesName = constFederalState.values.map(federalState => federalState.bundeslandName)
     this.topWertePath = '/' + rootingPath.top_werte
     this.topLinks = constTopLinks.values
     this.homePath = '/' + rootingPath.home
