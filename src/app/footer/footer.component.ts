@@ -27,8 +27,8 @@ export class FooterComponent implements OnInit {
   ngOnInit(): void {
     this.comService.getImpressum().subscribe((value: boolean) => this.onImpressum = value)
     this.comService.getAboutUs().subscribe((value: boolean) => this.onAboutUs = value)
-    this.comService.getCountryOrdinance().subscribe((value: boolean) => this.onCountryOrdinance = value)
-    this.comService.getCountryOrdinanceUrl().subscribe((value: string) => this.countryOrdinanceUrl = value)
+    this.comService.getFederalStateOrdinance().subscribe((value: boolean) => this.onCountryOrdinance = value)
+    this.comService.getFederalStateOrdinanceUrl().subscribe((value: string) => this.countryOrdinanceUrl = value)
     this.comService.getOtherMeasure().subscribe((value: boolean) => this.onOtherMeasure = value)
   }
 

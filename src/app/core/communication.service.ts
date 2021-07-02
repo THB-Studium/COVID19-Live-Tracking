@@ -7,8 +7,8 @@ export class CommunicationService {
 
   private impressum: Subject<boolean> = new Subject<boolean>()
   private aboutUs: Subject<boolean> = new Subject<boolean>()
-  private countryOrdinance: Subject<boolean> = new Subject<boolean>()
-  private countryOrdinanceUrl: Subject<string> = new Subject<string>()
+  private federalStateOrdinance: Subject<boolean> = new Subject<boolean>()
+  private federalStateOrdinanceUrl: Subject<string> = new Subject<string>()
   private otherMeasure: Subject<boolean> = new Subject<boolean>()
 
 
@@ -33,22 +33,22 @@ export class CommunicationService {
     return this.aboutUs.asObservable()
   }
 
-  /*** Country ordinance ***/
-  setCountryOrdinance(value: boolean): void {
-    this.countryOrdinance.next(value)
+  /*** Federal state ordinance ***/
+  setFederalStateOrdinance(value: boolean): void {
+    this.federalStateOrdinance.next(value)
   }
 
-  getCountryOrdinance(): Observable<boolean> {
-    return this.countryOrdinance.asObservable()
+  getFederalStateOrdinance(): Observable<boolean> {
+    return this.federalStateOrdinance.asObservable()
   }
 
-  /*** Country ordinance url ***/
-  setCountryOrdinanceUrl(value: string): void {
-    this.countryOrdinanceUrl.next(value)
+  /*** Federal state ordinance url ***/
+  setFederalStateOrdinanceUrl(value: string): void {
+    this.federalStateOrdinanceUrl.next(value)
   }
 
-  getCountryOrdinanceUrl(): Observable<string> {
-    return this.countryOrdinanceUrl.asObservable()
+  getFederalStateOrdinanceUrl(): Observable<string> {
+    return this.federalStateOrdinanceUrl.asObservable()
   }
 
   /*** Other measure ***/
@@ -64,7 +64,7 @@ export class CommunicationService {
   resetAll(): void {
     this.setImpressum(false)
     this.setAboutUs(false)
-    this.setCountryOrdinance(false)
+    this.setFederalStateOrdinance(false)
     this.setOtherMeasure(false)
   }
 

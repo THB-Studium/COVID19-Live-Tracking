@@ -45,7 +45,7 @@ export class SearchResultsComponent implements OnInit {
         if (params.pillId) {
           this.bundesLandName = params.pillId
           const bundesLandId = constFederalState.values.filter(
-            fedSt => fedSt.bundeslandName.toLowerCase() === this.bundesLandName.toLowerCase())[0].bundeslandId
+            fedSt => fedSt.federalStateName.toLowerCase() === this.bundesLandName.toLowerCase())[0].federalStateId
           if (bundesLandId) {
             this.getDataByCountryId(bundesLandId)
           }
@@ -72,7 +72,7 @@ export class SearchResultsComponent implements OnInit {
     this.comService.resetAll()
     this.comService.setImpressum(true)
     this.comService.setAboutUs(true)
-    this.comService.setCountryOrdinance(true)
+    this.comService.setFederalStateOrdinance(true)
     this.comService.setOtherMeasure(true)
   }
 
