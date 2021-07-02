@@ -23,17 +23,16 @@ export class TopWerteComponent implements OnInit {
 
   federalStatesData: IFederalStatesData[] = []
   selectedFederalState: IFederalState = {} as IFederalState
+  selectedFederalStateDatas: IFederalStatesData = {} as IFederalStatesData
   topValues: IFederalStatesData[] = []
   currentPillId = ''
   currentPath: string | undefined
 
-
-  totalPopulation = 0
-  totalCase = 780
-  incident = 950
-  fallzahl7Tage = 150
-  todesFaelle = 230
-  sterben7 = 560
+  totalCase = 0
+  incident = 0
+  fallzahl7Tage = 0
+  todesFaelle = 0
+  sterben7 = 0
   chartWidth = 500
   asyncTabs: Observable<any[]> | undefined
 
@@ -71,7 +70,9 @@ export class TopWerteComponent implements OnInit {
       console.log(values[event.index])
       this.selectedFederalState = constFederalState.values.filter(fedSt => fedSt.federalStateName === values[event.index].label)[0]
       this.comService.setFederalStateOrdinanceUrl(this.selectedFederalState.federalStateOrdinance)
-      console.log(this.selectedFederalState)
+      this.selectedFederalStateDatas = this.federalStatesData
+        .filter(data => data.lAN_ew_GEN === this.selectedFederalState.federalStateName)[0]
+      console.log(this.selectedFederalStateDatas)
     })
   }
 
@@ -92,7 +93,6 @@ export class TopWerteComponent implements OnInit {
             countryData.faelle = item.attributes.faelle_100000_EW
 
             this.federalStatesData.push(countryData)
-            console.log(this.federalStatesData)
           })
 
           if (this.currentPillId === 'top_niedrigste_inzidenz' || this.currentPillId === 'top_urlaubsorte') {

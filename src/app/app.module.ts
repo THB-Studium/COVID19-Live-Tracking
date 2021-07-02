@@ -25,15 +25,17 @@ import {FooterComponent} from './footer/footer.component'
 import {ChartComponent} from './chart/chart.component'
 import {MatGridListModule} from '@angular/material/grid-list'
 import {ChartsModule} from 'ng2-charts'
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap'
+import {NgbCarouselModule, NgbModule} from '@ng-bootstrap/ng-bootstrap'
 import {MatTabsModule} from '@angular/material/tabs'
 import {SortService} from './core/sort.service'
 
 
 const angularMaterialModules = [
   MatFormFieldModule, MatIconModule, MatInputModule, MatGridListModule,
-  MatOptionModule, MatAutocompleteModule, MatTabsModule, NgbModule
+  MatOptionModule, MatAutocompleteModule, MatTabsModule
 ]
+
+const bootstrapModules = [NgbModule, NgbCarouselModule]
 
 @NgModule({
   declarations: [
@@ -51,12 +53,13 @@ const angularMaterialModules = [
   ],
   imports: [
     angularMaterialModules,
+    bootstrapModules,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    ChartsModule
+    ChartsModule,
   ],
   providers: [
     {
