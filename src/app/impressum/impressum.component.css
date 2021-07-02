@@ -1,7 +1,7 @@
 .contact {
   margin: auto;
-  width: 1132px;
-  height: 457px;
+  width: 70%;
+  height: 15%;
   left: 151px;
   top: 328px;
   text-align: center !important;
@@ -13,7 +13,7 @@
   margin: auto;
   width: 125px;
   height: 270px;
-  background: url("../../assets/logo/afri-care-logo-ohne.png") no-repeat center;
+  background: url("../../assets/logo/afri-care-germany-logo-2.png") no-repeat center;
   background-size: contain;
   cursor: pointer;
 }
@@ -27,11 +27,18 @@ h1 {
 }
 
 h2 {
-  margin-top: 50px;
   font-family: "Montserrat Light", sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 28px;
+}
+
+#branch {
+  margin-top: -10px;
+}
+
+#contact-head {
+  margin-top: 50px;
 }
 
 p {
