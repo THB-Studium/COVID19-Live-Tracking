@@ -1,7 +1,7 @@
 <body class="body bodyHeight" id="home_body">
 
 <!-- Afri-care-germany logo -->
-<img id="afri-care-logo"
+<img id="afri-care-logo" alt="afri-care logo"
      routerLink="{{homePath}}"
      class="pointer"
      src="assets/logo/afri-care-germany-logo.png">
@@ -25,10 +25,11 @@
 
   <div class="unser-team">
     <h2>Unser Team</h2>
-    <div *ngFor="let member of teamMembers; let i = index" class="team_member">
-      <div (click)="navTo(member.name)" [class]="'member' + (i+1)">
-        <a class="role">{{member.name}}</a>
-        <p>({{member.role}})</p>
+    <div *ngFor="let member of teamMembers; let i = index" class="team-member">
+      <div id="member{{i+1}}" (click)="navTo(member.name)">
+        <img class="member-picture pointer" [src]="member.imagePath">
+        <a class="member-name pointer">{{member.name}}</a><br>
+        <p class="member-role">({{member.role}})</p>
       </div>
     </div>
   </div>

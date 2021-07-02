@@ -37,12 +37,11 @@ h2 {
 }
 
 .border-wrapper {
-  width: auto;
-  height: auto;
+  min-width: 25em;
   background: #242832;
   border: 2px solid #6EB1D5;
   box-sizing: border-box;
-  margin: 6em;
+  margin: 6em 6em 0em 6em;
   text-align: center;
 }
 
@@ -70,22 +69,6 @@ h2 {
 #bundesLandMapSmall p {
   font-size: 9px;
   letter-spacing: 0.5px;
-}
-
-
-
-.iLabel {
-  left: calc(50% - 213px / 2 - 420px);
-  top: calc(50% - 45.56px / 2 - 213.72px);
-
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 42px;
-  text-align: center;
-
-  color: #CCC5B9;
 }
 
 .bundesLandImage {
@@ -120,6 +103,6 @@ h2 {
   text-align: center;
 }
 
-.shift-right {
-  /*margin-right: 0em;*/
+.my-footer {
+  /*bottom: 0.002% !important;*/
 }

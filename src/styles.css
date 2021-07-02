@@ -1,10 +1,11 @@
 /** style of body of the index html ***/
 html, body {
-  min-width: 1018px;
+  /*min-width: 1018px;*/
 }
 body {
   display: block;
   margin: 0;
+  padding-bottom: 20px;
   background-color: #1C232B;
 }
 
@@ -14,9 +15,10 @@ body {
 
 #afri-care-logo {
   position: absolute;
-  left: 4.5%;
-  top: 7%;
-  max-width: 6%;
+  left: 3em;
+  top: 3em;
+  max-width: 4%;
+  min-width: 1em;
 }
 
 
@@ -77,13 +79,11 @@ a:hover {
   border-color: #6EB1D5;
 }
 
-footer {
-  clear: both;
-  position: absolute;
-  min-width: 555px;
-  height: 30px;
-  left: 2.2em;
-  bottom: 1.6%;
+.my-footer {
+  min-width: 51em;
+  max-width: 55%;
+  margin-left: 30px;
+  bottom: 10%;
   background: #6EB1D5;
 
   font-family: 'Montserrat', sans-serif;
@@ -95,10 +95,14 @@ footer {
   align-items: center;
 }
 
-footer, footer span, footer a {
+.my-footer, .my-footer span, .my-footer a {
   color: #4D5964;
 }
-footer a:hover {
+
+.my-footer span, .my-footer a {
+  margin: 5px 0 5px 0;
+}
+.my-footer a:hover {
   color: #4D5964;
   border-color: #FFFCF2;
 }
@@ -113,7 +117,8 @@ footer a:hover {
 
 .body {
   background: #242832;
-  margin: 50px 30px 30px 30px;
+  margin: 50px 30px 0px 30px;
+  min-width: 45em;
   padding-top: 10px;
   text-align: center;
 }
