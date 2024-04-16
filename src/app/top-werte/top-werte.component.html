@@ -18,7 +18,7 @@
               <app-chart
                 [chartLabelName]="'7 Tage Inzidenz'"
                 [positionLabel]="'bottom'"
-                [caseValue]= "selectedFederalStateDatas?.incident"
+                [caseValue]= "selectedFederalStateDatas.incident"
                 [totalValue]="0"
                 [chartWidth]="chartWidth"></app-chart>
             </div>
@@ -26,32 +26,32 @@
               <app-chart
                 [chartLabelName]="'Fallzahl Gesamt'"
                 [positionLabel]="'bottom'"
-                [caseValue]="selectedFederalStateDatas?.fallzahl"
-                [totalValue]="selectedFederalStateDatas?.faelle"
+                [caseValue]="selectedFederalStateDatas.fallzahl"
+                [totalValue]="selectedFederalStateDatas.faelle"
                 [chartWidth]="chartWidth"></app-chart>
             </div>
             <div class="chart-content">
               <app-chart
                 [chartLabelName]="'Todesfälle Gesamt'"
                 [positionLabel]="'bottom'"
-                [caseValue]="selectedFederalStateDatas?.death"
-                [totalValue]="selectedFederalStateDatas?.faelle"
+                [caseValue]="selectedFederalStateDatas.death"
+                [totalValue]="selectedFederalStateDatas.faelle"
                 [chartWidth]="chartWidth"></app-chart>
             </div>
             <div class="chart-content">
               <app-chart
                 [chartLabelName]="'7 Tage Sterbezahl'"
                 [positionLabel]="'bottom'"
-                [caseValue]="selectedFederalStateDatas?.death7_bl"
-                [totalValue]="selectedFederalStateDatas?.faelle"
+                [caseValue]="selectedFederalStateDatas.death7_bl"
+                [totalValue]="selectedFederalStateDatas.faelle"
                 [chartWidth]="chartWidth"></app-chart>
             </div>
             <div class="chart-content">
               <app-chart
                 [chartLabelName]="' 7 Tage Fallzahl'"
                 [positionLabel]="'bottom'"
-                [caseValue]="selectedFederalStateDatas?.cases7_bl"
-                [totalValue]="selectedFederalStateDatas?.faelle"
+                [caseValue]="selectedFederalStateDatas.cases7_bl"
+                [totalValue]="selectedFederalStateDatas.faelle"
                 [chartWidth]="chartWidth"></app-chart>
             </div>
 <!--           <div class="chart-content">-->

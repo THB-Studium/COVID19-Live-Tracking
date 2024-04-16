@@ -17,8 +17,7 @@ import {FormsModule} from '@angular/forms'
 import {MatInputModule} from '@angular/material/input'
 import {MatOptionModule} from '@angular/material/core'
 import {MatAutocompleteModule} from '@angular/material/autocomplete'
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http'
-import {AuthInterceptor} from './core/auth.Interceptor'
+import {HttpClientModule} from '@angular/common/http'
 import {CovidService} from './core/covid-19.service'
 import {TopWerteComponent} from './top-werte/top-werte.component'
 import {FooterComponent} from './footer/footer.component'
@@ -62,11 +61,6 @@ const bootstrapModules = [NgbModule, NgbCarouselModule]
     ChartsModule,
   ],
   providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptor,
-      multi: true
-    },
     angularMaterialModules,
     CovidService,
     SortService

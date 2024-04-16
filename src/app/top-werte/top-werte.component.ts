@@ -25,7 +25,7 @@ export class TopWerteComponent implements OnInit {
   selectedFederalState: IFederalState = {} as IFederalState
   selectedFederalStateDatas: IFederalStatesData = {} as IFederalStatesData
   topValues: IFederalStatesData[] = []
-  currentPillId = ''
+  currentPillId: string = ''
   currentPath: string | undefined
 
   totalCase = 0
@@ -80,7 +80,7 @@ export class TopWerteComponent implements OnInit {
     this.covidService.getforAllBundesland().subscribe(
       (results: any) => {
         if (results) {
-          results.features.forEach((item: any) => {
+          results.features.forEach((item: any): void => {
             const countryData: IFederalStatesData = {} as IFederalStatesData
 
             countryData.incident = parseFloat(item.attributes.cases7_bl_per_100k_txt.replace(',', '.'))
