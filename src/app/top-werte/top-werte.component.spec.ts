@@ -11,14 +11,14 @@ describe('TopWerteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
+    imports: [
         HttpClientTestingModule, RouterTestingModule,
-      ],
-      declarations: [TopWerteComponent],
-      providers: [
+        TopWerteComponent
+    ],
+    providers: [
         SortService
-      ]
-    })
+    ]
+})
       .compileComponents()
   })
 

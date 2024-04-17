@@ -1,16 +1,25 @@
 import {Component, OnInit} from '@angular/core'
 import {rootingPath} from '../shared/rooting-path'
-import {Router} from '@angular/router'
+import { Router, RouterLink } from '@angular/router'
 import {CovidService} from '../core/covid-19.service'
 import {constFederalState, constTopLinks} from '../shared/constante'
 import {CommunicationService} from '../core/communication.service'
 import {ITopLink} from '../model/top-link.interface'
 import {IFederalState} from '../model/federal-states-data.interface'
+import { ChartComponent } from '../chart/chart.component';
+import { MatLegacyOptionModule } from '@angular/material/legacy-core';
+import { NgFor } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
+import { MatLegacyAutocompleteModule } from '@angular/material/legacy-autocomplete';
+import { MatLegacyInputModule } from '@angular/material/legacy-input';
+import { MatLegacyFormFieldModule } from '@angular/material/legacy-form-field';
 
 @Component({
-  selector: 'app-homepage',
-  templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.css']
+    selector: 'app-homepage',
+    templateUrl: './homepage.component.html',
+    styleUrls: ['./homepage.component.css'],
+    standalone: true,
+    imports: [RouterLink, MatLegacyFormFieldModule, MatLegacyInputModule, MatLegacyAutocompleteModule, MatIconModule, NgFor, MatLegacyOptionModule, ChartComponent]
 })
 export class HomepageComponent implements OnInit {
   filteredList: Array<any> = []

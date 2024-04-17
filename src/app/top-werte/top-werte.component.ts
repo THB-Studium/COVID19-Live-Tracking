@@ -3,19 +3,23 @@ import {Observable, Observer} from 'rxjs'
 import {rootingPath} from '../shared/rooting-path'
 import {CovidService} from '../core/covid-19.service'
 import {SortService} from '../core/sort.service'
-import {ActivatedRoute, ChildActivationEnd, Router} from '@angular/router'
+import { ActivatedRoute, ChildActivationEnd, Router, RouterLink } from '@angular/router'
 import {CommunicationService} from '../core/communication.service'
-import {MatLegacyTabChangeEvent as MatTabChangeEvent} from '@angular/material/legacy-tabs'
+import { MatLegacyTabChangeEvent as MatTabChangeEvent, MatLegacyTabsModule } from '@angular/material/legacy-tabs'
 import {filter, take} from 'rxjs/operators'
 import {constFederalState} from '../shared/constante'
 import {IFederalState} from '../model/federal-states-data.interface'
 import {IFederalStatesData} from '../model/federal-state.interface'
+import { ChartComponent } from '../chart/chart.component';
+import { NgFor, AsyncPipe } from '@angular/common';
 
 
 @Component({
-  selector: 'app-top-werte',
-  templateUrl: './top-werte.component.html',
-  styleUrls: ['./top-werte.component.css']
+    selector: 'app-top-werte',
+    templateUrl: './top-werte.component.html',
+    styleUrls: ['./top-werte.component.css'],
+    standalone: true,
+    imports: [MatLegacyTabsModule, NgFor, RouterLink, ChartComponent, AsyncPipe]
 })
 export class TopWerteComponent implements OnInit {
   readonly homePath: string

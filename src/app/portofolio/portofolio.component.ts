@@ -1,15 +1,18 @@
 import {Component, OnInit, ViewChild} from '@angular/core'
 import {rootingPath} from '../shared/rooting-path'
-import {ActivatedRoute, Router} from '@angular/router'
+import { ActivatedRoute, Router, RouterLink } from '@angular/router'
 import {constTeamMember} from '../shared/constante'
 import {IMember} from '../model/member.interface'
-import {NgbCarousel, NgbSlideEvent} from '@ng-bootstrap/ng-bootstrap'
+import { NgbCarousel, NgbSlideEvent, NgbSlide } from '@ng-bootstrap/ng-bootstrap'
 import {CommunicationService} from '../core/communication.service'
+import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-portofolio',
-  templateUrl: './portofolio.component.html',
-  styleUrls: ['./portofolio.component.css']
+    selector: 'app-portofolio',
+    templateUrl: './portofolio.component.html',
+    styleUrls: ['./portofolio.component.css'],
+    standalone: true,
+    imports: [RouterLink, NgbCarousel, NgFor, NgbSlide]
 })
 export class PortofolioComponent implements OnInit {
   @ViewChild('carousel', {static: true}) myCarousel: NgbCarousel | undefined

@@ -1,7 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser'
 import {NgModule} from '@angular/core'
-
-import {AppRoutingModule} from './app-routing.module'
 import {AppComponent} from './app.component'
 import {HeaderComponent} from './header/header.component'
 import {HomepageComponent} from './homepage/homepage.component'
@@ -27,18 +25,62 @@ import {ChartsModule} from 'ng2-charts'
 import {NgbCarouselModule, NgbModule} from '@ng-bootstrap/ng-bootstrap'
 import {MatLegacyTabsModule as MatTabsModule} from '@angular/material/legacy-tabs'
 import {SortService} from './core/sort.service'
+import {RouterModule, Routes} from "@angular/router";
+import {rootingPath} from "./shared/rooting-path";
 
 
-const angularMaterialModules = [
-  MatFormFieldModule, MatIconModule, MatInputModule, MatGridListModule,
-  MatOptionModule, MatAutocompleteModule, MatTabsModule
+const routes: Routes = [
+  {path: '', pathMatch: 'full', redirectTo: '/' + rootingPath.home},
+  {
+    path: rootingPath.home,
+    loadComponent: () => import('./homepage/homepage.component')
+      .then(module => module.HomepageComponent)
+  },
+  {
+    path: rootingPath.search_results + '/:pillId',
+    loadComponent: () => import('./search-results/search-results.component')
+      .then(module => module.SearchResultsComponent)
+  },
+  {
+    path: rootingPath.top_werte + '/:pillId',
+    loadComponent: () => import('./top-werte/top-werte.component')
+      .then(module => module.TopWerteComponent)
+  },
+  {
+    path: rootingPath.about,
+    loadComponent: () => import('./about-us/about-us.component')
+      .then(module => module.AboutUsComponent)
+  },
+  {
+    path: rootingPath.about + '/:pillId',
+    loadComponent: () => import('./portofolio/portofolio.component')
+      .then(module => module.PortofolioComponent)
+  },
+  {
+    path: rootingPath.impressum,
+    loadComponent: () => import('./impressum/impressum.component')
+      .then(module => module.ImpressumComponent)
+  },
 ]
 
-const bootstrapModules = [NgbModule, NgbCarouselModule]
-
 @NgModule({
-  declarations: [
-    AppComponent,
+  declarations: [AppComponent],
+  imports: [
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatGridListModule,
+    MatOptionModule,
+    MatAutocompleteModule,
+    MatTabsModule,
+    NgbModule,
+    NgbCarouselModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    HttpClientModule,
+    ChartsModule,
+    RouterModule.forRoot(routes),
     HeaderComponent,
     HomepageComponent,
     AboutUsComponent,
@@ -50,18 +92,14 @@ const bootstrapModules = [NgbModule, NgbCarouselModule]
     FooterComponent,
     ChartComponent
   ],
-  imports: [
-    angularMaterialModules,
-    bootstrapModules,
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    FormsModule,
-    HttpClientModule,
-    ChartsModule,
-  ],
   providers: [
-    angularMaterialModules,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatGridListModule,
+    MatOptionModule,
+    MatAutocompleteModule,
+    MatTabsModule,
     CovidService,
     SortService
   ],

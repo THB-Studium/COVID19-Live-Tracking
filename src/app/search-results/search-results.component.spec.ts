@@ -12,12 +12,12 @@ describe('SearchResultsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        HttpClientTestingModule, RouterTestingModule
-      ],
-      declarations: [SearchResultsComponent, ChartComponent],
-      providers: [SortService]
-    })
+    imports: [
+        HttpClientTestingModule, RouterTestingModule,
+        SearchResultsComponent, ChartComponent
+    ],
+    providers: [SortService]
+})
       .compileComponents()
   })
 

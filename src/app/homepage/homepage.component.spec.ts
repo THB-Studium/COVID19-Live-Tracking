@@ -11,11 +11,11 @@ describe('HomepageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        HttpClientTestingModule, RouterTestingModule, MatAutocompleteModule
-      ],
-      declarations: [HomepageComponent]
-    })
+    imports: [
+        HttpClientTestingModule, RouterTestingModule, MatAutocompleteModule,
+        HomepageComponent
+    ]
+})
       .compileComponents()
   })
 

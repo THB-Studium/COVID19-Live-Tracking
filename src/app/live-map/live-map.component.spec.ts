@@ -8,10 +8,8 @@ describe('LiveMapComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [
-        LiveMapComponent
-      ]
-    })
+    imports: [LiveMapComponent]
+})
       .compileComponents()
   })
 

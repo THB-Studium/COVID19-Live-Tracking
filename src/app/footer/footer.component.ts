@@ -1,11 +1,15 @@
 import {Component, OnInit} from '@angular/core'
 import {rootingPath} from '../shared/rooting-path'
 import {CommunicationService} from '../core/communication.service'
+import { RouterLink } from '@angular/router';
+import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-footer',
-  templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.css']
+    selector: 'app-footer',
+    templateUrl: './footer.component.html',
+    styleUrls: ['./footer.component.css'],
+    standalone: true,
+    imports: [NgIf, RouterLink]
 })
 export class FooterComponent implements OnInit {
   onImpressum: boolean | undefined
