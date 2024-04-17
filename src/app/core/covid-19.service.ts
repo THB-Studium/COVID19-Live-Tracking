@@ -7,7 +7,8 @@ import {environment} from '../../environments/environment'
 @Injectable({providedIn: 'root'})
 export class CovidService {
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+  }
 
 
   /*** TO GET ALL COVID-19 VALUES BY COUNTRIES:
@@ -28,8 +29,8 @@ export class CovidService {
   /*** TO GET ALL COVID-19 VALUES OF ALL FEDERAL STATES:
    * The data come from the arcgis free API (https://services7.arcgis.com/mOBPykOjAyBO2ZKk/ArcGIS/rest/services/) ***/
   getforAllBundesland(): any {
-  return this.httpClient.get<Response>(environment.fetchAllFederalStatesBaseUrl)
-    .pipe(map((res: Response) => res))
+    return this.httpClient.get<Response>(environment.fetchAllFederalStatesBaseUrl)
+      .pipe(map((res: Response) => res))
   }
 
 }

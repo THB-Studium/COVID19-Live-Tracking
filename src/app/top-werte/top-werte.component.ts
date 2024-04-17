@@ -3,27 +3,27 @@ import {Observable, Observer} from 'rxjs'
 import {rootingPath} from '../shared/rooting-path'
 import {CovidService} from '../core/covid-19.service'
 import {SortService} from '../core/sort.service'
-import { ActivatedRoute, ChildActivationEnd, Router, RouterLink } from '@angular/router'
+import {ActivatedRoute, ChildActivationEnd, Router, RouterLink} from '@angular/router'
 import {CommunicationService} from '../core/communication.service'
-import { MatLegacyTabChangeEvent as MatTabChangeEvent, MatLegacyTabsModule } from '@angular/material/legacy-tabs'
+import {MatLegacyTabChangeEvent as MatTabChangeEvent} from '@angular/material/legacy-tabs'
 import {filter, take} from 'rxjs/operators'
 import {constFederalState} from '../shared/constante'
 import {IFederalState} from '../model/federal-states-data.interface'
 import {IFederalStatesData} from '../model/federal-state.interface'
-import { ChartComponent } from '../chart/chart.component';
-import { NgFor, AsyncPipe } from '@angular/common';
+import {ChartComponent} from '../chart/chart.component';
+import {AsyncPipe, NgFor} from '@angular/common';
+import {MatTabsModule} from "@angular/material/tabs";
 
 
 @Component({
-    selector: 'app-top-werte',
-    templateUrl: './top-werte.component.html',
-    styleUrls: ['./top-werte.component.css'],
-    standalone: true,
-    imports: [MatLegacyTabsModule, NgFor, RouterLink, ChartComponent, AsyncPipe]
+  selector: 'app-top-werte',
+  templateUrl: './top-werte.component.html',
+  styleUrls: ['./top-werte.component.css'],
+  standalone: true,
+  imports: [NgFor, RouterLink, ChartComponent, AsyncPipe, MatTabsModule]
 })
 export class TopWerteComponent implements OnInit {
   readonly homePath: string
-  readonly lvoPath: string
 
   federalStatesData: IFederalStatesData[] = []
   selectedFederalState: IFederalState = {} as IFederalState
@@ -48,7 +48,6 @@ export class TopWerteComponent implements OnInit {
     private router: Router
   ) {
     this.homePath = '/' + rootingPath.home
-    this.lvoPath = 'https://www.schleswig-holstein.de/DE/Schwerpunkte/Coronavirus/_documents/teaser_erlasse.html#doc6e00366d-8e07-4704-bced-88e5c28e9363bodyText1'
 
 
     // to get the current url

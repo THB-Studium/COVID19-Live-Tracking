@@ -1,9 +1,9 @@
 <body class="body">
 
 <!-- Afri-care-germany logo -->
-<img id="afri-care-logo" alt="afri-care logo"
+<img alt="afri-care logo" class="pointer"
+     id="afri-care-logo"
      routerLink="{{homePath}}"
-     class="pointer"
      src="assets/logo/afri-care-germany-logo.png">
 
 <h2 id="title-header">Suchergebnis für <b>{{ bundesLandName | titlecase }}</b></h2>
@@ -13,8 +13,8 @@
 <div *ngIf="!isVisible" class="bundesLandImage" id="bundesLandMapBig">
   <img (click)="changeImageSize()"
        class="pointer center"
-       title="zum Verkleinern anklicken"
-       src="assets/img/dld-map-results.jpeg">
+       src="assets/img/dld-map-results.jpeg"
+       title="zum Verkleinern anklicken">
   <p>Covid-19 live tracking: &nbsp; <b>{{ bundesLandName | titlecase }}</b></p>
 </div>
 
@@ -27,8 +27,8 @@
     <div *ngIf="isVisible" class="bundesLandImage col-4" id="bundesLandMapSmall">
       <img (click)="changeImageSize()"
            class="pointer"
-           title="zum Vergrößern anklicken"
-           src="assets/img/dld-map-results.jpeg">
+           src="assets/img/dld-map-results.jpeg"
+           title="zum Vergrößern anklicken">
       <p id="map-legend-smallest">Covid-19 live tracking: &nbsp; <b>{{ bundesLandName | titlecase }}</b></p>
     </div>
   </div>

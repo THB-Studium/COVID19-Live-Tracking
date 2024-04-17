@@ -1,15 +1,15 @@
 import {Component, OnInit} from '@angular/core'
 import {rootingPath} from '../shared/rooting-path'
 import {CommunicationService} from '../core/communication.service'
-import { RouterLink } from '@angular/router';
-import { NgIf } from '@angular/common';
+import {RouterLink} from '@angular/router';
+import {NgIf} from '@angular/common';
 
 @Component({
-    selector: 'app-footer',
-    templateUrl: './footer.component.html',
-    styleUrls: ['./footer.component.css'],
-    standalone: true,
-    imports: [NgIf, RouterLink]
+  selector: 'app-footer',
+  templateUrl: './footer.component.html',
+  styleUrls: ['./footer.component.css'],
+  standalone: true,
+  imports: [NgIf, RouterLink]
 })
 export class FooterComponent implements OnInit {
   onImpressum: boolean | undefined
@@ -24,8 +24,8 @@ export class FooterComponent implements OnInit {
 
   constructor(private comService: CommunicationService) {
     this.impressumPath = '/' + rootingPath.impressum,
-    this.aboutUsPath = '/' + rootingPath.about,
-    this.otherMeasurePath = ''
+      this.aboutUsPath = '/' + rootingPath.about,
+      this.otherMeasurePath = ''
   }
 
   ngOnInit(): void {

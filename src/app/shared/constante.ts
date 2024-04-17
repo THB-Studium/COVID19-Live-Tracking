@@ -17,21 +17,61 @@ export const constTopLinks = {
 
 export const constFederalState = {
   values: [
-    {federalStateId: 1, federalStateName: 'Schleswig-Holstein', federalStateOrdinance: 'https://www.schleswig-holstein.de/DE/Schwerpunkte/Coronavirus/coronavirus_node.html;jsessionid=8651006488D177B24833E4A56502FC06.delivery1-master'},
+    {
+      federalStateId: 1,
+      federalStateName: 'Schleswig-Holstein',
+      federalStateOrdinance: 'https://www.schleswig-holstein.de/DE/Schwerpunkte/Coronavirus/coronavirus_node.html;jsessionid=8651006488D177B24833E4A56502FC06.delivery1-master'
+    },
     {federalStateId: 2, federalStateName: 'Hamburg', federalStateOrdinance: 'https://www.hamburg.de/coronavirus/'},
-    {federalStateId: 3, federalStateName: 'Niedersachsen', federalStateOrdinance: 'https://www.niedersachsen.de/Coronavirus'},
+    {
+      federalStateId: 3,
+      federalStateName: 'Niedersachsen',
+      federalStateOrdinance: 'https://www.niedersachsen.de/Coronavirus'
+    },
     {federalStateId: 4, federalStateName: 'Bremen', federalStateOrdinance: 'https://www.bremen.de/corona'},
     {federalStateId: 5, federalStateName: 'Nordrhein-Westfalen', federalStateOrdinance: 'https://www.land.nrw/corona'},
-    {federalStateId: 6, federalStateName: 'Hessen', federalStateOrdinance: 'https://www.hessen.de/fuer-buerger/aktuelle-informationen-zu-corona-hessen'},
-    {federalStateId: 7, federalStateName: 'Rheinland-Pfalz', federalStateOrdinance: 'https://corona.rlp.de/de/startseite/'},
-    {federalStateId: 8, federalStateName: 'Baden-Württemberg', federalStateOrdinance: 'https://www.baden-wuerttemberg.de/de/service/aktuelle-infos-zu-corona/'},
-    {federalStateId: 9, federalStateName: 'Bayern', federalStateOrdinance: 'https://www.bayern.de/coronavirus-in-bayern-informationen-auf-einen-blick/'},
-    {federalStateId: 10, federalStateName: 'Saarland', federalStateOrdinance: 'https://corona.saarland.de/DE/home/home_node.html'},
+    {
+      federalStateId: 6,
+      federalStateName: 'Hessen',
+      federalStateOrdinance: 'https://www.hessen.de/fuer-buerger/aktuelle-informationen-zu-corona-hessen'
+    },
+    {
+      federalStateId: 7,
+      federalStateName: 'Rheinland-Pfalz',
+      federalStateOrdinance: 'https://corona.rlp.de/de/startseite/'
+    },
+    {
+      federalStateId: 8,
+      federalStateName: 'Baden-Württemberg',
+      federalStateOrdinance: 'https://www.baden-wuerttemberg.de/de/service/aktuelle-infos-zu-corona/'
+    },
+    {
+      federalStateId: 9,
+      federalStateName: 'Bayern',
+      federalStateOrdinance: 'https://www.bayern.de/coronavirus-in-bayern-informationen-auf-einen-blick/'
+    },
+    {
+      federalStateId: 10,
+      federalStateName: 'Saarland',
+      federalStateOrdinance: 'https://corona.saarland.de/DE/home/home_node.html'
+    },
     {federalStateId: 11, federalStateName: 'Berlin', federalStateOrdinance: 'https://www.berlin.de/corona/'},
     {federalStateId: 12, federalStateName: 'Brandenburg', federalStateOrdinance: 'https://kkm.brandenburg.de/kkm/de/'},
-    {federalStateId: 13, federalStateName: 'Mecklenburg-Vorpommern', federalStateOrdinance: 'https://www.regierung-mv.de/corona/'},
-    {federalStateId: 14, federalStateName: 'Sachsen', federalStateOrdinance: 'https://www.coronavirus.sachsen.de/index.html'},
-    {federalStateId: 15, federalStateName: 'Sachsen-Anhalt', federalStateOrdinance: 'https://coronavirus.sachsen-anhalt.de/'},
+    {
+      federalStateId: 13,
+      federalStateName: 'Mecklenburg-Vorpommern',
+      federalStateOrdinance: 'https://www.regierung-mv.de/corona/'
+    },
+    {
+      federalStateId: 14,
+      federalStateName: 'Sachsen',
+      federalStateOrdinance: 'https://www.coronavirus.sachsen.de/index.html'
+    },
+    {
+      federalStateId: 15,
+      federalStateName: 'Sachsen-Anhalt',
+      federalStateOrdinance: 'https://coronavirus.sachsen-anhalt.de/'
+    },
     {federalStateId: 16, federalStateName: 'Thüringen', federalStateOrdinance: 'https://corona.thueringen.de/'}
   ]
 }

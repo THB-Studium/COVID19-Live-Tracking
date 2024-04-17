@@ -1,9 +1,9 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing'
+import {ComponentFixture, TestBed} from '@angular/core/testing'
 
-import { HomepageComponent } from './homepage.component'
+import {HomepageComponent} from './homepage.component'
 import {HttpClientTestingModule} from '@angular/common/http/testing'
 import {RouterTestingModule} from '@angular/router/testing'
-import {MatLegacyAutocompleteModule as MatAutocompleteModule} from '@angular/material/legacy-autocomplete'
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
 
 describe('HomepageComponent', () => {
   let component: HomepageComponent
@@ -11,11 +11,11 @@ describe('HomepageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    imports: [
+      imports: [
         HttpClientTestingModule, RouterTestingModule, MatAutocompleteModule,
         HomepageComponent
-    ]
-})
+      ]
+    })
       .compileComponents()
   })
 

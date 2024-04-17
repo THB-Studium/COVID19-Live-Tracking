@@ -1,15 +1,15 @@
 <body class="body">
 
 <!-- Afri-care-germany logo -->
-<img id="afri-care-logo" alt="afri-care logo"
+<img alt="afri-care logo" class="pointer"
+     id="afri-care-logo"
      routerLink="{{homePath}}"
-     class="pointer"
      src="assets/logo/afri-care-germany-logo.png">
 
 <div class="body-contents">
   <!-- Ngb Carousel from Boostrap:  https://ng-bootstrap.github.io/#/components/carousel/examples -->
-  <ngb-carousel #carousel="ngbCarousel" [showNavigationArrows]="true"
-                [showNavigationIndicators]="true" (slide)="onSlide($event)"
+  <ngb-carousel #carousel="ngbCarousel" (slide)="onSlide($event)"
+                [showNavigationArrows]="true" [showNavigationIndicators]="true"
                 activeId="1" class="my-carousel">
     <ng-template *ngFor="let member of teamMembers; let i = index" id="{{i}}" ngbSlide>
       <div class="picsum-img-wrapper">
@@ -20,15 +20,15 @@
 
   <!-- More Infos -->
   <div class="mbr-description">
-    <h2>{{currentTeamMember.name}} ({{currentTeamMember.role}})</h2>
-    <p>{{currentTeamMember.description}}</p>
+    <h2>{{ currentTeamMember.name }} ({{ currentTeamMember.role }})</h2>
+    <p>{{ currentTeamMember.description }}</p>
   </div>
 
   <!-- Skills -->
   <div class="mbr-skills clearfix">
     <h2>Fachliche Skills</h2>
     <ul *ngFor="let skill of currentTeamMember.skills">
-      <li><p>{{skill}}</p></li>
+      <li><p>{{ skill }}</p></li>
     </ul>
   </div>
 
@@ -41,7 +41,7 @@
       src="assets/logo/thb-logo.png"
       title="to the thb home page">
     <p>
-      Technische Hochschule Brandenburg {{currentTeamMember.name}}
+      Technische Hochschule Brandenburg {{ currentTeamMember.name }}
       <a class="margin-left-15px" href="{{currentTeamMember.contact}}" target="”_blank”">E-Mail senden</a>
     </p>
   </div>

@@ -12,7 +12,8 @@ export class CommunicationService {
   private otherMeasure: Subject<boolean> = new Subject<boolean>()
 
 
-  constructor() { }
+  constructor() {
+  }
 
 
   /*** Impressum ***/

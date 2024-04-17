@@ -1,71 +1,71 @@
 <body class="body bodyHeight">
-  <div>
-    <!--  MatTabsModule from Angular materials: https://material.angular.io/components/tabs/overview  -->
-    <mat-tab-group (selectedTabChange)="onTabClicked($event)">
-      <mat-tab *ngFor="let tab of asyncTabs | async">
-        <ng-template mat-tab-label>{{tab.label}}</ng-template>
+<div>
+  <!--  MatTabsModule from Angular materials: https://material.angular.io/components/tabs/overview  -->
+  <mat-tab-group (selectedTabChange)="onTabClicked($event)">
+    <mat-tab *ngFor="let tab of asyncTabs | async">
+      <ng-template mat-tab-label>{{ tab.label }}</ng-template>
 
-        <!-- Afri-care-germany logo -->
-        <img id="afri-care-logo" alt="afri-care logo"
-             routerLink="{{homePath}}"
-             class="pointer"
-             src="assets/logo/afri-care-germany-logo.png">
+      <!-- Afri-care-germany logo -->
+      <img alt="afri-care logo" class="pointer"
+           id="afri-care-logo"
+           routerLink="{{homePath}}"
+           src="assets/logo/afri-care-germany-logo.png">
 
-        <div class="statistic">
-          <!-- CHARTS -->
-          <div class="chart-list index-bgd-color statistic-item">
-            <div class="chart-content">
-              <app-chart
-                [chartLabelName]="'7 Tage Inzidenz'"
-                [positionLabel]="'bottom'"
-                [caseValue]= "selectedFederalStateDatas.incident"
-                [totalValue]="0"
-                [chartWidth]="chartWidth"></app-chart>
-            </div>
-            <div class="chart-content">
-              <app-chart
-                [chartLabelName]="'Fallzahl Gesamt'"
-                [positionLabel]="'bottom'"
-                [caseValue]="selectedFederalStateDatas.fallzahl"
-                [totalValue]="selectedFederalStateDatas.faelle"
-                [chartWidth]="chartWidth"></app-chart>
-            </div>
-            <div class="chart-content">
-              <app-chart
-                [chartLabelName]="'Todesfälle Gesamt'"
-                [positionLabel]="'bottom'"
-                [caseValue]="selectedFederalStateDatas.death"
-                [totalValue]="selectedFederalStateDatas.faelle"
-                [chartWidth]="chartWidth"></app-chart>
-            </div>
-            <div class="chart-content">
-              <app-chart
-                [chartLabelName]="'7 Tage Sterbezahl'"
-                [positionLabel]="'bottom'"
-                [caseValue]="selectedFederalStateDatas.death7_bl"
-                [totalValue]="selectedFederalStateDatas.faelle"
-                [chartWidth]="chartWidth"></app-chart>
-            </div>
-            <div class="chart-content">
-              <app-chart
-                [chartLabelName]="' 7 Tage Fallzahl'"
-                [positionLabel]="'bottom'"
-                [caseValue]="selectedFederalStateDatas.cases7_bl"
-                [totalValue]="selectedFederalStateDatas.faelle"
-                [chartWidth]="chartWidth"></app-chart>
-            </div>
-<!--           <div class="chart-content">-->
-<!--              <app-chart-->
-<!--                [chartLabelName]="'Sterberate'"-->
-<!--                [positionLabel]="'bottom'"-->
-<!--                [caseValue]="100"-->
-<!--                [totalValue]="totalCase"-->
-<!--                [chartWidth]="chartWidth"></app-chart>-->
-<!--            </div>-->
+      <div class="statistic">
+        <!-- CHARTS -->
+        <div class="chart-list index-bgd-color statistic-item">
+          <div class="chart-content">
+            <app-chart
+              [caseValue]="selectedFederalStateDatas.incident"
+              [chartLabelName]="'7 Tage Inzidenz'"
+              [chartWidth]="chartWidth"
+              [positionLabel]="'bottom'"
+              [totalValue]="0"></app-chart>
           </div>
+          <div class="chart-content">
+            <app-chart
+              [caseValue]="selectedFederalStateDatas.fallzahl"
+              [chartLabelName]="'Fallzahl Gesamt'"
+              [chartWidth]="chartWidth"
+              [positionLabel]="'bottom'"
+              [totalValue]="selectedFederalStateDatas.faelle"></app-chart>
+          </div>
+          <div class="chart-content">
+            <app-chart
+              [caseValue]="selectedFederalStateDatas.death"
+              [chartLabelName]="'Todesfälle Gesamt'"
+              [chartWidth]="chartWidth"
+              [positionLabel]="'bottom'"
+              [totalValue]="selectedFederalStateDatas.faelle"></app-chart>
+          </div>
+          <div class="chart-content">
+            <app-chart
+              [caseValue]="selectedFederalStateDatas.death7_bl"
+              [chartLabelName]="'7 Tage Sterbezahl'"
+              [chartWidth]="chartWidth"
+              [positionLabel]="'bottom'"
+              [totalValue]="selectedFederalStateDatas.faelle"></app-chart>
+          </div>
+          <div class="chart-content">
+            <app-chart
+              [caseValue]="selectedFederalStateDatas.cases7_bl"
+              [chartLabelName]="' 7 Tage Fallzahl'"
+              [chartWidth]="chartWidth"
+              [positionLabel]="'bottom'"
+              [totalValue]="selectedFederalStateDatas.faelle"></app-chart>
+          </div>
+          <!--           <div class="chart-content">-->
+          <!--              <app-chart-->
+          <!--                [chartLabelName]="'Sterberate'"-->
+          <!--                [positionLabel]="'bottom'"-->
+          <!--                [caseValue]="100"-->
+          <!--                [totalValue]="totalCase"-->
+          <!--                [chartWidth]="chartWidth"></app-chart>-->
+          <!--            </div>-->
         </div>
-      </mat-tab>
-    </mat-tab-group>
-  </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>
 
 </body>

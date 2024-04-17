@@ -1,5 +1,5 @@
 <div class="chart-body">
-  <p *ngIf="positionLabel === 'top'">{{chartLabelName}}</p>
+  <p *ngIf="positionLabel === 'top'">{{ chartLabelName }}</p>
   <div class="chart-wrapper">
     <!-- this Canvas is used from the library Chart Js: https://www.positronx.io/angular-chart-js-tutorial-with-ng2-charts-examples/  -->
     <canvas [chartType]="pieChartType"
@@ -12,5 +12,5 @@
             baseChart>
     </canvas>
   </div>
-  <p *ngIf="positionLabel === 'bottom'">{{chartLabelName}}</p>
+  <p *ngIf="positionLabel === 'bottom'">{{ chartLabelName }}</p>
 </div>

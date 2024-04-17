@@ -11,11 +11,11 @@ describe('PortofolioComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    imports: [
+      imports: [
         HttpClientTestingModule, RouterTestingModule, NgbModule,
         PortofolioComponent
-    ]
-})
+      ]
+    })
       .compileComponents()
   })
 

@@ -1,14 +1,14 @@
 import {Component, Input, OnChanges, OnInit, SimpleChange} from '@angular/core'
-import { Label, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip, SingleDataSet, ChartsModule } from 'ng2-charts'
+import {ChartsModule, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip, SingleDataSet} from 'ng2-charts'
 import {ChartOptions, ChartType} from 'chart.js'
-import { NgIf } from '@angular/common';
+import {NgIf} from '@angular/common';
 
 @Component({
-    selector: 'app-chart',
-    templateUrl: './chart.component.html',
-    styleUrls: ['./chart.component.css'],
-    standalone: true,
-    imports: [NgIf, ChartsModule]
+  selector: 'app-chart',
+  templateUrl: './chart.component.html',
+  styleUrls: ['./chart.component.css'],
+  standalone: true,
+  imports: [NgIf, ChartsModule]
 })
 export class ChartComponent implements OnInit, OnChanges {
   @Input() chartLabelName = ''

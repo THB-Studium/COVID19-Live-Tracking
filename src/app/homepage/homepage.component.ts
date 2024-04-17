@@ -1,25 +1,28 @@
 import {Component, OnInit} from '@angular/core'
 import {rootingPath} from '../shared/rooting-path'
-import { Router, RouterLink } from '@angular/router'
+import {Router, RouterLink} from '@angular/router'
 import {CovidService} from '../core/covid-19.service'
 import {constFederalState, constTopLinks} from '../shared/constante'
 import {CommunicationService} from '../core/communication.service'
 import {ITopLink} from '../model/top-link.interface'
 import {IFederalState} from '../model/federal-states-data.interface'
-import { ChartComponent } from '../chart/chart.component';
-import { MatLegacyOptionModule } from '@angular/material/legacy-core';
-import { NgFor } from '@angular/common';
-import { MatIconModule } from '@angular/material/icon';
-import { MatLegacyAutocompleteModule } from '@angular/material/legacy-autocomplete';
-import { MatLegacyInputModule } from '@angular/material/legacy-input';
-import { MatLegacyFormFieldModule } from '@angular/material/legacy-form-field';
+import {ChartComponent} from '../chart/chart.component';
+import {MatLegacyOptionModule} from '@angular/material/legacy-core';
+import {NgFor} from '@angular/common';
+import {MatIconModule} from '@angular/material/icon';
+import {MatLegacyAutocompleteModule} from '@angular/material/legacy-autocomplete';
+import {MatLegacyInputModule} from '@angular/material/legacy-input';
+import {MatLegacyFormFieldModule} from '@angular/material/legacy-form-field';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
+import {MatInputModule} from "@angular/material/input";
 
 @Component({
-    selector: 'app-homepage',
-    templateUrl: './homepage.component.html',
-    styleUrls: ['./homepage.component.css'],
-    standalone: true,
-    imports: [RouterLink, MatLegacyFormFieldModule, MatLegacyInputModule, MatLegacyAutocompleteModule, MatIconModule, NgFor, MatLegacyOptionModule, ChartComponent]
+  selector: 'app-homepage',
+  templateUrl: './homepage.component.html',
+  styleUrls: ['./homepage.component.css'],
+  standalone: true,
+  imports: [RouterLink, MatIconModule, NgFor, ChartComponent, MatFormFieldModule, MatAutocompleteModule, MatInputModule]
 })
 export class HomepageComponent implements OnInit {
   filteredList: Array<any> = []
@@ -66,8 +69,8 @@ export class HomepageComponent implements OnInit {
     const selectedFederalState: IFederalState = constFederalState.values.filter(fedStat => fedStat.federalStateName === pillId)[0]
     topValues
       ? this.router.navigate(['/' + rootingPath.top_werte + '/' + pillId.toLowerCase()])
-      : ( this.router.navigate(['/' + rootingPath.search_results + '/' + pillId.toLowerCase()]),
-          this.comService.setFederalStateOrdinanceUrl(selectedFederalState.federalStateOrdinance))
+      : (this.router.navigate(['/' + rootingPath.search_results + '/' + pillId.toLowerCase()]),
+        this.comService.setFederalStateOrdinanceUrl(selectedFederalState.federalStateOrdinance))
   }
 
   private footerItemsInit(): void {

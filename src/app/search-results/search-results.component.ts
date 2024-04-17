@@ -1,24 +1,24 @@
 import {Component, OnInit} from '@angular/core'
-import { ActivatedRoute, RouterLink } from '@angular/router'
+import {ActivatedRoute, RouterLink} from '@angular/router'
 import {rootingPath} from '../shared/rooting-path'
 import {CovidService} from '../core/covid-19.service'
 import {constFederalState} from '../shared/constante'
 import {CommunicationService} from '../core/communication.service'
-import { ChartComponent } from '../chart/chart.component';
-import { NgIf, TitleCasePipe } from '@angular/common';
+import {ChartComponent} from '../chart/chart.component';
+import {NgIf, TitleCasePipe} from '@angular/common';
 
 @Component({
-    selector: 'app-search-results',
-    templateUrl: './search-results.component.html',
-    styleUrls: ['./search-results.component.css'],
-    standalone: true,
-    imports: [RouterLink, NgIf, ChartComponent, TitleCasePipe]
+  selector: 'app-search-results',
+  templateUrl: './search-results.component.html',
+  styleUrls: ['./search-results.component.css'],
+  standalone: true,
+  imports: [RouterLink, NgIf, ChartComponent, TitleCasePipe]
 })
 export class SearchResultsComponent implements OnInit {
   mapWidth = 100
-  isVisible = true
+  isVisible: boolean = true
   readonly homePath: string
-  bundesLandName = ''
+  bundesLandName: string = ''
   bundeslandWerte: any
 
   filteredList: Array<any> = []
